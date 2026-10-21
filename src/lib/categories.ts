@@ -13,21 +13,60 @@ export type CategoryDef = {
   parentSlug: string | null;
   sortOrder: number;
   folder?: string;
+  /** Tile image for the home page (top-level groups only). */
+  image?: string;
 };
 
 export const CATEGORIES: CategoryDef[] = [
-  // Top-level groups
-  { slug: "protein", name: "Protein", parentSlug: null, sortOrder: 1 },
-  { slug: "amino-acids", name: "Amino Acids", parentSlug: null, sortOrder: 2 },
-  { slug: "creatine", name: "Creatine", parentSlug: null, sortOrder: 3 },
-  { slug: "weight-gain", name: "Weight Gain", parentSlug: null, sortOrder: 4 },
-  { slug: "weight-loss", name: "Weight Loss", parentSlug: null, sortOrder: 5 },
-  { slug: "pre-workout", name: "Pre-Workout", parentSlug: null, sortOrder: 6 },
+  // Top-level groups (images are product photos used for the home page tiles)
+  {
+    slug: "protein",
+    name: "Protein",
+    parentSlug: null,
+    sortOrder: 1,
+    image: "/products/27235.webp",
+  },
+  {
+    slug: "amino-acids",
+    name: "Amino Acids",
+    parentSlug: null,
+    sortOrder: 2,
+    image: "/products/2762.webp",
+  },
+  {
+    slug: "creatine",
+    name: "Creatine",
+    parentSlug: null,
+    sortOrder: 3,
+    image: "/products/32724.webp",
+  },
+  {
+    slug: "weight-gain",
+    name: "Weight Gain",
+    parentSlug: null,
+    sortOrder: 4,
+    image: "/products/2683.webp",
+  },
+  {
+    slug: "weight-loss",
+    name: "Weight Loss",
+    parentSlug: null,
+    sortOrder: 5,
+    image: "/products/60.webp",
+  },
+  {
+    slug: "pre-workout",
+    name: "Pre-Workout",
+    parentSlug: null,
+    sortOrder: 6,
+    image: "/products/21353.webp",
+  },
   {
     slug: "vitamins-minerals",
     name: "Vitamins & Minerals",
     parentSlug: null,
     sortOrder: 7,
+    image: "/products/22218.webp",
   },
 
   // Protein
@@ -224,6 +263,7 @@ export type CategoryNode = {
   name: string;
   /** Listing URL built from the slug path, e.g. "/c/vitamins-minerals/minerals/zinc". */
   href: string;
+  image?: string;
   children: CategoryNode[];
 };
 
@@ -239,6 +279,7 @@ function buildTree(
         slug: c.slug,
         name: c.name,
         href,
+        image: c.image,
         children: buildTree(c.slug, href),
       };
     });
@@ -246,3 +287,49 @@ function buildTree(
 
 /** The 7 top-level groups with their nested children. */
 export const CATEGORY_TREE: CategoryNode[] = buildTree(null, "/c");
+
+/** Every node in the tree, keyed by slug. */
+const NODES_BY_SLUG = new Map<string, CategoryNode>();
+(function index(nodes: CategoryNode[]) {
+  for (const node of nodes) {
+    NODES_BY_SLUG.set(node.slug, node);
+    index(node.children);
+  }
+})(CATEGORY_TREE);
+
+export function getCategory(slug: string): CategoryNode | undefined {
+  return NODES_BY_SLUG.get(slug);
+}
+
+/**
+ * Resolves a URL path like ["vitamins-minerals", "minerals", "zinc"] to its
+ * category and the trail from the top group down to it. Returns null if any
+ * step doesn't match, so "/c/protein/zinc" is a 404.
+ */
+export function findCategoryByPath(
+  slugs: string[],
+): { category: CategoryNode; trail: CategoryNode[] } | null {
+  const trail: CategoryNode[] = [];
+  let level = CATEGORY_TREE;
+  for (const slug of slugs) {
+    const node = level.find((n) => n.slug === slug);
+    if (!node) return null;
+    trail.push(node);
+    level = node.children;
+  }
+  const category = trail.at(-1);
+  return category ? { category, trail } : null;
+}
+
+/** The trail from the top group down to the category, e.g. [Vitamins & Minerals, Minerals, Zinc]. */
+export function getCategoryTrail(slug: string): CategoryNode[] {
+  const def = CATEGORIES.find((c) => c.slug === slug);
+  if (!def) return [];
+  const node = NODES_BY_SLUG.get(slug)!;
+  return def.parentSlug ? [...getCategoryTrail(def.parentSlug), node] : [node];
+}
+
+/** The category's slug plus the slugs of all its descendants. */
+export function getSubtreeSlugs(node: CategoryNode): string[] {
+  return [node.slug, ...node.children.flatMap(getSubtreeSlugs)];
+}

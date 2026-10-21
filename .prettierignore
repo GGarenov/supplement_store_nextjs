@@ -5,3 +5,4 @@ images
 package-lock.json
 src/generated
 docs
+src/components/ui

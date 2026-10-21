@@ -212,3 +212,117 @@
 1. Connect Supabase, then migrate and seed (see the Phase 0/1 next steps above). The promo strip will then show "Free shipping on orders over €60".
 2. Phase 3: the catalog (`/c/[...slug]`, `/brands`, `/p/[slug]`, `/search`). The nav links to those pages return 404 until then.
 3. Commits: nothing is committed yet.
+
+---
+
+## 2026-10-21 16:38 (UTC+03:00): Phase 3 (catalog)
+
+**Status:** All the Phase 3 code is written. Lint, typecheck and the build pass.
+
+**Not tested with real data:** as agreed, the catalog was built **without a database**. The ✅ Check items in the to-do stay open until Supabase is connected and seeded.
+
+What was verified without data:
+- **Build:** it succeeds with no database. Database-backed pages are partial prerenders: static shell at build time, data per request.
+- **In the browser:**
+  - The home page renders the category tiles, and each product section shows its own "couldn't be loaded" box.
+  - A catalog page shows the shop error page, with the header and footer still in place.
+  - An unknown category path shows the 404 page.
+- **Logic:** a one-off script of `node:assert` checks passed for filter parsing and URL building, promotion pricing, and the category lookups.
+
+### Next.js 16 rules that shaped this phase
+- **Database reads happen at request time, not at build time.** Reasoning:
+  - Anything cached with `"use cache"` is filled during the build.
+  - With no database, a cached query would break the build.
+  - So for now no catalog query is cached, and every database read runs inside a Suspense boundary.
+  - Pages that read `params`/`searchParams` (category, brand, product, search) use `loading.tsx` as that boundary.
+  - Pages without params (home, `/brands`) call `await connection()` before querying, inside `<Suspense>`.
+  - Caching can be added once the database is connected (Phase 10).
+- **`error.tsx` changes:** it now receives `retry()` (not `reset()`), and `error` is `unknown`.
+- **`catchError` from `next/error`** gives component-level error boundaries; it's used for `SectionErrorBoundary`.
+- **404 status:** `notFound()` on a streamed page returns HTTP 200 (the status is already sent), but Next.js shows the not-found page and adds `<meta name="robots" content="noindex">`. Unknown URLs that match no route still return a real 404.
+
+### Data layer (`src/lib/`)
+- **`format.ts`**: `formatPrice(cents)` → "€12.26".
+- **`pricing.ts`**: pure functions with no database access.
+  - `getEffectivePrice(product, promotions)` returns `{ priceCents, originalCents, percentOff, promotionId }`.
+  - The best promotion wins; promotions don't stack.
+  - A promotion matches by brand, by product, or by category.
+- **`filters.ts`** (usable in the browser too): parses and serialises filters.
+  - Zod parsing that **never throws**: invalid values are dropped, and min/max are swapped if reversed.
+  - URL format: `?brand=a,b&form=powder&size=large&minPrice=10&maxPrice=50&rating=4&sale=1&inStock=1&sort=price-asc&page=2`. Defaults are left out of the URL.
+  - Any filter change resets to page 1.
+  - Also holds the labels for sort, form and pack size.
+- **`catalog.ts`** (`server-only`): all catalog queries.
+  - `getActivePromotions()`: a category promotion is expanded to the whole subtree, so "Pre-Workout −20%" also covers "NO Boosters".
+  - `buildProductWhere(scope, filters, promotions, skip?)`. The *scope* is what the page is about (category subtree, brand or search). `skip` leaves one filter out for facet counts, so the brand counts show what picking another brand would give.
+  - `getProducts`: 24 per page; a page number past the end shows the last page; `id` as the final sort key keeps paging stable.
+  - `getFacets`: brand and form counts via `groupBy`, 3 counts for pack sizes, and the price min/max for the slider.
+  - Home, product and brand queries: `getFeaturedProducts`, `getBestSellers`, `getProductBySlug` (deduplicated with React `cache`, because both `generateMetadata` and the page call it), `getRelatedProducts`, `getRatingDistribution`, `getBrandsWithCounts`, `getBrand`.
+- **`categories.ts`**: new `findCategoryByPath`, `getCategoryTrail`, `getSubtreeSlugs` and `getCategory`.
+  - Top-level groups now have an `image`, a product photo for the home tiles.
+  - The seed writes it to `Category.image`.
+- **Search:** every word must appear in the product name or the brand name, case-insensitive.
+- **Pack size buckets** (`size` filter): weight and count packs use separate limits.
+
+  | Bucket | Weight (g, ml) | Count (capsules, tablets…) |
+  |---|---|---|
+  | Small | ≤ 300 | ≤ 60 |
+  | Medium | 301–1000 | 61–120 |
+  | Large | > 1000 | > 120 |
+
+- **Known limitation:** the price filter and the price sort use the **regular** price. Sale prices are calculated in code and aren't stored in the database.
+
+### Components
+- **`components/product/`**
+  - **`ProductCard`**:
+    - White image tile; −X% and "Out of stock" badges.
+    - The name link stretches over the whole card, so the card is one click target. The brand link and the heart sit above it.
+    - "Add to cart" is revealed on hover only on devices with a mouse (`@media (hover: hover)`); on touch screens it's always visible.
+  - **`PriceTag`**: the sale price in orange with the struck-through regular price.
+  - **`RatingStars`**: a filled row clipped to the exact rating, e.g. 4.3 stars.
+  - **`ProductGrid`** (2/3/4 columns, first row loads with `priority`) and **`ProductGridSkeleton`**.
+  - **`ProductPurchase`**: quantity stepper, at most 10 or the stock.
+  - **`ProductReviews`**: average, a 5→1 breakdown bar, and the latest 20 reviews.
+  - `AddToCartButton` and `WishlistButton` are **placeholders**; they show a toast until Phases 5 and 7.
+- **`components/catalog/`**
+  - `ProductListing`: the shared layout for category, brand and search pages.
+  - `FilterControls` (client): brand search, "show all" and counts; price slider and inputs; form; pack size; rating; on sale; in stock.
+    - The controls dim while the new results load (`useTransition`).
+    - Options with 0 results are disabled unless already selected.
+  - `CategoryFilter`: all 7 groups, with the current group expanded.
+  - `MobileFilters`: the same sidebar in a bottom sheet, with a "Show N products" button.
+  - `ActiveFilters`: removable chips plus "Clear all".
+  - `SortSelect`.
+  - `ListingPagination`: built on `next/link` with a page window like 1 … 4 5 6 … 18. The shadcn pagination uses plain `<a>` tags, which would reload the page.
+  - `PageBreadcrumb` and `ListingSkeleton`.
+- **`components/home/category-tiles.tsx`**: 7 tiles with product photos. They're static, so they don't need the database.
+- **`section-error-boundary.tsx`** (`catchError`), **`not-found-content.tsx`** and **`error-content.tsx`** (shows the error digest so it can be matched in the server logs).
+
+### Pages (`src/app/`)
+- `(shop)/c/[...slug]`: the category listing. An invalid path such as `/c/protein/zinc` gives a 404.
+- `(shop)/brands`: A–Z with letter anchors and product counts; featured brands in bold.
+- `(shop)/brands/[slug]`: the listing without the brand filter.
+- `(shop)/p/[slug]`: the product page:
+  - image, brand, rating (links to the reviews), pack and form, price with "You save …", stock status ("Only N left" at 10 or fewer)
+  - quantity and "Add to cart", wishlist, description, reviews, related products
+  - Product JSON-LD (structured data for search engines)
+- `(shop)/search`: results for `?q=`, or a search box when `q` is empty. Marked `noindex`.
+- Home: placeholder hero, category tiles, Featured, and Best sellers. Each product section has its own Suspense and error boundary.
+- `loading.tsx` for the category, brand, product and search pages.
+- 404 and error pages:
+  - `not-found.tsx` at the root (with the site shell, for URLs that match no route) and in `(shop)` (for `notFound()` calls).
+  - `error.tsx` at the root and in `(shop)`.
+
+### Other changes
+- New dependencies: `zod`, `server-only`.
+- `.prettierignore` now includes `src/components/ui`, so formatting doesn't rewrite the shadcn-generated files. A reformat of those files was reverted.
+
+### Next steps
+1. **Connect Supabase**, then migrate, seed and run the Phase 3 ✅ Check in the browser:
+   - real product cards
+   - filters together with their counts
+   - pagination
+   - the product page
+   - search
+2. Commit: `feat(catalog): listings, filters, product page and search`.
+3. Phase 4: authentication.

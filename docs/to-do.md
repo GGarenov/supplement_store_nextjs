@@ -216,10 +216,10 @@ Use these defaults unless the project owner decides otherwise:
 ## Phase 3: Catalog (plan §3.1)
 
 ### 3.1 Shared helpers
-- [ ] `src/lib/format.ts`: `formatPrice(cents)`.
-- [ ] `src/lib/pricing.ts`: `getActivePromotions()` and `getEffectivePrice(product, promotions)`. It returns `{ priceCents, originalCents, percentOff }`; when several promotions apply, the **best** one wins. Keep it a **pure function** so it is easy to unit-test later. Promotions only become visible in Phase 8, but write the function now so that prices are already computed through it.
-- [ ] `src/lib/catalog.ts`:
-  - [ ] `parseFilters(searchParams)` → a typed object, validated with Zod. Parameters:
+- [x] `src/lib/format.ts`: `formatPrice(cents)`.
+- [x] `src/lib/pricing.ts`: `getActivePromotions()` and `getEffectivePrice(product, promotions)`. It returns `{ priceCents, originalCents, percentOff }`; when several promotions apply, the **best** one wins. Keep it a **pure function** so it is easy to unit-test later. Promotions only become visible in Phase 8, but write the function now so that prices are already computed through it.
+- [x] `src/lib/catalog.ts`:
+  - [x] `parseFilters(searchParams)` → a typed object, validated with Zod. Parameters:
     - `brand` (array)
     - `minPrice`
     - `maxPrice`
@@ -230,59 +230,66 @@ Use these defaults unless the project owner decides otherwise:
     - `inStock`
     - `sort`
     - `page`
-  - [ ] `buildProductWhere(filters, categoryIds)` → a Prisma `where`
-  - [ ] `getCategoryWithDescendants(slugPath)`: a parent category includes all of its children's products
-  - [ ] `getProducts(filters)`: returns `{ items, total, pageCount }` with a page size of 24
-  - [ ] `getFacets(categoryIds, filters)`: counts per brand and form, and the price min/max. Use `groupBy`.
+  - [x] `buildProductWhere(filters, categoryIds)` → a Prisma `where`
+  - [x] `getCategoryWithDescendants(slugPath)`: a parent category includes all of its children's products
+  - [x] `getProducts(filters)`: returns `{ items, total, pageCount }` with a page size of 24
+  - [x] `getFacets(categoryIds, filters)`: counts per brand and form, and the price min/max. Use `groupBy`.
 
 ### 3.2 Product components (`src/components/product/`)
-- [ ] `PriceTag`: the current price, plus the struck-through original price and a "−X%" badge when it is on sale.
-- [ ] `RatingStars`: read-only stars with the count.
-- [ ] `ProductCard`:
-  - [ ] the image on a white rounded tile (`next/image` with `sizes`)
-  - [ ] brand, name (2-line clamp), pack label, rating, `PriceTag`
-  - [ ] "Out of stock" badge
-  - [ ] wishlist heart (a placeholder until Phase 7)
-  - [ ] "Add to cart" button (a placeholder until Phase 5)
-- [ ] `ProductGrid`: a responsive grid (2 columns on mobile, 3 on tablet, 4 on desktop).
-- [ ] `ProductGridSkeleton`.
+- [x] `PriceTag`: the current price, plus the struck-through original price and a "−X%" badge when it is on sale.
+- [x] `RatingStars`: read-only stars with the count.
+- [x] `ProductCard`:
+  - [x] the image on a white rounded tile (`next/image` with `sizes`)
+  - [x] brand, name (2-line clamp), pack label, rating, `PriceTag`
+  - [x] "Out of stock" badge
+  - [x] wishlist heart (a placeholder until Phase 7)
+  - [x] "Add to cart" button (a placeholder until Phase 5)
+- [x] `ProductGrid`: a responsive grid (2 columns on mobile, 3 on tablet, 4 on desktop).
+- [x] `ProductGridSkeleton`.
 
 ### 3.3 Catalog components (`src/components/catalog/`)
-- [ ] `FilterSidebar` (Client Component). Every filter **updates the URL** with `router.replace` and resets `page`:
-  - [ ] category tree links
-  - [ ] brand checkboxes with a search box, a "show more" toggle and counts
-  - [ ] price slider with min/max inputs (debounced)
-  - [ ] form checkboxes with counts
-  - [ ] pack size options
-  - [ ] minimum rating
-  - [ ] "On sale" and "In stock" toggles
-- [ ] `ActiveFilters`: removable chips plus "Clear all".
-- [ ] `SortSelect`: Featured, Price ↑, Price ↓, Newest, Best rated, Best selling.
-- [ ] `Pagination`: uses shadcn pagination and keeps the other parameters in the URL.
-- [ ] `MobileFilters`: the `FilterSidebar` inside a bottom `Sheet`, opened by a "Filters (n)" button.
+- [x] `FilterSidebar` (Client Component). Every filter **updates the URL** with `router.replace` and resets `page`:
+  - [x] category tree links
+  - [x] brand checkboxes with a search box, a "show more" toggle and counts
+  - [x] price slider with min/max inputs (debounced)
+  - [x] form checkboxes with counts
+  - [x] pack size options
+  - [x] minimum rating
+  - [x] "On sale" and "In stock" toggles
+- [x] `ActiveFilters`: removable chips plus "Clear all".
+- [x] `SortSelect`: Featured, Price ↑, Price ↓, Newest, Best rated, Best selling.
+- [x] `Pagination`: uses shadcn pagination and keeps the other parameters in the URL.
+- [x] `MobileFilters`: the `FilterSidebar` inside a bottom `Sheet`, opened by a "Filters (n)" button.
 
 ### 3.4 Pages
-- [ ] `/c/[...slug]/page.tsx`:
+- [x] `/c/[...slug]/page.tsx`:
   - breadcrumb, title and product count
   - sidebar, sort, grid and pagination
   - `notFound()` for an unknown slug
   - `generateMetadata`
-- [ ] `/c/[...slug]/loading.tsx`: show the skeleton grid.
-- [ ] `/brands/page.tsx`: all brands A–Z with letter anchors and product counts.
-- [ ] `/brands/[slug]/page.tsx`: the same listing UI, filtered by brand.
-- [ ] `/p/[slug]/page.tsx`:
-  - [ ] image and details: brand link, name, pack, rating, `PriceTag`, stock status
-  - [ ] quantity picker and "Add to cart" (placeholder)
-  - [ ] wishlist button (placeholder)
-  - [ ] description
-  - [ ] reviews section (read-only list for now)
-  - [ ] "Related products": 8 products from the same category
-  - [ ] `generateMetadata`, plus Product JSON-LD (optional)
-- [ ] `/search/page.tsx`: case-insensitive `contains` on `name` and `brand.name`, with the same listing UI; show an empty state for no results.
-- [ ] Home page (`/`), first version: a "Shop by category" grid of the 7 groups, "Featured products" and "Best sellers". The hero comes in Phase 8.
-- [ ] `not-found.tsx` and `error.tsx` at the root and in `(shop)`.
+- [x] `/c/[...slug]/loading.tsx`: show the skeleton grid.
+- [x] `/brands/page.tsx`: all brands A–Z with letter anchors and product counts.
+- [x] `/brands/[slug]/page.tsx`: the same listing UI, filtered by brand.
+- [x] `/p/[slug]/page.tsx`:
+  - [x] image and details: brand link, name, pack, rating, `PriceTag`, stock status
+  - [x] quantity picker and "Add to cart" (placeholder)
+  - [x] wishlist button (placeholder)
+  - [x] description
+  - [x] reviews section (read-only list for now)
+  - [x] "Related products": 8 products from the same category
+  - [x] `generateMetadata`, plus Product JSON-LD (optional)
+- [x] `/search/page.tsx`: case-insensitive `contains` on `name` and `brand.name`, with the same listing UI; show an empty state for no results.
+- [x] Home page (`/`), first version: a "Shop by category" grid of the 7 groups, "Featured products" and "Best sellers". The hero comes in Phase 8.
+- [x] `not-found.tsx` and `error.tsx` at the root and in `(shop)`.
 
-### ✅ Check
+**Where the code differs from the wording above** (details in `work_log.md`):
+- Filter parsing and URL building are in **`src/lib/filters.ts`**, because the browser needs them too. Database queries are in `src/lib/catalog.ts` (server-only). `getActivePromotions()` is in `catalog.ts`; `pricing.ts` stays pure.
+- `buildProductWhere` takes a **scope** (category slugs, brand or search text) instead of category ids. Category lookups use the static tree in `src/lib/categories.ts` (`findCategoryByPath`, `getSubtreeSlugs`).
+- The filter sidebar is a Server Component (`CategoryFilter`) plus a Client Component (`FilterControls`). Filters use `router.push`, not `replace`, so the back button undoes the last filter.
+- The price inputs apply on blur or Enter instead of being debounced (typing "25" doesn't search for "2"). The slider applies when released.
+- Pagination is a custom component built on `next/link`, because the shadcn version renders plain `<a>` tags (full page reloads).
+
+### ✅ Check (needs the database: run these once Supabase is connected and seeded)
 - [ ] Every category page lists products, and parent pages include their children's products.
 - [ ] Combining brand, price and form filters gives correct results and counts. A filtered URL opened in a new tab shows the same results.
 - [ ] Sorting and pagination work and keep the filters.
@@ -601,7 +608,7 @@ Use these defaults unless the project owner decides otherwise:
 | 0. Project setup | 🟨 done, except connecting Supabase |
 | 1. Data and seeding | 🟨 code done; migrate and seed waiting for Supabase |
 | 2. Layout and design system | ✅ (account dropdown moves to Phase 4) |
-| 3. Catalog | ⬜ |
+| 3. Catalog | 🟨 code done; checks waiting for the database |
 | 4. Authentication | ⬜ |
 | 5. Cart | ⬜ |
 | 6. Stripe checkout and orders | ⬜ |

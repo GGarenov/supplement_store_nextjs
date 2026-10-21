@@ -35,7 +35,12 @@ async function seedCategories() {
   // CATEGORIES lists parents before children, so parent ids are always known.
   for (const c of CATEGORIES) {
     const parentId = c.parentSlug ? ids.get(c.parentSlug) : null;
-    const data = { name: c.name, sortOrder: c.sortOrder, parentId };
+    const data = {
+      name: c.name,
+      sortOrder: c.sortOrder,
+      parentId,
+      image: c.image ?? null,
+    };
     const row = await db.category.upsert({
       where: { slug: c.slug },
       create: { slug: c.slug, ...data },
