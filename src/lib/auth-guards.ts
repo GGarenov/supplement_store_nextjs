@@ -1,6 +1,7 @@
 import "server-only";
 
 import { notFound, redirect } from "next/navigation";
+import { connection } from "next/server";
 
 import { auth } from "@/lib/auth";
 
@@ -14,6 +15,9 @@ import { auth } from "@/lib/auth";
 
 /** The logged-in user, or null. */
 export async function getCurrentUser() {
+  // Auth.js calls crypto.getRandomValues(), which Next.js rejects while
+  // prerendering even after the cookie read; wait for the real request first.
+  await connection();
   const session = await auth();
   return session?.user ?? null;
 }

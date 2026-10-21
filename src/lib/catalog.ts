@@ -1,5 +1,6 @@
 import "server-only";
 
+import { connection } from "next/server";
 import { cache } from "react";
 
 import type { Prisma } from "@/generated/prisma/client";
@@ -18,6 +19,11 @@ import {
   type EffectivePrice,
 } from "@/lib/pricing";
 
+// Every exported query awaits `connection()` before touching the database.
+// The Prisma driver uses `Date.now()` and `crypto.getRandomValues()`, which
+// Next.js rejects while prerendering, even on pages that read params or
+// searchParams. `connection()` makes the query wait for the real request.
+
 // ─── Promotions ──────────────────────────────────────────────────────────────
 
 /**
@@ -27,6 +33,7 @@ import {
  */
 export const getActivePromotions = cache(
   async (): Promise<ActivePromotion[]> => {
+    await connection();
     const now = new Date();
     const rows = await db.promotion.findMany({
       where: { active: true, startsAt: { lte: now }, endsAt: { gte: now } },
@@ -100,6 +107,7 @@ function toProductCard(
 async function findProductCards(
   args: Omit<Prisma.ProductFindManyArgs, "include" | "select">,
 ) {
+  await connection();
   const [rows, promotions] = await Promise.all([
     db.product.findMany({ ...args, include: productCardInclude }),
     getActivePromotions(),
@@ -349,6 +357,7 @@ export function getBestSellers(limit = 8) {
 
 /** One product with everything the product page shows. Deduplicated per request. */
 export const getProductBySlug = cache(async (slug: string) => {
+  await connection();
   const [product, promotions] = await Promise.all([
     db.product.findUnique({
       where: { slug },
@@ -376,6 +385,7 @@ export const getProductBySlug = cache(async (slug: string) => {
 
 /** How many visible reviews gave 5, 4, 3, 2 and 1 stars. */
 export async function getRatingDistribution(productId: string) {
+  await connection();
   const groups = await db.review.groupBy({
     by: ["rating"],
     where: { productId, hidden: false },
@@ -407,7 +417,8 @@ export function getRelatedProducts(
 
 // ─── Brands ──────────────────────────────────────────────────────────────────
 
-export function getBrandsWithCounts() {
+export async function getBrandsWithCounts() {
+  await connection();
   return db.brand.findMany({
     orderBy: { name: "asc" },
     select: {
@@ -419,6 +430,10 @@ export function getBrandsWithCounts() {
   });
 }
 
-export const getBrand = cache((slug: string) =>
-  db.brand.findUnique({ where: { slug }, select: { slug: true, name: true } }),
-);
+export const getBrand = cache(async (slug: string) => {
+  await connection();
+  return db.brand.findUnique({
+    where: { slug },
+    select: { slug: true, name: true },
+  });
+});

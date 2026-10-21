@@ -13,7 +13,7 @@ This is a step-by-step task list for building the store described in [plan.md](p
 ### Prerequisites (install / create once)
 - [x] **Node.js** LTS (v20 or newer): check with `node -v`
 - [x] **Git**: check with `git --version`
-- [ ] **PostgreSQL**: a free **Supabase** project (https://supabase.com). We decided on Supabase instead of Docker or Neon.
+- [x] **PostgreSQL**: a free **Supabase** project (https://supabase.com). We decided on Supabase instead of Docker or Neon.
 - [ ] **Stripe** account in **test mode** (https://dashboard.stripe.com/test)
 - [ ] **Stripe CLI** (https://docs.stripe.com/stripe-cli), then run `stripe login`
 - [ ] Google Cloud OAuth client **or** GitHub OAuth app, for social login (you need it in Phase 4)
@@ -66,7 +66,7 @@ Use these defaults unless the project owner decides otherwise:
   ```
 
 ### 0.4 Database and Prisma
-- [ ] Create a free **Supabase** project. Then, in Supabase, open **Connect → ORMs → Prisma** and copy:
+- [x] Create a free **Supabase** project. Then, in Supabase, open **Connect → ORMs → Prisma** and copy:
   - the **pooled** connection string (port 6543) → `DATABASE_URL`, used by the app at runtime
   - the **direct/session** connection string (port 5432) → `DIRECT_URL`, used by migrations and the seed
 - [x] Install Prisma:
@@ -75,7 +75,7 @@ Use these defaults unless the project owner decides otherwise:
   npm i -D prisma tsx
   npx prisma init
   ```
-- [ ] Copy `.env.example` to `.env` and set `DATABASE_URL`, `DIRECT_URL` and `SEED_ADMIN_PASSWORD`.
+- [x] Copy `.env.example` to `.env` and set `DATABASE_URL`, `DIRECT_URL` and `SEED_ADMIN_PASSWORD`.
 - [x] Create `src/lib/db.ts` with a **Prisma client singleton**, so that hot reload doesn't open new connections.
 - [x] Create `.env.example` listing every variable without its value:
   - `DATABASE_URL`
@@ -89,8 +89,8 @@ Use these defaults unless the project owner decides otherwise:
 
 ### ✅ Check
 - [x] `npm run dev`, `npm run lint` and `npm run typecheck` all pass.
-- [ ] The database is reachable: `npx prisma db pull` or `npx prisma studio` connects.
-- [ ] First commit: `chore: scaffold Next.js app with Tailwind, shadcn and Prisma`
+- [x] The database is reachable: `npx prisma db pull` or `npx prisma studio` connects.
+- [x] First commit: `chore: scaffold Next.js app with Tailwind, shadcn and Prisma`
 
 ---
 
@@ -109,7 +109,7 @@ Use these defaults unless the project owner decides otherwise:
   - `Cascade`: cart items, wishlist items and reviews when their user is deleted
   - `Restrict`: products that are referenced by orders
 - [x] Add indexes: `Product.brandId`, `Product.priceCents`, `Product.createdAt`, `Review.productId`.
-- [ ] Run `npx prisma migrate dev --name init`.
+- [x] Run `npx prisma migrate dev --name init`.
 
 ### 1.2 Category map
 - [x] Create `prisma/category-map.ts`. It describes the 7 top-level groups and the 22 leaf categories (plan §2), and for each one gives:
@@ -162,14 +162,14 @@ Use these defaults unless the project owner decides otherwise:
 - [x] Make the seed **idempotent**: running it twice must not create duplicates.
 
 ### ✅ Check
-- [ ] `npm run db:seed` finishes without errors and logs nothing unparsed (or only expected warnings).
-- [ ] In Prisma Studio:
-  - [ ] **428** products
-  - [ ] about **90** brands
-  - [ ] **29+** categories (7 groups + 22 leaves + the `minerals` and `vitamins` mid-levels)
-  - [ ] 5 products with 2 categories
+- [x] `npm run db:seed` finishes without errors and logs nothing unparsed (or only expected warnings).
+- [x] In Prisma Studio:
+  - [x] **428** products
+  - [x] about **90** brands
+  - [x] **29+** categories (7 groups + 22 leaves + the `minerals` and `vitamins` mid-levels)
+  - [ ] 5 products with 2 categories: not any more. The rebuilt catalog puts each product in one category (see `work_log.md`, 2026-10-21 21:00)
 - [x] `public/products/` contains 428 `.webp` files.
-- [ ] Commit: `feat(db): schema, category map and catalog seed`
+- [x] Commit: `feat(db): schema, category map and catalog seed`
 
 ---
 
@@ -209,7 +209,7 @@ Use these defaults unless the project owner decides otherwise:
 ### ✅ Check
 - [x] Every page shares the header and footer, and the theme toggle switches dark/light without a flash.
 - [x] Layout looks right at 375px, 768px and 1280px wide.
-- [ ] Commit: `feat(ui): theme, fonts and main layout`
+- [x] Commit: `feat(ui): theme, fonts and main layout`
 
 ---
 
@@ -289,13 +289,13 @@ Use these defaults unless the project owner decides otherwise:
 - The price inputs apply on blur or Enter instead of being debounced (typing "25" doesn't search for "2"). The slider applies when released.
 - Pagination is a custom component built on `next/link`, because the shadcn version renders plain `<a>` tags (full page reloads).
 
-### ✅ Check (needs the database: run these once Supabase is connected and seeded)
-- [ ] Every category page lists products, and parent pages include their children's products.
-- [ ] Combining brand, price and form filters gives correct results and counts. A filtered URL opened in a new tab shows the same results.
-- [ ] Sorting and pagination work and keep the filters.
-- [ ] The product page loads for any product; an unknown slug returns 404.
-- [ ] Search for "creatine" or "ostrovit" returns results.
-- [ ] Commit: `feat(catalog): listings, filters, product page and search`
+### ✅ Check
+- [x] Every category page lists products, and parent pages include their children's products.
+- [x] Combining brand, price and form filters gives correct results and counts. A filtered URL opened in a new tab shows the same results.
+- [x] Sorting and pagination work and keep the filters.
+- [x] The product page loads for any product; an unknown slug returns 404.
+- [x] Search for "creatine" or "ostrovit" returns results.
+- [x] Commit: `feat(catalog): listings, filters, product page and search`
 
 ---
 
@@ -303,7 +303,7 @@ Use these defaults unless the project owner decides otherwise:
 
 ### 4.1 Auth.js setup
 - [x] `npm i next-auth@beta @auth/prisma-adapter bcryptjs` and `npm i -D @types/bcryptjs`
-- [ ] Generate a secret with `npx auth secret` (this sets `AUTH_SECRET`). Do this together with the Supabase setup, when `.env` is created.
+- [x] Generate a secret with `npx auth secret` (this sets `AUTH_SECRET`). Do this together with the Supabase setup, when `.env` is created.
 - [x] `src/lib/auth.ts`:
   - [x] `PrismaAdapter(db)` with `session: { strategy: "jwt" }`. The Credentials provider requires JWT sessions.
   - [x] **Credentials** provider: validate the input with Zod, look up the user, then `bcrypt.compare`
@@ -336,12 +336,12 @@ Use these defaults unless the project owner decides otherwise:
 - **`@hookform/resolvers` is v5**: v6 fails to install because of an optional peer conflict with `effect`.
 - **Placeholder pages** for `/account` and `/admin` were added so the protection can be tested. Phases 7 and 9 replace them.
 
-### ✅ Check (needs the database and an `AUTH_SECRET`)
-- [ ] Register, then log out, then log in with credentials.
-- [ ] Google login works and creates a user and an account in the database.
-- [ ] `/account` redirects to `/login` when logged out, and returns to the original page after login.
-- [ ] A normal user cannot open `/admin`. The seeded admin can.
-- [ ] Commit: `feat(auth): credentials and OAuth login with roles`
+### ✅ Check
+- [x] Register, then log out, then log in with credentials.
+- [ ] Google login works and creates a user and an account in the database. (Optional; needs `AUTH_GOOGLE_ID`/`AUTH_GOOGLE_SECRET`.)
+- [x] `/account` redirects to `/login` when logged out, and returns to the original page after login.
+- [ ] A normal user cannot open `/admin` (checked: sent to `/`). The seeded admin can (not checked yet: log in as `admin@healthystreet.test` with `SEED_ADMIN_PASSWORD`).
+- [x] Commit: `feat(auth): credentials and OAuth login with roles`
 
 ---
 
@@ -612,11 +612,11 @@ Use these defaults unless the project owner decides otherwise:
 
 | Phase | Status |
 |---|---|
-| 0. Project setup | 🟨 done, except connecting Supabase |
-| 1. Data and seeding | 🟨 code done; migrate and seed waiting for Supabase |
+| 0. Project setup | ✅ |
+| 1. Data and seeding | ✅ (catalog rebuilt from the product photos) |
 | 2. Layout and design system | ✅ (account dropdown moves to Phase 4) |
-| 3. Catalog | 🟨 code done; checks waiting for the database |
-| 4. Authentication | 🟨 code done; login checks waiting for the database |
+| 3. Catalog | ✅ |
+| 4. Authentication | ✅ except the admin login check and optional Google |
 | 5. Cart | ⬜ |
 | 6. Stripe checkout and orders | ⬜ |
 | 7. User profile | ⬜ |

@@ -43,7 +43,8 @@ export function RatingStars({
           className="absolute inset-0 overflow-hidden"
           style={{ width: `${(Math.min(Math.max(rating, 0), 5) / 5) * 100}%` }}
         >
-          <Stars className={cn("fill-rating text-rating", starSize)} />
+          {/* The fill goes on the svgs: lucide sets fill="none" on each one. */}
+          <Stars className={cn("text-rating [&_svg]:fill-current", starSize)} />
         </span>
       </span>
       {count !== undefined && (

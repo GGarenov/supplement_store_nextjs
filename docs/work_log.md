@@ -9,49 +9,27 @@ All times are UTC+03:00.
 
 ## Overview
 
-*Last updated: 2026-10-21 17:05*
+*Last updated: 2026-10-21 22:10*
 
 ### Status by phase
 
 | Phase | Status | Commit |
 |---|---|---|
-| 0. Project setup | ✅ Code done · ⏳ database not connected yet | `0357135` |
-| 1. Data model and seeding | ✅ Code done · ⏳ migrate and seed not run yet | `0357135` |
+| 0. Project setup | ✅ Done; Supabase connected | `0357135` |
+| 1. Data model and seeding | ✅ Migrated and seeded (catalog rebuilt from the photos) | `0357135` + uncommitted migration |
 | 2. Layout and design system | ✅ Done and checked in the browser | `da00e29` + `f5672f8` |
-| 3. Catalog | ✅ Code done · ⏳ checks need real data | `5358fc5` |
-| 4. Authentication | ✅ Code done · ⏳ login checks need the database | `c5d25d9` |
+| 3. Catalog | ✅ Checked in the browser with real data | `5358fc5` + uncommitted fixes |
+| 4. Authentication | ✅ Register, log in, log out and redirects checked · ⏳ admin login not tried | `c5d25d9` + uncommitted fix |
 | 5. Cart | ⬜ Next | |
 | 6–11 | ⬜ Not started | |
 
-**In short:** the store's code is ready up to and including login. Everything that reads data has been built and checked **without a database** (build, error handling, logic tests). It hasn't yet been tested with real products or users.
+**In short:** the store runs against the Supabase database, with real products and users. Phases 0–4 are checked in the browser. The work of the 21:00 entry is not committed yet.
 
-### Waiting for the database
+### Still open
 
-These are blocked until Supabase is connected. Doing them in this order finishes the open checks for Phases 0–4.
-
-1. Create a free Supabase project, then copy `.env.example` → `.env` and fill in:
-   - `DATABASE_URL`: pooled, port 6543
-   - `DIRECT_URL`: direct, port 5432
-   - `SEED_ADMIN_PASSWORD`
-   - `AUTH_SECRET`: generate with `npx auth secret`
-2. `npm run db:migrate -- --name init`
-3. `npm run db:seed`, then check in `npm run db:studio`:
-   - 428 products
-   - 94 brands
-   - 31 categories
-   - 5 products in two categories
-4. Phase 3 checks in the browser:
-   - product cards
-   - filters and their counts
-   - sort and pagination
-   - product page
-   - search ("creatine", "ostrovit")
-   - the promo strip showing "Free shipping on orders over €60"
-5. Phase 4 checks:
-   - register → log out → log in
-   - `/account` sends you back after login
-   - a normal user gets a 404 on `/admin`; the seeded admin gets in
-6. Optional: Google OAuth. Set `AUTH_GOOGLE_ID` and `AUTH_GOOGLE_SECRET` (redirect URI `http://localhost:3000/api/auth/callback/google`); the Google button then appears.
+1. **Admin login:** log in as `admin@healthystreet.test` with the `SEED_ADMIN_PASSWORD` from `.env`, and check that `/admin` opens.
+2. **Optional: Google OAuth.** Set `AUTH_GOOGLE_ID` and `AUTH_GOOGLE_SECRET` (redirect URI `http://localhost:3000/api/auth/callback/google`); the Google button then appears.
+3. **Commit** the migration (`prisma/migrations/`) and the fixes.
 
 ### Tech stack and versions
 
@@ -62,7 +40,7 @@ These are blocked until Supabase is connected. Doing them in this order finishes
 | Language | TypeScript 5 | |
 | Styling | Tailwind CSS v4 + **shadcn/ui** (Radix base, Nova preset) | `src/components/ui` is generated: don't hand-format it |
 | Theme | `next-themes`, dark by default | Palette from plan §6 |
-| Database | PostgreSQL on **Supabase** (not connected yet) | |
+| Database | PostgreSQL on **Supabase** (free plan, region eu-west-1) | Free projects pause after 7 days without activity: "Restore project" in the dashboard |
 | ORM | **Prisma 7.10.1** (pinned) | npm's `latest` for the CLI is an 8.0 RC. Don't upgrade yet |
 | Auth | **Auth.js v5** `5.0.0-beta.32` (pinned) | JWT sessions, Credentials + optional Google |
 | Validation and forms | Zod 4, react-hook-form 7, `@hookform/resolvers` 5 | resolvers v6 doesn't install (peer conflict) |
@@ -91,14 +69,18 @@ These are blocked until Supabase is connected. Doing them in this order finishes
 | `src/proxy.ts` plus page-level guards | Next 16 renamed Middleware to Proxy; the proxy is only an early check | Phase 4 |
 | JWT sessions | Required by the Credentials provider | Phase 4 |
 | Google login only when configured | No broken button without credentials | Phase 4 |
+| `images/**/products.json` rebuilt from the product photos | The original source folder was lost; it was never in git | Supabase |
+| `await connection()` before every database or session read | Prisma and Auth.js call `Date.now()`/`crypto.getRandomValues()`, which Next 16 rejects while prerendering | Supabase |
 
 ### Known issues and limitations
+
+- **The catalog is a reconstruction.** Names, brands and pack sizes were read from the photos; prices are invented (realistic), and about 40 pack sizes were guessed because the label doesn't show them. Every product is in exactly one category (the original had 5 in two). Fix individual products later in the admin.
+- **`images/` is still gitignored.** If it's lost again, the JSON files can't be recovered from git. Consider committing `images/**/products.json` (small) without the duplicate images.
 
 - **Price filter and sort use the regular price,** not the sale price, because sale prices are calculated in code.
 - **A role change applies after the user's next login,** because the role is copied into the JWT at sign-in.
 - **`notFound()` on streamed pages returns HTTP 200** with a `noindex` tag. URLs that match no route return a real 404.
 - **`npm audit`: 5 high-severity issues,** all from the `shadcn` package's CLI. They're not used at runtime. Don't run `npm audit fix --force`, which would downgrade shadcn to 1.0.0.
-- **One product name is in Bulgarian** ("VIP - Кутия", id 11003). It can be fixed later in the admin.
 - **"Add to cart" and "Wishlist" are placeholders** that show a toast, until Phases 5 and 7.
 
 ### Testing notes (Chrome DevTools)
@@ -106,6 +88,8 @@ These are blocked until Supabase is connected. Doing them in this order finishes
 - With **touch emulation** on, a tap fires two clicks, so accordions open and close at once. Use a normal click instead. This is a quirk of the tool, not an app bug.
 - **Full-page screenshots** can look cut off on the right. Check `scrollWidth` instead; there was no real overflow.
 - If DevTools reports "browser is already running", its own Chrome (profile `ClaudeCodeChromeProfile`) lost the connection. Close only that profile's processes; your normal Chrome isn't affected.
+- **After changing `DATABASE_URL`, restart `npm run dev`.** The Prisma client is kept on `globalThis` across hot reloads, so it keeps the old connection string, and every query fails until a restart.
+- The test account `test.buyer@healthystreet.test` / `testpass123` was created through the register form.
 
 ### Git history
 
@@ -127,6 +111,7 @@ These are blocked until Supabase is connected. Doing them in this order finishes
 2. [2026-10-21 14:47 · Phase 2 (layout and design system)](#2026-10-21-1447-utc0300-phase-2-layout-and-design-system)
 3. [2026-10-21 16:38 · Phase 3 (catalog)](#2026-10-21-1638-utc0300-phase-3-catalog)
 4. [2026-10-21 17:02 · Phase 4 (authentication)](#2026-10-21-1702-utc0300-phase-4-authentication)
+5. [2026-10-21 21:00 · Supabase connected, catalog rebuilt, Phase 3–4 checks](#2026-10-21-2100-utc0300-supabase-connected-catalog-rebuilt-phase-34-checks)
 
 ---
 
@@ -555,3 +540,73 @@ What was verified, with the dev server running on a temporary `AUTH_SECRET` pass
 2. Optional: create Google OAuth credentials (redirect URI `http://localhost:3000/api/auth/callback/google`) and set `AUTH_GOOGLE_ID`/`AUTH_GOOGLE_SECRET` to enable the Google button.
 3. ~~Commit.~~ Done: `c5d25d9`.
 4. Phase 5: the cart. Its guest-cart merge runs right after login.
+
+---
+
+## 2026-10-21 21:00 (UTC+03:00): Supabase connected, catalog rebuilt, Phase 3–4 checks
+
+**Status:** The app runs against Supabase with real data. The Phase 0, 1, 3 and 4 checks pass in the browser, except the admin login (not tried) and Google OAuth (optional, not configured). Lint and typecheck pass.
+
+**Not committed yet:** `prisma/migrations/`, the fixes below, and these docs.
+
+### Supabase
+- Free project in **eu-west-1**. `.env` was created from `.env.example`. `AUTH_SECRET` was generated with Node's `crypto.randomBytes(32)` (same result as `npx auth secret`).
+- Two problems with the connection strings, both fixed:
+  - The password was still wrapped in the `[ ]` from Supabase's `[YOUR-PASSWORD]` template, so authentication failed.
+  - Characters such as `@ , $ ]` in a password break the URL. They have to be URL-encoded, or the password must use only letters and digits. The owner then reset it to letters and digits.
+- Both connections were checked: `DIRECT_URL` (port 5432) with `prisma db execute`, and the pooled `DATABASE_URL` (port 6543) with `pg`.
+- `npm run db:migrate -- --name init` created `prisma/migrations/20261021172016_init`.
+
+### Catalog rebuilt from the product photos
+- **`images/` was missing.** The raw source folder (all the `products.json` files) was gone and couldn't be found anywhere on drive D. It was gitignored, so git couldn't restore it either. Only the 428 photos in `public/products/` were left.
+- With the owner's agreement, the catalog was **rebuilt from the photos**: six agents opened every image and read the brand, name and pack from the label.
+  - The output uses the original JSON format (`id, brand, brandSlug, name, pack, price, image, url`), with the pack written in Bulgarian so the existing parser reads it.
+  - Each product went into the leaf folder that fits it, and its image was copied next to the JSON, as before.
+  - The original ids (the file names) were kept, so the image paths didn't change.
+- Result: 428 products, 95 brands, 0 parser warnings (`npm run catalog:check`).
+- **Differences from the original data:**
+  - **Prices are invented** but realistic, within €0.54–199.95.
+  - About **40 pack sizes were guessed**, because the label doesn't show them.
+  - A few brands were unreadable and are stored as "Unknown".
+  - Each product is in **one category**; none are in two any more.
+  - The category sizes differ from the original (e.g. NO Boosters has 1 product, Stim-Free NO Boosters 32).
+- The temporary files are in the session scratchpad and not in the repo.
+
+### Seed
+- The first run stopped partway (after categories and users) because of the missing `images/`. The second run finished:
+  - 31 categories, 95 brands, 428 products
+  - 6 users; up to 150 reviews on 121 products
+  - 6 banners, 2 promotions
+- Re-running it was safe, as designed: nothing was duplicated.
+
+### Fixes found with real data
+- **Stale Prisma client in `next dev`.** The dev server was started before `.env` was right. The Prisma client lives on `globalThis` and survives hot reloads, so it kept the old connection string and every page showed "Something went wrong". Restarting `npm run dev` fixed it; the testing notes now mention it.
+- **`crypto.getRandomValues()` / `Date.now()` while prerendering** (dev console error on every page):
+  - The source was Auth.js inside `auth()`. It calls `crypto.getRandomValues()` after reading the cookie, and Next 16 still flags that even inside `<Suspense>`. This was found by switching parts of the header off one at a time.
+  - Fix: `getCurrentUser()` in `src/lib/auth-guards.ts` now calls `await connection()` first.
+  - Same for the database. Every exported query in `src/lib/catalog.ts` now calls `await connection()` before touching Prisma, as the Next 16 `connection()` docs recommend for database drivers. The Prisma driver used `Date.now()` in the same way.
+- **Rating stars were never filled.** Lucide sets `fill="none"` on each `<svg>`, which beats a `fill` inherited from the wrapper. `RatingStars` now puts the fill on the svgs (`[&_svg]:fill-current`). Partial ratings such as 4.5 show correctly.
+
+### Checks run
+- **Catalog:**
+  - every group page lists products; parent pages include their children (`/c/vitamins-minerals` has a full page of 24)
+  - an invalid path (`/c/protein/zinc`) and unknown slugs show the 404 page with `noindex`
+  - combined filters (`/c/pre-workout?brand=kevin-levrone,ostrovit&form=powder&minPrice=10&maxPrice=60&sort=price-asc`) give 4 results with chips, all at −20% from the Pre-Workout promotion
+  - page 2 of Weight Loss sorted by price works
+  - `/brands` lists 95 brands
+  - the product page shows the price with "You save", stock, description, reviews and 8 related products
+  - search: "creatine" gives 19 results, "ostrovit" a full page, nonsense gives the empty state
+  - the promo strip shows "Free shipping on orders over €60"
+- **Auth:**
+  - a logged-out visit to `/account/orders` goes to `/login?callbackUrl=…`
+  - registering returns to the callback URL; `/account/orders` itself is a 404 until Phase 7
+  - a wrong password shows "Invalid email or password."; the right one returns to `/account`
+  - sign-out works
+  - a normal user who opens `/admin` is sent to `/`
+- `npm run lint` ✅ · `npm run typecheck` ✅ · Prettier ✅ on the changed files (with `--end-of-line auto`; the working tree uses CRLF through `core.autocrlf`)
+- `/sale` is a 404, which is expected: it's built in Phase 8.
+
+### Next steps
+1. Log in as the admin and open `/admin`.
+2. Commit: the migration, the fixes and the docs.
+3. Phase 5: the cart.
