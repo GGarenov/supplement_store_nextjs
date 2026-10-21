@@ -326,3 +326,94 @@ What was verified without data:
    - search
 2. Commit: `feat(catalog): listings, filters, product page and search`.
 3. Phase 4: authentication.
+
+---
+
+## 2026-10-21 17:02 (UTC+03:00): Phase 4 (authentication)
+
+**Status:** All the Phase 4 code is written. Lint, typecheck and the build pass, and the build log is free of errors.
+
+**Not tested yet:** an actual login. As agreed, there's still **no database**, and there's no `.env` (so no `AUTH_SECRET`). The Phase 4 ✅ Check stays open until then.
+
+What was verified, with the dev server running on a temporary `AUTH_SECRET` passed as a process variable (not saved anywhere):
+- `/account`, `/account/orders` and `/admin` redirect logged-out users to `/login?callbackUrl=…` (307, from the proxy).
+- `/api/auth/providers` lists only `credentials`, because Google isn't configured.
+- **Login form:**
+  - Submitting it empty shows field errors from the client-side Zod check.
+  - A valid submit shows "Signing in…" and then "Something went wrong. Please try again.", because the database is unreachable. That's the generic error on purpose: it doesn't claim the password was wrong.
+- **Register form:** "Name must be at least 2 characters" and "Passwords don't match" appear under the right fields.
+- The `callbackUrl` survives the trip: the "Create an account" link on `/login?callbackUrl=…/account` points to `/register?callbackUrl=/account`.
+- The browser console stays clean.
+
+### Next.js 16 and Auth.js details
+- **Middleware is now called Proxy** in Next.js 16, so the file is `src/proxy.ts` (`export { auth as proxy }`, matcher `/account/:path*`, `/admin/:path*`). Proxy runs on the Node.js runtime.
+- **The session read must be inside `<Suspense>`.**
+  - Reading `cookies()`/`headers()` (which `auth()` does) outside a boundary is a build error with Cache Components.
+  - The header's account menu, the login/register content and the placeholder account/admin pages all read the session behind a boundary. The rest of the page stays in the static shell.
+- **`unstable_rethrow`:**
+  - During prerendering, `headers()` returns a promise that rejects when the prerender ends. That's how Next.js marks the part as dynamic.
+  - The `try/catch` in `AccountMenu` was catching it and logging it as an error (`HANGING_PROMISE_REJECTION` in the build log).
+  - Fixed by calling `unstable_rethrow(error)` first in the `catch`.
+- **Auth.js v5 beta:** pinned to `next-auth@5.0.0-beta.32`, which supports Next 16. Two things needed care:
+  - Its JWT type lives in `@auth/core/jwt`, so the type extension targets that module (`src/types/next-auth.d.ts`).
+  - The Prisma adapter's types expect the classic `@prisma/client`. Our generated client is passed with a cast; at runtime it's the same API.
+- **`@hookform/resolvers` v5** instead of v6: v6 fails to install (an `ERESOLVE` conflict between its optional peers and the `effect` version Prisma installs). v5.9 supports Zod 4.
+
+### Files
+- **`src/lib/auth.ts`**: the Auth.js configuration.
+  - JWT sessions, which the Credentials provider requires. The Prisma adapter stores OAuth users and accounts.
+  - **Credentials:** Zod check → look up the user → `bcrypt.compare`. Users without a password (Google-only) can't use it.
+  - **Google:** added only if `AUTH_GOOGLE_ID` and `AUTH_GOOGLE_SECRET` are set. `allowDangerousEmailAccountLinking` lets a Google login join an existing account with the same email; that's safe because Google verifies emails.
+  - **Callbacks:**
+    - `jwt`/`session` put `id` and `role` into the session.
+    - The role is copied at sign-in, so a role change applies after the next login.
+    - `authorized` sends guests to `/login` and non-admins away from `/admin` (to `/`).
+  - `pages.signIn = "/login"`.
+- **`src/lib/auth-guards.ts`**: `getCurrentUser()`, `requireUser(returnTo)` (redirects to `/login?callbackUrl=…`) and `requireAdmin()` (returns a 404 for non-admins, so the admin area isn't advertised). These are the real checks; the proxy is only a first line.
+- **`src/lib/validators/auth.ts`**:
+  - `loginSchema` and `registerSchema`, shared by the forms and the server.
+    - Email: trimmed and lowercased.
+    - Password: 8–72 characters (bcrypt ignores everything after 72 bytes).
+    - Name: 2–50 characters.
+    - Confirm password must match.
+  - **`safeCallbackUrl`**: keeps redirects inside the site.
+    - Auth.js passes absolute URLs, so only the path is kept: `https://evil.com/x` becomes `/x` here.
+    - `//evil.com`, `/\evil.com` and `javascript:` fall back to `/`.
+    - Checked with a one-off assert script.
+- **`src/actions/auth.ts`** (Server Actions):
+  - `loginUser`: generic errors that never say which field was wrong.
+  - `registerUser`:
+    - errors are shown per field
+    - "email already exists" is checked first, and a duplicate that slips through at the same moment is still caught via `P2002`
+    - password hashed with bcrypt (cost 10)
+    - the user is signed in automatically afterwards
+  - `signInWithGoogle` and `signOutUser`.
+  - `signIn` redirects by throwing, so the success redirect is always rethrown and never caught.
+- **`src/app/api/auth/[...nextauth]/route.ts`**: the Auth.js route handlers.
+- **Pages:**
+  - `(shop)/login` and `(shop)/register`:
+    - the card, the Google button (only if enabled) with an "or" divider, the form, and a link to the other page that keeps `callbackUrl`
+    - a logged-in user who opens them is redirected to `callbackUrl`
+    - `/login` shows Auth.js errors from `?error=`, e.g. `OAuthAccountNotLinked`
+  - **Placeholders:**
+    - `(account)/account`: name, email, role, Sign out
+    - `(admin)/admin`: behind `requireAdmin()`
+    - Phases 7 and 9 replace them.
+- **Components:**
+  - `components/auth/`: `LoginForm`, `RegisterForm` (errors the server finds, such as "email taken", appear under their fields), `FormField` (react-hook-form `Controller` + shadcn `Field`), `GoogleButton` (a plain form posting to a Server Action, so it works without JavaScript), and `AuthCard`/`OrDivider`/`AuthFormSkeleton`.
+  - `components/layout/account-dropdown.tsx`: avatar with initials; links to My account, Orders, Wishlist and Admin (admins only); Sign out.
+  - `header-actions.tsx`:
+    - the account menu streams in inside `<Suspense>`, with the sign-in icon as fallback
+    - if reading the session fails, it logs the error and shows the sign-in icon, because the header sits above the error pages and would otherwise break every page
+
+### New dependencies
+`next-auth@5.0.0-beta.32` (exact), `@auth/prisma-adapter`, `react-hook-form`, `@hookform/resolvers@5`.
+
+### Next steps
+1. With Supabase:
+   - create `.env` (`DATABASE_URL`, `DIRECT_URL`, `SEED_ADMIN_PASSWORD`, plus `AUTH_SECRET` via `npx auth secret`)
+   - migrate and seed
+   - run the Phase 3 and Phase 4 ✅ Checks
+2. Optional: create Google OAuth credentials (redirect URI `http://localhost:3000/api/auth/callback/google`) and set `AUTH_GOOGLE_ID`/`AUTH_GOOGLE_SECRET` to enable the Google button.
+3. Commit: `feat(auth): credentials and OAuth login with roles`.
+4. Phase 5: the cart. Its guest-cart merge runs right after login.

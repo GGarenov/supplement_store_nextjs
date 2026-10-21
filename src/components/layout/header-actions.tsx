@@ -1,8 +1,12 @@
 import { HeartIcon, ShoppingBagIcon, UserIcon } from "lucide-react";
 import Link from "next/link";
+import { unstable_rethrow } from "next/navigation";
+import { Suspense } from "react";
 
 import { Button } from "@/components/ui/button";
+import { getCurrentUser } from "@/lib/auth-guards";
 
+import { AccountDropdown } from "./account-dropdown";
 import { ThemeToggle } from "./theme-toggle";
 
 function IconLink({
@@ -25,9 +29,42 @@ function IconLink({
   );
 }
 
+function SignInLink() {
+  return (
+    <IconLink href="/login" label="Sign in">
+      <UserIcon />
+    </IconLink>
+  );
+}
+
+/** Sign-in icon for guests, avatar menu for logged-in users. Reads the session. */
+async function AccountMenu() {
+  let user;
+  try {
+    user = await getCurrentUser();
+  } catch (error) {
+    // Let Next.js's own signals through (e.g. the prerender ending while the
+    // session read is pending, which is how this part becomes dynamic).
+    unstable_rethrow(error);
+    // The header is in the layout, above the error pages, so a failure here
+    // (e.g. AUTH_SECRET missing) would break every page. Show the guest icon instead.
+    console.error("AccountMenu: couldn't read the session", error);
+  }
+  if (!user) return <SignInLink />;
+  return (
+    <AccountDropdown
+      user={{
+        name: user.name,
+        email: user.email,
+        image: user.image,
+        isAdmin: user.role === "ADMIN",
+      }}
+    />
+  );
+}
+
 /**
- * Theme toggle, wishlist, account and cart.
- * Placeholders for now: the account dropdown comes in Phase 4, the cart count in Phase 5.
+ * Theme toggle, wishlist, account and cart. The cart count comes in Phase 5.
  */
 export function HeaderActions({ cartCount = 0 }: { cartCount?: number }) {
   return (
@@ -40,9 +77,10 @@ export function HeaderActions({ cartCount = 0 }: { cartCount?: number }) {
       >
         <HeartIcon />
       </IconLink>
-      <IconLink href="/login" label="Sign in">
-        <UserIcon />
-      </IconLink>
+      {/* The session is request data, so the menu streams in; the header itself stays static. */}
+      <Suspense fallback={<SignInLink />}>
+        <AccountMenu />
+      </Suspense>
       <IconLink
         href="/cart"
         label={cartCount > 0 ? `Cart, ${cartCount} items` : "Cart"}

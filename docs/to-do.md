@@ -197,7 +197,7 @@ Use these defaults unless the project owner decides otherwise:
   - [x] category navigation with a mega-menu that lists the 7 groups and their children. It's built from `src/lib/categories.ts` (the same map the seed uses), not loaded from the database, because categories aren't editable in the admin.
   - [x] search input (it submits to `/search?q=`)
   - [x] wishlist icon
-  - [ ] account icon (a dropdown when logged in): the icon links to `/login` for now; the dropdown needs auth (Phase 4)
+  - [x] account icon (a dropdown when logged in): done in Phase 4
   - [x] cart icon with a count badge (the badge is ready; the real count is wired up in Phase 5)
   - [x] theme toggle
   - [x] it stays at the top on scroll (sticky)
@@ -302,34 +302,41 @@ Use these defaults unless the project owner decides otherwise:
 ## Phase 4: Authentication (plan §1, §3.5)
 
 ### 4.1 Auth.js setup
-- [ ] `npm i next-auth@beta @auth/prisma-adapter bcryptjs` and `npm i -D @types/bcryptjs`
-- [ ] Generate a secret with `npx auth secret` (this sets `AUTH_SECRET`).
-- [ ] `src/lib/auth.ts`:
-  - [ ] `PrismaAdapter(db)` with `session: { strategy: "jwt" }`. The Credentials provider requires JWT sessions.
-  - [ ] **Credentials** provider: validate the input with Zod, look up the user, then `bcrypt.compare`
-  - [ ] **Google** (or GitHub) provider
-  - [ ] `jwt` and `session` callbacks that put `user.id` and `user.role` into the session
-  - [ ] extend the types in `src/types/next-auth.d.ts` with `id` and `role`
-  - [ ] export `auth`, `signIn`, `signOut` and `handlers`
-- [ ] `src/app/api/auth/[...nextauth]/route.ts`: export the handlers.
-- [ ] `src/lib/auth-guards.ts`:
+- [x] `npm i next-auth@beta @auth/prisma-adapter bcryptjs` and `npm i -D @types/bcryptjs`
+- [ ] Generate a secret with `npx auth secret` (this sets `AUTH_SECRET`). Do this together with the Supabase setup, when `.env` is created.
+- [x] `src/lib/auth.ts`:
+  - [x] `PrismaAdapter(db)` with `session: { strategy: "jwt" }`. The Credentials provider requires JWT sessions.
+  - [x] **Credentials** provider: validate the input with Zod, look up the user, then `bcrypt.compare`
+  - [x] **Google** (or GitHub) provider
+  - [x] `jwt` and `session` callbacks that put `user.id` and `user.role` into the session
+  - [x] extend the types in `src/types/next-auth.d.ts` with `id` and `role`
+  - [x] export `auth`, `signIn`, `signOut` and `handlers`
+- [x] `src/app/api/auth/[...nextauth]/route.ts`: export the handlers.
+- [x] `src/lib/auth-guards.ts`:
   - `requireUser()`: redirects to `/login?callbackUrl=…`
   - `requireAdmin()`: returns 404 or 403 for anyone who is not an admin
 
 ### 4.2 Pages and actions
-- [ ] `actions/auth.ts`:
+- [x] `actions/auth.ts`:
   - `registerUser`: Zod (name, email, password ≥ 8 characters, confirm), check the email is unique, hash, create the user, sign in
   - `loginUser`
-- [ ] `/login` and `/register` pages, built with react-hook-form and the shadcn `Form`:
-  - [ ] error messages
-  - [ ] "Continue with Google" button
-  - [ ] the `callbackUrl` is respected
-- [ ] Header account menu:
+- [x] `/login` and `/register` pages, built with react-hook-form and the shadcn `Form`:
+  - [x] error messages
+  - [x] "Continue with Google" button
+  - [x] the `callbackUrl` is respected
+- [x] Header account menu:
   - logged out: "Sign in"
   - logged in: avatar with links to My account, Orders, Wishlist, Admin (admins only) and Sign out
-- [ ] Protect `/account/**` and `/admin/**` in `middleware.ts` (Auth.js `authorized` callback). **Also** call `requireUser()` or `requireAdmin()` inside the pages and actions.
+- [x] Protect `/account/**` and `/admin/**` in `middleware.ts` (Auth.js `authorized` callback). **Also** call `requireUser()` or `requireAdmin()` inside the pages and actions.
 
-### ✅ Check
+**Where the code differs from the wording above** (details in `work_log.md`):
+- **`src/proxy.ts`**, not `middleware.ts`: Next.js 16 renamed Middleware to Proxy.
+- **Forms** use shadcn **`Field`**, because `Form` is empty in this shadcn version, plus a small `FormField` wrapper around react-hook-form's `Controller`.
+- **Google** login is offered only when `AUTH_GOOGLE_ID` and `AUTH_GOOGLE_SECRET` are set; otherwise the button is hidden.
+- **`@hookform/resolvers` is v5**: v6 fails to install because of an optional peer conflict with `effect`.
+- **Placeholder pages** for `/account` and `/admin` were added so the protection can be tested. Phases 7 and 9 replace them.
+
+### ✅ Check (needs the database and an `AUTH_SECRET`)
 - [ ] Register, then log out, then log in with credentials.
 - [ ] Google login works and creates a user and an account in the database.
 - [ ] `/account` redirects to `/login` when logged out, and returns to the original page after login.
@@ -609,7 +616,7 @@ Use these defaults unless the project owner decides otherwise:
 | 1. Data and seeding | 🟨 code done; migrate and seed waiting for Supabase |
 | 2. Layout and design system | ✅ (account dropdown moves to Phase 4) |
 | 3. Catalog | 🟨 code done; checks waiting for the database |
-| 4. Authentication | ⬜ |
+| 4. Authentication | 🟨 code done; login checks waiting for the database |
 | 5. Cart | ⬜ |
 | 6. Stripe checkout and orders | ⬜ |
 | 7. User profile | ⬜ |
