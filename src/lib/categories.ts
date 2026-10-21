@@ -1,5 +1,7 @@
 /**
- * Category tree for the store.
+ * Category tree for the store. Used by the seed (to create the categories) and
+ * by the site navigation. Categories aren't editable in the admin, so this file
+ * is the source of truth for the tree.
  *
  * `folder` is the path under `images/` that holds the products.json and images
  * for that category. Only leaf categories have a folder. Parents must be listed
@@ -216,3 +218,31 @@ export const CATEGORIES: CategoryDef[] = [
 export const LEAF_CATEGORIES = CATEGORIES.filter(
   (c): c is CategoryDef & { folder: string } => c.folder !== undefined,
 );
+
+export type CategoryNode = {
+  slug: string;
+  name: string;
+  /** Listing URL built from the slug path, e.g. "/c/vitamins-minerals/minerals/zinc". */
+  href: string;
+  children: CategoryNode[];
+};
+
+function buildTree(
+  parentSlug: string | null,
+  basePath: string,
+): CategoryNode[] {
+  return CATEGORIES.filter((c) => c.parentSlug === parentSlug)
+    .sort((a, b) => a.sortOrder - b.sortOrder)
+    .map((c) => {
+      const href = `${basePath}/${c.slug}`;
+      return {
+        slug: c.slug,
+        name: c.name,
+        href,
+        children: buildTree(c.slug, href),
+      };
+    });
+}
+
+/** The 7 top-level groups with their nested children. */
+export const CATEGORY_TREE: CategoryNode[] = buildTree(null, "/c");

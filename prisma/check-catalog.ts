@@ -4,7 +4,7 @@
  *
  * Usage: npm run catalog:check
  */
-import { CATEGORIES } from "./category-map";
+import { CATEGORIES } from "../src/lib/categories";
 import { copyProductImages, loadCatalog } from "./lib/load-catalog";
 
 const catalog = loadCatalog();

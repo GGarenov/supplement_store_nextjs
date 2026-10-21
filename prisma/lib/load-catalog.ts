@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-import { LEAF_CATEGORIES } from "../category-map";
+import { LEAF_CATEGORIES } from "../../src/lib/categories";
 import { parsePack, type ParsedPack } from "./parse-pack";
 
 export const IMAGES_DIR = path.join(process.cwd(), "images");

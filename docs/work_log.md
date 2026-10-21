@@ -127,3 +127,88 @@
   - The package can't be removed, because `globals.css` imports `shadcn/tailwind.css` from it.
   - The vulnerable code is the CLI's file-globbing, which never runs in the shop.
   - Don't run `npm audit fix --force`: it would downgrade to `shadcn@1.0.0`. Re-check when shadcn releases an update.
+
+---
+
+## 2026-10-21 14:47 (UTC+03:00): Phase 2 (layout and design system)
+
+**Status:** Phase 2 is done. Lint, typecheck and the build pass. The layout was checked in a real browser (Chrome DevTools) at 375px, 768px, 1024px and 1280px in both themes, with no console errors or hydration warnings.
+
+**Moved to Phase 4:** the account dropdown in the header. The icon links to `/login` until auth exists.
+
+### Before starting
+- Read the Next.js 16 docs bundled in `node_modules/next/dist/docs` (as `AGENTS.md` asks), especially Cache Components. The rules that shaped this phase:
+  - Data that isn't cached must be rendered inside `<Suspense>`.
+  - `"use cache"` together with `cacheLife`/`cacheTag` caches a function's result.
+  - Calling `new Date()` or `Math.random()` outside a cache or `connection()` blocks prerendering. That's why the footer doesn't show the current year.
+
+### Theme (`src/app/globals.css`, `src/components/theme-provider.tsx`, `src/components/layout/theme-toggle.tsx`)
+- The plan §6 palette is defined as shadcn CSS variables: light values on `:root`, dark values on `.dark`.
+- New tokens, registered in Tailwind:
+  - `sale` / `sale-foreground`, e.g. `bg-sale text-sale-foreground`
+  - `rating`
+  - `tile`: always white, for product photos
+- **Change from the plan:** the light-mode sale colour is `#C2410C` instead of `#EA580C`, so white badge text passes WCAG AA contrast. In dark mode, sale badges use dark text on orange.
+- `next-themes`: `defaultTheme="dark"`, `enableSystem={false}`, `disableTransitionOnChange`.
+  - The theme is stored in `localStorage` and applied before the page paints. Checked: after a reload the choice persists and there's no flash.
+- The theme toggle renders both icons and swaps them with the `dark:` variant, so the server HTML always matches the client.
+
+### Fonts and metadata (`src/app/layout.tsx`)
+- **Inter** (body, `--font-sans`) and **Oswald** (headings, `--font-heading`, used through the `font-heading` class) via `next/font/google`.
+- h1–h3 use Oswald automatically. Uppercase is added per section title, not globally, so shadcn dialog and sheet titles aren't forced into capitals.
+- Metadata: title template `%s | Healthy Street`, a default title and a description.
+- Favicon: the Next.js `favicon.ico` was replaced by `src/app/icon.svg`, a lime square with two road stripes. The same mark appears in the logo.
+
+### Layout components (`src/components/layout/`)
+- **`logo.tsx`**: the mark plus the wordmark, "HEALTHY" in the text colour and "STREET" in the primary colour.
+- **`header.tsx`**: sticky header with a translucent background.
+  - Top row: mobile menu (below `lg`), logo, search (`md` and up), actions.
+  - Below `md` the search gets its own row.
+  - From `lg` up, the category bar appears underneath.
+- **`category-nav.tsx`**: shadcn `navigation-menu` with a dropdown per group, plus "Brands" and "Sale".
+  - Vitamins & Minerals opens a 3-column panel: the plain categories, Minerals and Vitamins.
+  - That panel opens leftwards so it stays on screen at 1024px.
+- **`mobile-nav.tsx`**: a hamburger button opens a `Sheet` with an accordion of the 7 groups and their nested children. Following a link closes the sheet.
+  - shadcn's accordion underlines links by default; that is overridden here.
+- **`search-form.tsx`**: a `next/form` that sends `q` to `/search`. It navigates on the client and also works without JavaScript.
+- **`header-actions.tsx`**: theme toggle, wishlist (`/account/wishlist`), account (`/login` for now) and cart (`/cart`).
+  - The cart badge takes a `cartCount` prop; Phase 5 will pass the real count.
+- **`promo-strip.tsx`** and **`src/lib/banners.ts`**:
+  - `getActiveBanners(placement)` uses `"use cache"`, `cacheLife("minutes")` and `cacheTag("banners")`, and filters by `active`/`startsAt`/`endsAt`.
+  - The admin (Phase 9) should call `revalidateTag(BANNERS_TAG)` after editing banners.
+  - The strip is rendered inside `<Suspense fallback={null}>`.
+  - It renders nothing when `DATABASE_URL` isn't set, and also when the query fails (the error is logged), so a database problem can't break every page.
+  - **Not yet tested against real data**, because Supabase isn't connected.
+- **`footer.tsx`**: logo, Shop column (7 groups), Store column (Brands, Sale, About), Account column, and the disclaimer "Demo store, not a real shop".
+- **`site-shell.tsx`**: the promo strip, header, `<main>` and footer, shared by the `(shop)` and `(account)` layouts.
+
+### Routes (`src/app/`)
+- Route groups:
+  - `(shop)/layout.tsx` and `(account)/layout.tsx` use `SiteShell`.
+  - `(admin)/layout.tsx` is a placeholder; the admin UI gets its own shell in Phase 9.
+- The home page moved to `(shop)/page.tsx` and became an on-brand placeholder: a "Coming soon" badge, the title "Fuel your training" and two buttons.
+- New `(shop)/about/page.tsx` so the footer's About link works.
+- A `Toaster` (sonner) was added to the root layout.
+
+### Design decisions
+- **Navigation categories come from code, not the database.**
+  - `prisma/category-map.ts` moved to **`src/lib/categories.ts`**, and the seed now imports it from there.
+  - It also builds `CATEGORY_TREE`, with URLs like `/c/vitamins-minerals/minerals/zinc`.
+  - Reason: categories aren't editable in the admin (the plan has no category management), so this map is already the source of truth. The header also works without a database and doesn't query the database on every page.
+- **Extra shadcn components:** `navigation-menu` (desktop menu) and `accordion` (mobile menu).
+
+### Checks run
+- `npm run lint` ✅ · `npm run typecheck` ✅ · `npm run build` ✅ (`/`, `/about` and `/icon.svg` are prerendered as static) · `npm run catalog:check` ✅ (still 0 warnings after moving the category map)
+- In the browser (Chrome DevTools):
+  - dark and light screenshots
+  - Vitamins & Minerals dropdown at 1280px and at about 1030px
+  - mobile sheet and accordion at 375px
+  - tablet at about 785px
+  - no horizontal scroll
+  - console clean
+- One testing note: with touch emulation on, the DevTools tap fires two clicks, so accordion items open and immediately close. A normal click, and `element.click()`, work correctly, so this is a quirk of the test tool, not a bug in the app.
+
+### Next steps
+1. Connect Supabase, then migrate and seed (see the Phase 0/1 next steps above). The promo strip will then show "Free shipping on orders over €60".
+2. Phase 3: the catalog (`/c/[...slug]`, `/brands`, `/p/[slug]`, `/search`). The nav links to those pages return 404 until then.
+3. Commits: nothing is committed yet.

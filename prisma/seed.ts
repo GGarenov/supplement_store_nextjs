@@ -11,7 +11,7 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import bcrypt from "bcryptjs";
 
 import { PrismaClient } from "../src/generated/prisma/client";
-import { CATEGORIES } from "./category-map";
+import { CATEGORIES } from "../src/lib/categories";
 import {
   copyProductImages,
   loadCatalog,

@@ -176,39 +176,39 @@ Use these defaults unless the project owner decides otherwise:
 ## Phase 2: Layout and design system (plan §6)
 
 ### 2.1 Theme
-- [ ] `npm i next-themes`
-- [ ] Create `src/components/theme-provider.tsx` and wrap the app in `layout.tsx` with `attribute="class"`, `defaultTheme="dark"` and `enableSystem={false}`.
-- [ ] In `globals.css`, define the colour tokens from plan §6 as CSS variables for `:root` (light) and `.dark`, using shadcn's variable names (`--background`, `--card`, `--primary`, `--destructive`…).
-- [ ] Add custom tokens `--sale` (orange) and `--rating` (yellow), and register them in Tailwind.
-- [ ] Create `ThemeToggle` (sun and moon icons, a dropdown or a button).
+- [x] `npm i next-themes`
+- [x] Create `src/components/theme-provider.tsx` and wrap the app in `layout.tsx` with `attribute="class"`, `defaultTheme="dark"` and `enableSystem={false}`.
+- [x] In `globals.css`, define the colour tokens from plan §6 as CSS variables for `:root` (light) and `.dark`, using shadcn's variable names (`--background`, `--card`, `--primary`, `--destructive`…).
+- [x] Add custom tokens `--sale` (orange) and `--rating` (yellow), and register them in Tailwind.
+- [x] Create `ThemeToggle` (sun and moon icons, a dropdown or a button).
 
 ### 2.2 Fonts and metadata
-- [ ] Load **Inter** (body) and **Oswald** or **Barlow Condensed** (headings) with `next/font/google`, and expose them as CSS variables.
-- [ ] Root `metadata`:
+- [x] Load **Inter** (body) and **Oswald** or **Barlow Condensed** (headings) with `next/font/google`, and expose them as CSS variables.
+- [x] Root `metadata`:
   - `title.template = "%s | Healthy Street"`
   - a description
   - a favicon
 
 ### 2.3 Layout components (`src/components/layout/`)
-- [ ] `Logo`: "HEALTHY" in the text colour and "STREET" in lime; links to `/`.
-- [ ] `PromoStrip`: reads the active STRIP banner from the database (a Server Component); hidden if there is none.
-- [ ] `Header`:
-  - [ ] logo
-  - [ ] category navigation with a mega-menu that lists the 7 groups and their children, loaded from the database
-  - [ ] search input (it submits to `/search?q=`)
-  - [ ] wishlist icon
-  - [ ] account icon (a dropdown when logged in)
-  - [ ] cart icon with a count badge
-  - [ ] theme toggle
-  - [ ] it stays at the top on scroll (sticky)
-- [ ] `MobileNav`: a hamburger button that opens a `Sheet` with the category tree.
-- [ ] `Footer`: category links, "About", and a "Demo store, not a real shop" disclaimer.
-- [ ] Create route groups `src/app/(shop)/layout.tsx`, `(account)` and `(admin)`. Each layout can be a placeholder for now.
-- [ ] Add a `Toaster` (sonner) to the root layout.
+- [x] `Logo`: "HEALTHY" in the text colour and "STREET" in lime; links to `/`.
+- [x] `PromoStrip`: reads the active STRIP banner from the database (a Server Component); hidden if there is none. Not yet tested against real data, because Supabase isn't connected.
+- [x] `Header`:
+  - [x] logo
+  - [x] category navigation with a mega-menu that lists the 7 groups and their children. It's built from `src/lib/categories.ts` (the same map the seed uses), not loaded from the database, because categories aren't editable in the admin.
+  - [x] search input (it submits to `/search?q=`)
+  - [x] wishlist icon
+  - [ ] account icon (a dropdown when logged in): the icon links to `/login` for now; the dropdown needs auth (Phase 4)
+  - [x] cart icon with a count badge (the badge is ready; the real count is wired up in Phase 5)
+  - [x] theme toggle
+  - [x] it stays at the top on scroll (sticky)
+- [x] `MobileNav`: a hamburger button that opens a `Sheet` with the category tree.
+- [x] `Footer`: category links, "About", and a "Demo store, not a real shop" disclaimer.
+- [x] Create route groups `src/app/(shop)/layout.tsx`, `(account)` and `(admin)`. Each layout can be a placeholder for now.
+- [x] Add a `Toaster` (sonner) to the root layout.
 
 ### ✅ Check
-- [ ] Every page shares the header and footer, and the theme toggle switches dark/light without a flash.
-- [ ] Layout looks right at 375px, 768px and 1280px wide.
+- [x] Every page shares the header and footer, and the theme toggle switches dark/light without a flash.
+- [x] Layout looks right at 375px, 768px and 1280px wide.
 - [ ] Commit: `feat(ui): theme, fonts and main layout`
 
 ---
@@ -600,7 +600,7 @@ Use these defaults unless the project owner decides otherwise:
 |---|---|
 | 0. Project setup | 🟨 done, except connecting Supabase |
 | 1. Data and seeding | 🟨 code done; migrate and seed waiting for Supabase |
-| 2. Layout and design system | ⬜ |
+| 2. Layout and design system | ✅ (account dropdown moves to Phase 4) |
 | 3. Catalog | ⬜ |
 | 4. Authentication | ⬜ |
 | 5. Cart | ⬜ |
