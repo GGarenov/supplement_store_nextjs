@@ -1,8 +1,140 @@
 # Work Log
 
+What was done on Healthy Street, when, and why. The **Overview** below is the current state, kept up to date. The **Entries** further down are the history, oldest first; they describe each phase as it was at the time.
+
+Related docs: [plan.md](plan.md) (what we're building) · [to-do.md](to-do.md) (task checklist).
+All times are UTC+03:00.
+
+---
+
+## Overview
+
+*Last updated: 2026-10-21 17:05*
+
+### Status by phase
+
+| Phase | Status | Commit |
+|---|---|---|
+| 0. Project setup | ✅ Code done · ⏳ database not connected yet | `0357135` |
+| 1. Data model and seeding | ✅ Code done · ⏳ migrate and seed not run yet | `0357135` |
+| 2. Layout and design system | ✅ Done and checked in the browser | `da00e29` + `f5672f8` |
+| 3. Catalog | ✅ Code done · ⏳ checks need real data | `5358fc5` |
+| 4. Authentication | ✅ Code done · ⏳ login checks need the database | `c5d25d9` |
+| 5. Cart | ⬜ Next | |
+| 6–11 | ⬜ Not started | |
+
+**In short:** the store's code is ready up to and including login. Everything that reads data has been built and checked **without a database** (build, error handling, logic tests). It hasn't yet been tested with real products or users.
+
+### Waiting for the database
+
+These are blocked until Supabase is connected. Doing them in this order finishes the open checks for Phases 0–4.
+
+1. Create a free Supabase project, then copy `.env.example` → `.env` and fill in:
+   - `DATABASE_URL`: pooled, port 6543
+   - `DIRECT_URL`: direct, port 5432
+   - `SEED_ADMIN_PASSWORD`
+   - `AUTH_SECRET`: generate with `npx auth secret`
+2. `npm run db:migrate -- --name init`
+3. `npm run db:seed`, then check in `npm run db:studio`:
+   - 428 products
+   - 94 brands
+   - 31 categories
+   - 5 products in two categories
+4. Phase 3 checks in the browser:
+   - product cards
+   - filters and their counts
+   - sort and pagination
+   - product page
+   - search ("creatine", "ostrovit")
+   - the promo strip showing "Free shipping on orders over €60"
+5. Phase 4 checks:
+   - register → log out → log in
+   - `/account` sends you back after login
+   - a normal user gets a 404 on `/admin`; the seeded admin gets in
+6. Optional: Google OAuth. Set `AUTH_GOOGLE_ID` and `AUTH_GOOGLE_SECRET` (redirect URI `http://localhost:3000/api/auth/callback/google`); the Google button then appears.
+
+### Tech stack and versions
+
+| Area | Choice | Notes |
+|---|---|---|
+| Runtime | Node.js 26.2 | |
+| Framework | **Next.js 16.4.2** (App Router, Cache Components on) + React 19.3 | Breaking changes vs. older guides; see the bundled docs in `node_modules/next/dist/docs/` |
+| Language | TypeScript 5 | |
+| Styling | Tailwind CSS v4 + **shadcn/ui** (Radix base, Nova preset) | `src/components/ui` is generated: don't hand-format it |
+| Theme | `next-themes`, dark by default | Palette from plan §6 |
+| Database | PostgreSQL on **Supabase** (not connected yet) | |
+| ORM | **Prisma 7.10.1** (pinned) | npm's `latest` for the CLI is an 8.0 RC. Don't upgrade yet |
+| Auth | **Auth.js v5** `5.0.0-beta.32` (pinned) | JWT sessions, Credentials + optional Google |
+| Validation and forms | Zod 4, react-hook-form 7, `@hookform/resolvers` 5 | resolvers v6 doesn't install (peer conflict) |
+| Payments | Stripe (test mode) | Phase 6 |
+
+### Useful commands
+
+| Command | What it does |
+|---|---|
+| `npm run dev` | Dev server on http://localhost:3000 |
+| `npm run build` | Production build. Works without a database |
+| `npm run lint` · `npm run typecheck` · `npm run format` | Code checks and formatting |
+| `npm run catalog:check` | Validates `images/**/products.json` and copies images to `public/products/` (no database needed) |
+| `npm run db:migrate` · `npm run db:seed` · `npm run db:studio` | Database: migrations, seed data, browser UI (need `.env`) |
+
+### Key decisions
+
+| Decision | Why | Entry |
+|---|---|---|
+| Supabase instead of local Docker/Postgres | The owner's choice; nothing is installed locally | Phase 0–1 |
+| Prisma pinned to 7.10.1 | The npm `latest` tag for the CLI points to an 8.0 release candidate | Phase 0–1 |
+| Category tree lives in code (`src/lib/categories.ts`), not the database | Categories aren't editable in the admin; the nav works without a database | Phase 2 |
+| Database reads at request time, nothing cached yet | `"use cache"` fills caches during the build, and there's no database at build time | Phase 3 |
+| Filters live in the URL (`?brand=…&sort=…`) | Shareable links; the back button works | Phase 3 |
+| Pricing is a pure function, and the best promotion wins | Same price everywhere (cards, cart, checkout); easy to unit-test | Phase 3 |
+| `src/proxy.ts` plus page-level guards | Next 16 renamed Middleware to Proxy; the proxy is only an early check | Phase 4 |
+| JWT sessions | Required by the Credentials provider | Phase 4 |
+| Google login only when configured | No broken button without credentials | Phase 4 |
+
+### Known issues and limitations
+
+- **Price filter and sort use the regular price,** not the sale price, because sale prices are calculated in code.
+- **A role change applies after the user's next login,** because the role is copied into the JWT at sign-in.
+- **`notFound()` on streamed pages returns HTTP 200** with a `noindex` tag. URLs that match no route return a real 404.
+- **`npm audit`: 5 high-severity issues,** all from the `shadcn` package's CLI. They're not used at runtime. Don't run `npm audit fix --force`, which would downgrade shadcn to 1.0.0.
+- **One product name is in Bulgarian** ("VIP - Кутия", id 11003). It can be fixed later in the admin.
+- **"Add to cart" and "Wishlist" are placeholders** that show a toast, until Phases 5 and 7.
+
+### Testing notes (Chrome DevTools)
+
+- With **touch emulation** on, a tap fires two clicks, so accordions open and close at once. Use a normal click instead. This is a quirk of the tool, not an app bug.
+- **Full-page screenshots** can look cut off on the right. Check `scrollWidth` instead; there was no real overflow.
+- If DevTools reports "browser is already running", its own Chrome (profile `ClaudeCodeChromeProfile`) lost the connection. Close only that profile's processes; your normal Chrome isn't affected.
+
+### Git history
+
+| Commit | Time | Message | Note |
+|---|---|---|---|
+| `c5d25d9` | 10-21 17:04 | feat(auth): credentials and OAuth login with roles | Phase 4 · pushed |
+| `5358fc5` | 10-21 16:41 | feat(catalog): listings, filters, product page and search | Phase 3 · pushed |
+| `f5672f8` | 10-21 15:11 | feat(ui): theme, fonts and main layout | The rest of Phase 2 · pushed |
+| `da00e29` | 10-21 15:03 | The layout and the design system are implemented. | Only contains the move of the home page; the other Phase 2 files were still uncommitted, so they went into `f5672f8` |
+| `0357135` | 10-21 14:30 | Project setup is done | Phases 0 and 1 |
+| `4c6bf65` | 10-21 12:15 | all the items were removed | Before this log |
+| `cea8e58` | 08-27 22:34 | Add global styles, layout, and initial page structure | Before this log |
+
+---
+
+## Entries
+
+1. [2026-10-21 14:24 · Phase 0 and Phase 1](#2026-10-21-1424-utc0300-phase-0-and-phase-1)
+2. [2026-10-21 14:47 · Phase 2 (layout and design system)](#2026-10-21-1447-utc0300-phase-2-layout-and-design-system)
+3. [2026-10-21 16:38 · Phase 3 (catalog)](#2026-10-21-1638-utc0300-phase-3-catalog)
+4. [2026-10-21 17:02 · Phase 4 (authentication)](#2026-10-21-1702-utc0300-phase-4-authentication)
+
+---
+
 ## 2026-10-21 14:24 (UTC+03:00): Phase 0 and Phase 1
 
 **Status:** All the code for Phase 0 and Phase 1 is written. Lint, typecheck and the build pass.
+
+**Commit:** `0357135` "Project setup is done".
 
 **Not done yet:** connecting the database. As agreed, no PostgreSQL or Docker was installed; we will use a free **Supabase** project later. Until then, the migration and the seed have not been run.
 
@@ -60,7 +192,7 @@
   - `Banner.image` is optional, so the promo strip can be text only.
   - `onDelete` rules: user data cascades; deleting a user or product that is referenced by an order is restricted.
 
-**Category map (`prisma/category-map.ts`)**
+**Category map (`prisma/category-map.ts`, moved to `src/lib/categories.ts` in Phase 2)**
 - **31 categories**: 7 groups, the `minerals` and `vitamins` mid-levels, and 22 leaves.
 - Each leaf maps to its `images/` folder.
 - Parents are listed before their children.
@@ -117,8 +249,8 @@
 1. Create the Supabase project, copy `.env.example` → `.env`, and fill in `DATABASE_URL`, `DIRECT_URL` and `SEED_ADMIN_PASSWORD`.
 2. `npm run db:migrate -- --name init`
 3. `npm run db:seed`, then check the counts in `npm run db:studio` (Phase 1 ✅ Check in the to-do).
-4. Make the commits listed in the to-do (nothing has been committed yet).
-5. Phase 2: layout and design system.
+4. ~~Make the commits listed in the to-do.~~ Done: `0357135`.
+5. ~~Phase 2: layout and design system.~~ Done (next entry).
 
 ### Notes for later
 - One product has a Bulgarian name ("VIP - Кутия", id 11003). Its slug becomes `…-vip-11003`. The name can be translated later in the admin panel.
@@ -133,6 +265,8 @@
 ## 2026-10-21 14:47 (UTC+03:00): Phase 2 (layout and design system)
 
 **Status:** Phase 2 is done. Lint, typecheck and the build pass. The layout was checked in a real browser (Chrome DevTools) at 375px, 768px, 1024px and 1280px in both themes, with no console errors or hydration warnings.
+
+**Commits:** `da00e29` (only the home page move) and `f5672f8` "feat(ui): theme, fonts and main layout" (everything else).
 
 **Moved to Phase 4:** the account dropdown in the header. The icon links to `/login` until auth exists.
 
@@ -210,14 +344,16 @@
 
 ### Next steps
 1. Connect Supabase, then migrate and seed (see the Phase 0/1 next steps above). The promo strip will then show "Free shipping on orders over €60".
-2. Phase 3: the catalog (`/c/[...slug]`, `/brands`, `/p/[slug]`, `/search`). The nav links to those pages return 404 until then.
-3. Commits: nothing is committed yet.
+2. ~~Phase 3: the catalog (`/c/[...slug]`, `/brands`, `/p/[slug]`, `/search`).~~ Done (next entry).
+3. ~~Commit.~~ Done: `da00e29` + `f5672f8`.
 
 ---
 
 ## 2026-10-21 16:38 (UTC+03:00): Phase 3 (catalog)
 
 **Status:** All the Phase 3 code is written. Lint, typecheck and the build pass.
+
+**Commit:** `5358fc5` "feat(catalog): listings, filters, product page and search" (pushed).
 
 **Not tested with real data:** as agreed, the catalog was built **without a database**. The ✅ Check items in the to-do stay open until Supabase is connected and seeded.
 
@@ -324,14 +460,16 @@ What was verified without data:
    - pagination
    - the product page
    - search
-2. Commit: `feat(catalog): listings, filters, product page and search`.
-3. Phase 4: authentication.
+2. ~~Commit.~~ Done: `5358fc5`.
+3. ~~Phase 4: authentication.~~ Done (next entry).
 
 ---
 
 ## 2026-10-21 17:02 (UTC+03:00): Phase 4 (authentication)
 
 **Status:** All the Phase 4 code is written. Lint, typecheck and the build pass, and the build log is free of errors.
+
+**Commit:** `c5d25d9` "feat(auth): credentials and OAuth login with roles" (pushed).
 
 **Not tested yet:** an actual login. As agreed, there's still **no database**, and there's no `.env` (so no `AUTH_SECRET`). The Phase 4 ✅ Check stays open until then.
 
@@ -415,5 +553,5 @@ What was verified, with the dev server running on a temporary `AUTH_SECRET` pass
    - migrate and seed
    - run the Phase 3 and Phase 4 ✅ Checks
 2. Optional: create Google OAuth credentials (redirect URI `http://localhost:3000/api/auth/callback/google`) and set `AUTH_GOOGLE_ID`/`AUTH_GOOGLE_SECRET` to enable the Google button.
-3. Commit: `feat(auth): credentials and OAuth login with roles`.
+3. ~~Commit.~~ Done: `c5d25d9`.
 4. Phase 5: the cart. Its guest-cart merge runs right after login.
