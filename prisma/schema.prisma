@@ -1,0 +1,309 @@
+// Healthy Street data model. See docs/plan.md §4.
+// Connection URLs live in prisma.config.ts (CLI) and src/lib/db.ts (app runtime).
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Auth ────────────────────────────────────────────────────────────────────
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  passwordHash  String?
+  role          Role      @default(USER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts Account[]
+  sessions Session[]
+  cart     Cart?
+  orders   Order[]
+  wishlist WishlistItem[]
+  reviews  Review[]
+}
+
+// Auth.js Prisma adapter models
+model Account {
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, providerAccountId])
+}
+
+model Session {
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@id([identifier, token])
+}
+
+// ─── Catalog ─────────────────────────────────────────────────────────────────
+
+enum ProductForm {
+  POWDER
+  CAPSULES
+  SOFTGELS
+  TABLETS
+  LIQUID
+  GUMMIES
+  OTHER
+}
+
+enum PackUnit {
+  GRAMS
+  ML
+  CAPSULES
+  SOFTGELS
+  TABLETS
+  GUMMIES
+  SACHETS
+  PATCHES
+}
+
+model Brand {
+  id       String  @id @default(cuid())
+  slug     String  @unique
+  name     String
+  logo     String?
+  featured Boolean @default(false)
+
+  products   Product[]
+  promotions Promotion[]
+}
+
+model Category {
+  id        String  @id @default(cuid())
+  slug      String  @unique
+  name      String
+  image     String?
+  sortOrder Int     @default(0)
+  parentId  String?
+
+  parent     Category?   @relation("CategoryTree", fields: [parentId], references: [id])
+  children   Category[]  @relation("CategoryTree")
+  products   Product[]
+  promotions Promotion[]
+
+  @@index([parentId])
+}
+
+model Product {
+  id          String      @id @default(cuid())
+  sourceId    String      @unique // id from images/**/products.json
+  slug        String      @unique
+  name        String
+  description String?
+  brandId     String
+  priceCents  Int // money is always stored as integer cents (EUR)
+  stock       Int         @default(0)
+  form        ProductForm
+  packAmount  Int
+  packUnit    PackUnit
+  packLabel   String // English label, e.g. "60 capsules"
+  image       String // public path, e.g. "/products/20848.webp"
+  featured    Boolean     @default(false)
+  archived    Boolean     @default(false)
+  ratingAvg   Float       @default(0) // denormalised, updated when reviews change
+  ratingCount Int         @default(0)
+  soldCount   Int         @default(0)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  brand      Brand          @relation(fields: [brandId], references: [id], onDelete: Restrict)
+  categories Category[]
+  cartItems  CartItem[]
+  orderItems OrderItem[]
+  wishlistBy WishlistItem[]
+  reviews    Review[]
+  promotions Promotion[]
+
+  @@index([brandId])
+  @@index([priceCents])
+  @@index([createdAt])
+}
+
+// ─── Cart ────────────────────────────────────────────────────────────────────
+
+model Cart {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  updatedAt DateTime @updatedAt
+
+  user  User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items CartItem[]
+}
+
+model CartItem {
+  id        String @id @default(cuid())
+  cartId    String
+  productId String
+  quantity  Int
+
+  cart    Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([cartId, productId])
+}
+
+// ─── Orders ──────────────────────────────────────────────────────────────────
+
+enum OrderStatus {
+  PENDING
+  PAID
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+model Order {
+  id                    String      @id @default(cuid())
+  number                Int         @unique @default(autoincrement()) // shown as HS-000123
+  userId                String
+  status                OrderStatus @default(PENDING)
+  subtotalCents         Int
+  discountCents         Int         @default(0)
+  shippingCents         Int
+  totalCents            Int
+  stripeSessionId       String?     @unique
+  stripePaymentIntentId String?
+  shippingAddress       Json?
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+  paidAt                DateTime?
+
+  user  User        @relation(fields: [userId], references: [id], onDelete: Restrict)
+  items OrderItem[]
+
+  @@index([userId])
+  @@index([status])
+}
+
+// Snapshot of the product at purchase time: later price/name changes don't alter past orders.
+model OrderItem {
+  id             String @id @default(cuid())
+  orderId        String
+  productId      String
+  name           String
+  image          String
+  unitPriceCents Int
+  quantity       Int
+
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Restrict)
+
+  @@index([orderId])
+}
+
+// ─── Profile ─────────────────────────────────────────────────────────────────
+
+model WishlistItem {
+  userId    String
+  productId String
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@id([userId, productId])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  rating    Int // 1–5
+  title     String?
+  body      String
+  hidden    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])
+  @@index([productId])
+}
+
+// ─── Promotions ──────────────────────────────────────────────────────────────
+
+enum BannerPlacement {
+  HERO
+  STRIP
+  INLINE
+}
+
+model Banner {
+  id        String          @id @default(cuid())
+  title     String
+  subtitle  String?
+  image     String?
+  ctaLabel  String?
+  ctaHref   String?
+  placement BannerPlacement
+  startsAt  DateTime?
+  endsAt    DateTime?
+  active    Boolean         @default(true)
+  sortOrder Int             @default(0)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  @@index([placement, active])
+}
+
+// A percentage off a brand, a category or specific products during a date range.
+model Promotion {
+  id         String   @id @default(cuid())
+  name       String
+  percentOff Int // 1–90
+  brandId    String?
+  categoryId String?
+  startsAt   DateTime
+  endsAt     DateTime
+  active     Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  brand    Brand?    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  category Category? @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  products Product[]
+}

@@ -1,0 +1,7 @@
+node_modules
+.next
+public
+images
+package-lock.json
+src/generated
+docs
