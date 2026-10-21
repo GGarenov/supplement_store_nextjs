@@ -75,7 +75,7 @@ All times are UTC+03:00.
 ### Known issues and limitations
 
 - **The catalog is a reconstruction.** Names, brands and pack sizes were read from the photos; prices are invented (realistic), and about 40 pack sizes were guessed because the label doesn't show them. Every product is in exactly one category (the original had 5 in two). Fix individual products later in the admin.
-- **`images/` is still gitignored.** If it's lost again, the JSON files can't be recovered from git. Consider committing `images/**/products.json` (small) without the duplicate images.
+- **`images/` is committed** (since 2026-10-21 22:20): the `products.json` files and their images, ≈ 9.4 MB. The photos are stored twice in the repo (here and in `public/products/`), which is accepted so a fresh clone can run `npm run db:seed`.
 
 - **Price filter and sort use the regular price,** not the sale price, because sale prices are calculated in code.
 - **A role change applies after the user's next login,** because the role is copied into the JWT at sign-in.

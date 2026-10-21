@@ -1,0 +1,202 @@
+[
+  {
+    "id": "1625",
+    "brand": "NOW Foods",
+    "brandSlug": "now-foods",
+    "name": "Iron Complex",
+    "pack": "100 таблетки",
+    "price": "11.90",
+    "image": "1625.webp",
+    "url": ""
+  },
+  {
+    "id": "13136",
+    "brand": "Swedish Supplements",
+    "brandSlug": "swedish-supplements",
+    "name": "Iron Plus",
+    "pack": "60 капсули",
+    "price": "9.90",
+    "image": "13136.webp",
+    "url": ""
+  },
+  {
+    "id": "20040",
+    "brand": "Swanson",
+    "brandSlug": "swanson",
+    "name": "Albion Ferrochel Iron",
+    "pack": "180 капсули",
+    "price": "11.90",
+    "image": "20040.webp",
+    "url": ""
+  },
+  {
+    "id": "20667",
+    "brand": "Doctor's Best",
+    "brandSlug": "doctors-best",
+    "name": "High Absorption Iron",
+    "pack": "120 таблетки",
+    "price": "14.90",
+    "image": "20667.webp",
+    "url": ""
+  },
+  {
+    "id": "20733",
+    "brand": "Natural Factors",
+    "brandSlug": "natural-factors",
+    "name": "Iron Chelate 25 mg",
+    "pack": "90 таблетки",
+    "price": "11.90",
+    "image": "20733.webp",
+    "url": ""
+  },
+  {
+    "id": "23194",
+    "brand": "NOW Foods",
+    "brandSlug": "now-foods",
+    "name": "Iron 18 mg",
+    "pack": "120 капсули",
+    "price": "9.90",
+    "image": "23194.webp",
+    "url": ""
+  },
+  {
+    "id": "24489",
+    "brand": "NOW Foods",
+    "brandSlug": "now-foods",
+    "name": "Iron 36 mg Double Strength",
+    "pack": "90 капсули",
+    "price": "12.90",
+    "image": "24489.webp",
+    "url": ""
+  },
+  {
+    "id": "26322",
+    "brand": "OstroVit",
+    "brandSlug": "ostrovit",
+    "name": "Pharma Ferr Aid",
+    "pack": "60 капсули",
+    "price": "8.90",
+    "image": "26322.webp",
+    "url": ""
+  },
+  {
+    "id": "28156",
+    "brand": "NOW Foods",
+    "brandSlug": "now-foods",
+    "name": "Iron Complex Caps",
+    "pack": "100 капсули",
+    "price": "13.90",
+    "image": "28156.webp",
+    "url": ""
+  },
+  {
+    "id": "28651",
+    "brand": "VitaCorp",
+    "brandSlug": "vitacorp",
+    "name": "Iron",
+    "pack": "60 таблетки",
+    "price": "7.90",
+    "image": "28651.webp",
+    "url": ""
+  },
+  {
+    "id": "32062",
+    "brand": "NOW Foods",
+    "brandSlug": "now-foods",
+    "name": "Liquid Iron",
+    "pack": "237 мл",
+    "price": "16.90",
+    "image": "32062.webp",
+    "url": ""
+  },
+  {
+    "id": "34815",
+    "brand": "Garden of Life",
+    "brandSlug": "garden-of-life",
+    "name": "Vitamin Code Raw Iron",
+    "pack": "30 капсули",
+    "price": "19.90",
+    "image": "34815.webp",
+    "url": ""
+  },
+  {
+    "id": "36009",
+    "brand": "Cardiovascular Research",
+    "brandSlug": "cardiovascular-research",
+    "name": "Ferritin 5 mg",
+    "pack": "60 капсули",
+    "price": "14.90",
+    "image": "36009.webp",
+    "url": ""
+  },
+  {
+    "id": "37205",
+    "brand": "BetterYou",
+    "brandSlug": "betteryou",
+    "name": "Iron 10 Daily Oral Spray",
+    "pack": "25 мл",
+    "price": "12.90",
+    "image": "37205.webp",
+    "url": ""
+  },
+  {
+    "id": "41956",
+    "brand": "WeightWorld",
+    "brandSlug": "weightworld",
+    "name": "Iron With Vitamin C Gummies",
+    "pack": "120 желирани бонбони",
+    "price": "16.90",
+    "image": "41956.webp",
+    "url": ""
+  },
+  {
+    "id": "42025",
+    "brand": "Thorne",
+    "brandSlug": "thorne",
+    "name": "Advanced Iron Complex",
+    "pack": "60 капсули",
+    "price": "22.90",
+    "image": "42025.webp",
+    "url": ""
+  },
+  {
+    "id": "43822",
+    "brand": "Osavi",
+    "brandSlug": "osavi",
+    "name": "Liposomal Iron 20 Mg",
+    "pack": "120 капсули",
+    "price": "24.90",
+    "image": "43822.webp",
+    "url": ""
+  },
+  {
+    "id": "44058",
+    "brand": "Osavi",
+    "brandSlug": "osavi",
+    "name": "Liposomal Iron 20 Mg",
+    "pack": "60 капсули",
+    "price": "14.90",
+    "image": "44058.webp",
+    "url": ""
+  },
+  {
+    "id": "44971",
+    "brand": "Pregnaco",
+    "brandSlug": "pregnaco",
+    "name": "Iron Direct",
+    "pack": "20 пакета",
+    "price": "14.90",
+    "image": "44971.webp",
+    "url": ""
+  },
+  {
+    "id": "46029",
+    "brand": "Natura Vita",
+    "brandSlug": "natura-vita",
+    "name": "Iron Plus",
+    "pack": "20 ефервесцентни таблетки",
+    "price": "6.90",
+    "image": "46029.webp",
+    "url": ""
+  }
+]

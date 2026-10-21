@@ -1,0 +1,222 @@
+[
+  {
+    "id": "1630",
+    "brand": "NOW Foods",
+    "brandSlug": "now-foods",
+    "name": "L-Carnitine 500 Mg",
+    "pack": "180 капсули",
+    "price": "34.90",
+    "image": "1630.webp",
+    "url": ""
+  },
+  {
+    "id": "1632",
+    "brand": "NOW Foods",
+    "brandSlug": "now-foods",
+    "name": "L-Carnitine 500 Mg",
+    "pack": "60 капсули",
+    "price": "14.90",
+    "image": "1632.webp",
+    "url": ""
+  },
+  {
+    "id": "4464",
+    "brand": "Pure Nutrition",
+    "brandSlug": "pure-nutrition",
+    "name": "L-Carnitine 1000",
+    "pack": "60 капсули",
+    "price": "14.90",
+    "image": "4464.webp",
+    "url": ""
+  },
+  {
+    "id": "9252",
+    "brand": "Pure Nutrition",
+    "brandSlug": "pure-nutrition",
+    "name": "L-Carnitine 1000",
+    "pack": "100 капсули",
+    "price": "21.90",
+    "image": "9252.webp",
+    "url": ""
+  },
+  {
+    "id": "10522",
+    "brand": "Maxxwin",
+    "brandSlug": "maxxwin",
+    "name": "L-Carnitine Maxx 1000",
+    "pack": "90 таблетки",
+    "price": "14.90",
+    "image": "10522.webp",
+    "url": ""
+  },
+  {
+    "id": "21462",
+    "brand": "OstroVit",
+    "brandSlug": "ostrovit",
+    "name": "L-Carnitine",
+    "pack": "210 грама",
+    "price": "12.90",
+    "image": "21462.webp",
+    "url": ""
+  },
+  {
+    "id": "24318",
+    "brand": "OstroVit",
+    "brandSlug": "ostrovit",
+    "name": "L-Carnitine 1250",
+    "pack": "60 капсули",
+    "price": "9.90",
+    "image": "24318.webp",
+    "url": ""
+  },
+  {
+    "id": "26525",
+    "brand": "Applied Nutrition",
+    "brandSlug": "applied-nutrition",
+    "name": "L-Carnitine 3000 Liquid",
+    "pack": "480 мл",
+    "price": "17.90",
+    "image": "26525.webp",
+    "url": ""
+  },
+  {
+    "id": "27958",
+    "brand": "MLO",
+    "brandSlug": "mlo",
+    "name": "Liquid L-Carnitine Complex 100000",
+    "pack": "500 мл",
+    "price": "16.90",
+    "image": "27958.webp",
+    "url": ""
+  },
+  {
+    "id": "28065",
+    "brand": "OstroVit",
+    "brandSlug": "ostrovit",
+    "name": "L-Carnitine Powder",
+    "pack": "210 грама",
+    "price": "9.90",
+    "image": "28065.webp",
+    "url": ""
+  },
+  {
+    "id": "28279",
+    "brand": "OstroVit",
+    "brandSlug": "ostrovit",
+    "name": "Aqua Kick L-Carnitine",
+    "pack": "10 грама",
+    "price": "0.79",
+    "image": "28279.webp",
+    "url": ""
+  },
+  {
+    "id": "28322",
+    "brand": "Kevin Levrone",
+    "brandSlug": "kevin-levrone",
+    "name": "Gold L-Carnitine 1000",
+    "pack": "100 таблетки",
+    "price": "14.90",
+    "image": "28322.webp",
+    "url": ""
+  },
+  {
+    "id": "28538",
+    "brand": "Nutriversum",
+    "brandSlug": "nutriversum",
+    "name": "L-Carnitine Tabs",
+    "pack": "60 таблетки",
+    "price": "12.90",
+    "image": "28538.webp",
+    "url": ""
+  },
+  {
+    "id": "29970",
+    "brand": "6PAK Nutrition",
+    "brandSlug": "6pak-nutrition",
+    "name": "L-Carnitine 1000 mg",
+    "pack": "90 капсули",
+    "price": "12.90",
+    "image": "29970.webp",
+    "url": ""
+  },
+  {
+    "id": "30771",
+    "brand": "NOW Foods",
+    "brandSlug": "now-foods",
+    "name": "L-Carnitine 1000 mg",
+    "pack": "50 таблетки",
+    "price": "24.90",
+    "image": "30771.webp",
+    "url": ""
+  },
+  {
+    "id": "30772",
+    "brand": "NOW Foods",
+    "brandSlug": "now-foods",
+    "name": "L-Carnitine 250 mg",
+    "pack": "60 капсули",
+    "price": "14.90",
+    "image": "30772.webp",
+    "url": ""
+  },
+  {
+    "id": "31883",
+    "brand": "Cardiovascular Research",
+    "brandSlug": "cardiovascular-research",
+    "name": "Claudivastin Propionyl-L-Carnitine",
+    "pack": "60 таблетки",
+    "price": "39.90",
+    "image": "31883.webp",
+    "url": ""
+  },
+  {
+    "id": "41166",
+    "brand": "Essensey",
+    "brandSlug": "essensey",
+    "name": "L-Carnitine 1000 mg",
+    "pack": "90 капсули",
+    "price": "12.90",
+    "image": "41166.webp",
+    "url": ""
+  },
+  {
+    "id": "42470",
+    "brand": "FA Nutrition",
+    "brandSlug": "fa-nutrition",
+    "name": "Ice L-Carnitine",
+    "pack": "300 грама",
+    "price": "19.90",
+    "image": "42470.webp",
+    "url": ""
+  },
+  {
+    "id": "42471",
+    "brand": "Kevin Levrone",
+    "brandSlug": "kevin-levrone",
+    "name": "Levro Legendary L-Carnitine",
+    "pack": "300 грама",
+    "price": "21.90",
+    "image": "42471.webp",
+    "url": ""
+  },
+  {
+    "id": "43985",
+    "brand": "NOW Foods",
+    "brandSlug": "now-foods",
+    "name": "L-Carnitine Pure Powder",
+    "pack": "85 грама",
+    "price": "24.90",
+    "image": "43985.webp",
+    "url": ""
+  },
+  {
+    "id": "44752",
+    "brand": "NOW Foods",
+    "brandSlug": "now-foods",
+    "name": "L-Carnitine 1000 Mg",
+    "pack": "100 таблетки",
+    "price": "34.90",
+    "image": "44752.webp",
+    "url": ""
+  }
+]
