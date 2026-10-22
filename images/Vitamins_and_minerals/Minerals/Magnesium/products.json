@@ -1,202 +1,202 @@
 [
   {
-    "id": "1651",
+    "id": "44082",
     "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Magnesium Citrate 200 Mg",
-    "pack": "100 таблетки",
-    "price": "12.90",
-    "image": "1651.webp",
-    "url": ""
-  },
-  {
-    "id": "5191",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Magnesium Citrate 200 Mg",
-    "pack": "250 таблетки",
-    "price": "24.90",
-    "image": "5191.webp",
-    "url": ""
-  },
-  {
-    "id": "10262",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Magtein Magnesium L-Threonate",
-    "pack": "90 капсули",
-    "price": "34.90",
-    "image": "10262.webp",
-    "url": ""
+    "name": "Magnesium Glycinate with BioPerine® | Highly Absorbable Magnesium Bisglycinate",
+    "pack": "180 капсули",
+    "price": "27.56",
+    "url": "https://fitness1.bg/minerali/now-foods/magnesium-glycinate-with-bioperine/54082",
+    "image": "now-foods_44082.webp",
+    "brandSlug": "now-foods"
   },
   {
     "id": "21064",
     "brand": "NOW Foods",
-    "brandSlug": "now-foods",
     "name": "Magnesium Bisglycinate Powder",
     "pack": "227 грама",
-    "price": "17.90",
-    "image": "21064.webp",
-    "url": ""
-  },
-  {
-    "id": "22501",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Magnesium Malate 1000 mg",
-    "pack": "180 таблетки",
-    "price": "22.90",
-    "image": "22501.webp",
-    "url": ""
-  },
-  {
-    "id": "24383",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Magnesium Citrate",
-    "pack": "200 грама",
-    "price": "8.90",
-    "image": "24383.webp",
-    "url": ""
-  },
-  {
-    "id": "30254",
-    "brand": "Hiro.Lab",
-    "brandSlug": "hiro-lab",
-    "name": "MG + B6",
-    "pack": "100 капсули",
-    "price": "9.90",
-    "image": "30254.webp",
-    "url": ""
-  },
-  {
-    "id": "32620",
-    "brand": "Natural Factors",
-    "brandSlug": "natural-factors",
-    "name": "Magnesium Bisglycinate Powder",
-    "pack": "120 грама",
-    "price": "17.90",
-    "image": "32620.webp",
-    "url": ""
-  },
-  {
-    "id": "33171",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Magnesium Glycinate",
-    "pack": "180 таблетки",
-    "price": "24.90",
-    "image": "33171.webp",
-    "url": ""
-  },
-  {
-    "id": "33831",
-    "brand": "Double Wood",
-    "brandSlug": "double-wood",
-    "name": "Magnesium Glycinate 400 mg",
-    "pack": "180 капсули",
-    "price": "22.90",
-    "image": "33831.webp",
-    "url": ""
-  },
-  {
-    "id": "33938",
-    "brand": "Natural Factors",
-    "brandSlug": "natural-factors",
-    "name": "Magnesium Bisglycinate 200 mg",
-    "pack": "120 капсули",
-    "price": "19.90",
-    "image": "33938.webp",
-    "url": ""
-  },
-  {
-    "id": "34345",
-    "brand": "Osavi",
-    "brandSlug": "osavi",
-    "name": "Magnesium Citrate + B6",
-    "pack": "90 капсули",
-    "price": "12.90",
-    "image": "34345.webp",
-    "url": ""
-  },
-  {
-    "id": "35022",
-    "brand": "Swedish Supplements",
-    "brandSlug": "swedish-supplements",
-    "name": "Magnesium Complex",
-    "pack": "90 капсули",
-    "price": "11.90",
-    "image": "35022.webp",
-    "url": ""
+    "price": "18.97",
+    "url": "https://fitness1.bg/minerali/now-foods/magnesium-bisglycinate-powder-227g-91-servings/31064",
+    "image": "now-foods_21064.webp",
+    "brandSlug": "now-foods"
   },
   {
     "id": "41210",
     "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Magnesium Glycinate",
+    "name": "Magnesium Glycinate | 400 mg Serving of Magnesiuim Bisglycinate",
     "pack": "90 капсули",
-    "price": "10.90",
-    "image": "41210.webp",
-    "url": ""
-  },
-  {
-    "id": "43977",
-    "brand": "Natural Factors",
-    "brandSlug": "natural-factors",
-    "name": "Magnesium Bisglycinate Powder",
-    "pack": "240 грама",
-    "price": "26.90",
-    "image": "43977.webp",
-    "url": ""
-  },
-  {
-    "id": "44081",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Magnesium Glycinate With BioPerine",
-    "pack": "60 капсули",
-    "price": "13.90",
-    "image": "44081.webp",
-    "url": ""
-  },
-  {
-    "id": "44082",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Magnesium Glycinate With BioPerine",
-    "pack": "180 капсули",
-    "price": "29.90",
-    "image": "44082.webp",
-    "url": ""
-  },
-  {
-    "id": "46147",
-    "brand": "Hiro.Lab",
-    "brandSlug": "hiro-lab",
-    "name": "Magnesium Glycinate",
-    "pack": "120 капсули",
-    "price": "14.90",
-    "image": "46147.webp",
-    "url": ""
+    "price": "6.47",
+    "url": "https://fitness1.bg/minerali/ostrovit/magnesium-glycinate-400-mg-of-magnesiuim-bisglycinate/51210",
+    "image": "ostrovit_41210.webp",
+    "brandSlug": "ostrovit"
   },
   {
     "id": "46412",
-    "brand": "Dorian Yates",
-    "brandSlug": "dorian-yates",
-    "name": "Magnesium Bisglycinate",
+    "brand": "Dorian Yates Nutrition",
+    "name": "Magnesium Bisglycinate | 125 mg Glycinate",
     "pack": "90 капсули",
-    "price": "14.90",
-    "image": "46412.webp",
-    "url": ""
+    "price": "9.95",
+    "url": "https://fitness1.bg/minerali/dorian-yates-nutrition/magnesium-bisglycinate-125-mg-glycinate/56412",
+    "image": "dorian-yates-nutrition_46412.webp",
+    "brandSlug": "dorian-yates-nutrition"
+  },
+  {
+    "id": "35022",
+    "brand": "SWEDISH Supplements",
+    "name": "Magnesium Complex | 4 Types Matrix ~ Citrate, Oxide, Gluconate, Bisglycinate",
+    "pack": "90 капсули",
+    "price": "13.94",
+    "url": "https://fitness1.bg/minerali/swedish-supplements/magnesium-complex-4-types-matrix-citrate-oxide-gluconate-bisglycinate/45022",
+    "image": "swedish-supplements_35022.webp",
+    "brandSlug": "swedish-supplements"
+  },
+  {
+    "id": "34345",
+    "brand": "Osavi",
+    "name": "Magnesium Citrate 375 mg + B6 | P-5-P",
+    "pack": "90 капсули",
+    "price": "11.28",
+    "url": "https://fitness1.bg/minerali/osavi/magnesium-citrate-375-mg-b6-p-5-p/44345",
+    "image": "osavi_34345.webp",
+    "brandSlug": "osavi"
+  },
+  {
+    "id": "24383",
+    "brand": "OstroVit",
+    "name": "Magnesium Citrate Powder",
+    "pack": "200 грама",
+    "price": "7.04",
+    "url": "https://fitness1.bg/minerali/ostrovit/magnesium-citrate-powder22/34383",
+    "image": "ostrovit_24383.webp",
+    "brandSlug": "ostrovit"
   },
   {
     "id": "47495",
     "brand": "Applied Nutrition",
-    "brandSlug": "applied-nutrition",
     "name": "Magnesium & Vitamin D3",
     "pack": "60 капсули",
-    "price": "11.90",
-    "image": "47495.webp",
-    "url": ""
+    "price": "8.31",
+    "url": "https://fitness1.bg/minerali/applied-nutrition/magnesium-amp-vitamin-d3/57495",
+    "image": "applied-nutrition_47495.webp",
+    "brandSlug": "applied-nutrition"
+  },
+  {
+    "id": "33171",
+    "brand": "NOW Foods",
+    "name": "Magnesium Glycinate | Highly Absorbable Magnesium Bisglycinate",
+    "pack": "180 Таблетки",
+    "price": "33.36",
+    "url": "https://fitness1.bg/minerali/now-foods/magnesium-glycinate-tablets-magnesium-bisglycinate-traacs/43171",
+    "image": "now-foods_33171.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "22501",
+    "brand": "NOW Foods",
+    "name": "Magnesium Malate 1000 mg",
+    "pack": "180 Таблетки",
+    "price": "25.70",
+    "url": "https://fitness1.bg/minerali/now-foods/magnesium-malate-1000-mg/32501",
+    "image": "now-foods_22501.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "33938",
+    "brand": "Natural Factors",
+    "name": "Magnesium Bisglycinate 200 mg",
+    "pack": "120 капсули",
+    "price": "16.60",
+    "url": "https://fitness1.bg/minerali/natural-factors/magnesium-bisglycinate-200-mg/43938",
+    "image": "natural-factors_33938.webp",
+    "brandSlug": "natural-factors"
+  },
+  {
+    "id": "10262",
+    "brand": "NOW Foods",
+    "name": "Magtein / Magnesium L-Threonate",
+    "pack": "90 капсули",
+    "price": "42.95",
+    "url": "https://fitness1.bg/minerali/now-foods/now-magtein/20262",
+    "image": "now-foods_10262.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "46147",
+    "brand": "Hero.Lab",
+    "name": "Magnesium Glycinate | MagChel® Bisglycinate + Vitamin B6",
+    "pack": "120 капсули",
+    "price": "21.08",
+    "url": "https://fitness1.bg/minerali/hero.lab/magnesium-glycinate-magchel-bisglycinate-vitamin-b6/56147",
+    "image": "hero-lab_46147.webp",
+    "brandSlug": "hero-lab"
+  },
+  {
+    "id": "43977",
+    "brand": "Natural Factors",
+    "name": "Magnesium Bisglycinate 200 mg",
+    "pack": "240 грама",
+    "price": "23.00",
+    "url": "https://fitness1.bg/minerali/natural-factors/magnesium-bisglycinate-200-mg2/53977",
+    "image": "natural-factors_43977.webp",
+    "brandSlug": "natural-factors"
+  },
+  {
+    "id": "44081",
+    "brand": "NOW Foods",
+    "name": "Magnesium Glycinate with BioPerine® | Highly Absorbable Magnesium Bisglycinate",
+    "pack": "60 капсули",
+    "price": "14.96",
+    "url": "https://fitness1.bg/minerali/now-foods/magnesium-glycinate-with-bioperine/54081",
+    "image": "now-foods_44081.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "5191",
+    "brand": "NOW Foods",
+    "name": "Magnesium Citrate 200 mg",
+    "pack": "250 Таблетки",
+    "price": "34.52",
+    "url": "https://fitness1.bg/minerali/now-foods/now-foods-magnesium-citrate-200mg/15191",
+    "image": "now-foods_5191.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "32620",
+    "brand": "Natural Factors",
+    "name": "Magnesium Bisglycinate Powder",
+    "pack": "120 грама",
+    "price": "18.91",
+    "url": "https://fitness1.bg/minerali/natural-factors/magnesium-bisglycinate-powder/42620",
+    "image": "natural-factors_32620.webp",
+    "brandSlug": "natural-factors"
+  },
+  {
+    "id": "33831",
+    "brand": "Double Wood Supplements",
+    "name": "Magnesium Glycinate 400 mg",
+    "pack": "180 капсули",
+    "price": "23.02",
+    "url": "https://fitness1.bg/minerali/double-wood-supplements/magnesium-glycinate-400-mg/43831",
+    "image": "double-wood-supplements_33831.webp",
+    "brandSlug": "double-wood-supplements"
+  },
+  {
+    "id": "1651",
+    "brand": "NOW Foods",
+    "name": "Magnesium Citrate 200 mg",
+    "pack": "100 Таблетки",
+    "price": "17.26",
+    "url": "https://fitness1.bg/minerali/now-foods/now-foods-magnesium-citrate-200mg/11651",
+    "image": "now-foods_1651.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "30254",
+    "brand": "Hero.Lab",
+    "name": "MG + B6 | Magnesium Citrate + B6",
+    "pack": "100 капсули",
+    "price": "9.62",
+    "url": "https://fitness1.bg/minerali/hero.lab/mg-b6-magnesium-citrate-b6/40254",
+    "image": "hero-lab_30254.webp",
+    "brandSlug": "hero-lab"
   }
 ]

@@ -1,202 +1,202 @@
 [
   {
-    "id": "1776",
+    "id": "38970",
     "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "C-1000 Sustained Release",
-    "pack": "100 таблетки",
-    "price": "12.90",
-    "image": "1776.webp",
-    "url": ""
-  },
-  {
-    "id": "1777",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "C-1000 With Rose Hips & Bioflavonoids",
-    "pack": "100 таблетки",
-    "price": "13.90",
-    "image": "1777.webp",
-    "url": ""
-  },
-  {
-    "id": "1778",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "C-1000 With Rose Hips & Bioflavonoids",
-    "pack": "250 таблетки",
-    "price": "28.90",
-    "image": "1778.webp",
-    "url": ""
-  },
-  {
-    "id": "1780",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "C-1000 Sustained Release",
-    "pack": "250 таблетки",
-    "price": "26.90",
-    "image": "1780.webp",
-    "url": ""
-  },
-  {
-    "id": "5231",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "C-1000 With 100 Mg Bioflavonoids",
-    "pack": "100 капсули",
-    "price": "14.90",
-    "image": "5231.webp",
-    "url": ""
-  },
-  {
-    "id": "20913",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Vitamin C",
-    "pack": "90 таблетки",
-    "price": "5.90",
-    "image": "20913.webp",
-    "url": ""
-  },
-  {
-    "id": "21483",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Vitamin C",
-    "pack": "500 грама",
-    "price": "12.90",
-    "image": "21483.webp",
-    "url": ""
-  },
-  {
-    "id": "22073",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Vitamin C 1000 mg",
-    "pack": "20 ефервесцентни таблетки",
-    "price": "2.90",
-    "image": "22073.webp",
-    "url": ""
-  },
-  {
-    "id": "22419",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "AlphaSorb-C 500",
-    "pack": "90 капсули",
-    "price": "16.90",
-    "image": "22419.webp",
-    "url": ""
-  },
-  {
-    "id": "22648",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Buffered C-1000 Complex",
-    "pack": "180 таблетки",
-    "price": "21.90",
-    "image": "22648.webp",
-    "url": ""
-  },
-  {
-    "id": "22651",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "C-1000",
-    "pack": "250 капсули",
-    "price": "24.90",
-    "image": "22651.webp",
-    "url": ""
-  },
-  {
-    "id": "24498",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Vitamin C",
-    "pack": "30 таблетки",
-    "price": "3.90",
-    "image": "24498.webp",
-    "url": ""
-  },
-  {
-    "id": "27211",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Vitamin C 1000 mg",
+    "name": "Liposomal Vitamin C",
     "pack": "120 капсули",
-    "price": "8.90",
-    "image": "27211.webp",
-    "url": ""
-  },
-  {
-    "id": "27339",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Vitamin C 1000",
-    "pack": "250 капсули",
-    "price": "14.90",
-    "image": "27339.webp",
-    "url": ""
-  },
-  {
-    "id": "31543",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "C-1000 Zinc Immune",
-    "pack": "90 капсули",
-    "price": "17.90",
-    "image": "31543.webp",
-    "url": ""
+    "price": "27.99",
+    "url": "https://fitness1.bg/vitamini/now-foods/liposomal-vitamin-c2/48970",
+    "image": "now-foods_38970.webp",
+    "brandSlug": "now-foods"
   },
   {
     "id": "31544",
     "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "C-1000 Zinc Immune",
+    "name": "C-1000 Zinc Immune | Vitamin C + Zinc Bisglycinate",
     "pack": "180 капсули",
-    "price": "29.90",
-    "image": "31544.webp",
-    "url": ""
+    "price": "26.46",
+    "url": "https://fitness1.bg/vitamini/now-foods/c-1000-zinc-immune-vitamin-c-zinc-bisglycinate/41544",
+    "image": "now-foods_31544.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "31543",
+    "brand": "NOW Foods",
+    "name": "C-1000 Zinc Immune | Vitamin C + Zinc Bisglycinate",
+    "pack": "90 капсули",
+    "price": "14.96",
+    "url": "https://fitness1.bg/vitamini/now-foods/c-1000-zinc-immune-vitamin-c-zinc-bisglycinate/41543",
+    "image": "now-foods_31543.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "5231",
+    "brand": "NOW Foods",
+    "name": "Vitamin C-1000 / with Bioflavonoids",
+    "pack": "100 капсули",
+    "price": "12.65",
+    "url": "https://fitness1.bg/vitamini/now-foods/vitamin-c-1000-with-100-mg-bioflavonids/15231",
+    "image": "now-foods_5231.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "34956",
+    "brand": "Garden Of Life",
+    "name": "Mykind Organics | Vitamin C Organic Spray",
+    "pack": "58 мл",
+    "price": "21.45",
+    "url": "https://fitness1.bg/vitamini/garden-of-life/mykind-organics-vitamin-c-organic-spray/44956",
+    "image": "garden-of-life_34956.webp",
+    "brandSlug": "garden-of-life"
+  },
+  {
+    "id": "27339",
+    "brand": "OstroVit",
+    "name": "Vitamin C 1000 mg",
+    "pack": "250 капсули",
+    "price": "21.45",
+    "url": "https://fitness1.bg/vitamini/ostrovit/vitamin-c-90-tablets-90-servings/37339",
+    "image": "ostrovit_27339.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "21483",
+    "brand": "OstroVit",
+    "name": "100% Vitamin C Powder",
+    "pack": "500 грама",
+    "price": "14.80",
+    "url": "https://fitness1.bg/vitamini/ostrovit/100-vitamin-c/31483",
+    "image": "ostrovit_21483.webp",
+    "brandSlug": "ostrovit"
   },
   {
     "id": "33095",
     "brand": "Osavi",
-    "brandSlug": "osavi",
     "name": "Liposomal Vitamin C 1000 mg",
     "pack": "120 капсули",
-    "price": "24.90",
-    "image": "33095.webp",
-    "url": ""
+    "price": "39.34",
+    "url": "https://fitness1.bg/vitamini/osavi/liposomal-vitamin-c-1000-mg/43095",
+    "image": "osavi_33095.webp",
+    "brandSlug": "osavi"
+  },
+  {
+    "id": "1780",
+    "brand": "NOW Foods",
+    "name": "Vitamin C-1000 with Rose Hips / Sustained Release",
+    "pack": "250 Таблетки",
+    "price": "24.92",
+    "url": "https://fitness1.bg/vitamini/now-foods/now-foods-vitamin-c1000-rose-hips-timed-release/11780",
+    "image": "now-foods_1780.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "22651",
+    "brand": "NOW Foods",
+    "name": "Vitamin C-1000 / with Bioflavonoids",
+    "pack": "250 капсули",
+    "price": "24.92",
+    "url": "https://fitness1.bg/vitamini/now-foods/vitamin-c-1000-with-100-mg-bioflavonids/32651",
+    "image": "now-foods_22651.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "20913",
+    "brand": "OstroVit",
+    "name": "Vitamin C 1000 mg",
+    "pack": "90 Таблетки",
+    "price": "8.67",
+    "url": "https://fitness1.bg/vitamini/ostrovit/vitamin-c-90-tablets-90-servings/30913",
+    "image": "ostrovit_20913.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "22419",
+    "brand": "NOW Foods",
+    "name": "AlphaSorb-C 500 mg",
+    "pack": "180 капсули",
+    "price": "26.46",
+    "url": "https://fitness1.bg/vitamini/now-foods/now-alphasorb-c-500mg-90c/32419",
+    "image": "now-foods_22419.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "22073",
+    "brand": "OstroVit",
+    "name": "Vitamin C 1000 mg / Effervescent",
+    "pack": "20 разтворими таблетки",
+    "price": "3.55",
+    "url": "https://fitness1.bg/vitamini/ostrovit/vitamin-c-effervescent/32073",
+    "image": "ostrovit_22073.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "24498",
+    "brand": "OstroVit",
+    "name": "Vitamin C 1000 mg",
+    "pack": "30 Таблетки",
+    "price": "4.06",
+    "url": "https://fitness1.bg/vitamini/ostrovit/vitamin-c-90-tablets-90-servings/34498",
+    "image": "ostrovit_24498.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "22648",
+    "brand": "NOW Foods",
+    "name": "Vitamin C-1000 Complex - Buffered with 250 mg Bioflavonoids",
+    "pack": "180 Таблетки",
+    "price": "30.67",
+    "url": "https://fitness1.bg/vitamini/now-foods/vitamin-c-1000-complex-buffered-with-250-mg-bioflavonoids/32648",
+    "image": "now-foods_22648.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "1777",
+    "brand": "NOW Foods",
+    "name": "Vitamin C-1000 / with Rose Hips + Bioflavonoids",
+    "pack": "100 Таблетки",
+    "price": "12.65",
+    "url": "https://fitness1.bg/vitamini/now-foods/now-foods-vitamin-c-1000-rh-no-timed-release-100-tabs/11777",
+    "image": "now-foods_1777.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "27211",
+    "brand": "OstroVit",
+    "name": "Vitamin C 1000 mg",
+    "pack": "120 капсули",
+    "price": "11.73",
+    "url": "https://fitness1.bg/vitamini/ostrovit/vitamin-c-90-tablets-90-servings/37211",
+    "image": "ostrovit_27211.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "1776",
+    "brand": "NOW Foods",
+    "name": "Vitamin C-1000 with Rose Hips / Sustained Release",
+    "pack": "100 Таблетки",
+    "price": "12.65",
+    "url": "https://fitness1.bg/vitamini/now-foods/now-foods-vitamin-c1000-rose-hips-timed-release/11776",
+    "image": "now-foods_1776.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "1778",
+    "brand": "NOW Foods",
+    "name": "Vitamin C-1000 / with Rose Hips + Bioflavonoids",
+    "pack": "250 Таблетки",
+    "price": "24.92",
+    "url": "https://fitness1.bg/vitamini/now-foods/now-foods-vitamin-c-1000-rh-no-timed-release-100-tabs/11778",
+    "image": "now-foods_1778.webp",
+    "brandSlug": "now-foods"
   },
   {
     "id": "33961",
     "brand": "Natural Factors",
-    "brandSlug": "natural-factors",
-    "name": "Liposomal Vitamin C 1000 mg",
-    "pack": "90 гел капсули",
-    "price": "27.90",
-    "image": "33961.webp",
-    "url": ""
-  },
-  {
-    "id": "34956",
-    "brand": "Garden of Life",
-    "brandSlug": "garden-of-life",
-    "name": "Mykind Organics Vitamin C Organic Spray",
-    "pack": "58 мл",
-    "price": "17.90",
-    "image": "34956.webp",
-    "url": ""
-  },
-  {
-    "id": "38970",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Liposomal Vitamin C",
-    "pack": "120 капсули",
-    "price": "29.90",
-    "image": "38970.webp",
-    "url": ""
+    "name": "Vitamin C 500 mg | Liposomal High Absoprtion",
+    "pack": "90 Гел капсули",
+    "price": "18.26",
+    "url": "https://fitness1.bg/vitamini/natural-factors/vitamin-c-500-mg-liposomal-high-absoprtion/43961",
+    "image": "natural-factors_33961.webp",
+    "brandSlug": "natural-factors"
   }
 ]

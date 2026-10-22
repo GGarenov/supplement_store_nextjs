@@ -1,232 +1,202 @@
 [
   {
-    "id": "308",
-    "brand": "Optimum Nutrition",
-    "brandSlug": "optimum-nutrition",
-    "name": "Serious Mass",
-    "pack": "2720 грама",
-    "price": "54.90",
-    "image": "308.webp",
-    "url": ""
-  },
-  {
-    "id": "309",
-    "brand": "Optimum Nutrition",
-    "brandSlug": "optimum-nutrition",
-    "name": "Serious Mass",
-    "pack": "5440 грама",
-    "price": "89.90",
-    "image": "309.webp",
-    "url": ""
+    "id": "21352",
+    "brand": "Kevin Levrone",
+    "name": "Black Line / Anabolic Mass Gainer",
+    "pack": "3000 грама",
+    "price": "47.22",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/kevin-levrone/anabolic-mass/31352",
+    "image": "kevin-levrone_21352.webp",
+    "brandSlug": "kevin-levrone"
   },
   {
     "id": "2683",
-    "brand": "Mutant",
-    "brandSlug": "mutant",
-    "name": "Mass",
+    "brand": "MUTANT",
+    "name": "Mutant Mass",
     "pack": "2270 грама",
-    "price": "39.90",
-    "image": "2683.webp",
-    "url": ""
-  },
-  {
-    "id": "2684",
-    "brand": "Mutant",
-    "brandSlug": "mutant",
-    "name": "Mass",
-    "pack": "6800 грама",
-    "price": "89.90",
-    "image": "2684.webp",
-    "url": ""
-  },
-  {
-    "id": "3432",
-    "brand": "Dymatize",
-    "brandSlug": "dymatize",
-    "name": "Super Mass Gainer",
-    "pack": "2943 грама",
-    "price": "59.90",
-    "image": "3432.webp",
-    "url": ""
-  },
-  {
-    "id": "4568",
-    "brand": "Amix",
-    "brandSlug": "amix",
-    "name": "Anabolic Masster",
-    "pack": "2200 грама",
-    "price": "54.90",
-    "image": "4568.webp",
-    "url": ""
-  },
-  {
-    "id": "4688",
-    "brand": "Amix",
-    "brandSlug": "amix",
-    "name": "Anabolic Masster",
-    "pack": "50 грама",
-    "price": "2.50",
-    "image": "4688.webp",
-    "url": ""
-  },
-  {
-    "id": "9451",
-    "brand": "Kevin Levrone",
-    "brandSlug": "kevin-levrone",
-    "name": "Levro Legendary Mass",
-    "pack": "7000 грама",
-    "price": "89.90",
-    "image": "9451.webp",
-    "url": ""
-  },
-  {
-    "id": "10978",
-    "brand": "MyProtein",
-    "brandSlug": "myprotein",
-    "name": "Impact Whey Gainer",
-    "pack": "2500 грама",
-    "price": "39.90",
-    "image": "10978.webp",
-    "url": ""
-  },
-  {
-    "id": "12103",
-    "brand": "Swedish Supplements",
-    "brandSlug": "swedish-supplements",
-    "name": "Massive Mass",
-    "pack": "7000 грама",
-    "price": "69.90",
-    "image": "12103.webp",
-    "url": ""
-  },
-  {
-    "id": "12756",
-    "brand": "Swedish Supplements",
-    "brandSlug": "swedish-supplements",
-    "name": "Massive Mass",
-    "pack": "3500 грама",
-    "price": "39.90",
-    "image": "12756.webp",
-    "url": ""
+    "price": "32.59",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/mutant/mutant-mutant-mass/12683",
+    "image": "mutant_2683.webp",
+    "brandSlug": "mutant"
   },
   {
     "id": "21351",
     "brand": "Kevin Levrone",
-    "brandSlug": "kevin-levrone",
-    "name": "Anabolic Mass",
+    "name": "Black Line / Anabolic Mass Gainer",
     "pack": "7000 грама",
-    "price": "74.90",
-    "image": "21351.webp",
-    "url": ""
+    "price": "94.47",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/kevin-levrone/anabolic-mass/31351",
+    "image": "kevin-levrone_21351.webp",
+    "brandSlug": "kevin-levrone"
   },
   {
-    "id": "21352",
+    "id": "9451",
     "brand": "Kevin Levrone",
-    "brandSlug": "kevin-levrone",
-    "name": "Anabolic Mass",
-    "pack": "3000 грама",
-    "price": "39.90",
-    "image": "21352.webp",
-    "url": ""
+    "name": "LevroLegendary MASS",
+    "pack": "7000 грама",
+    "price": "94.47",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/kevin-levrone/levrolegendary-mass/19451",
+    "image": "kevin-levrone_9451.webp",
+    "brandSlug": "kevin-levrone"
   },
   {
-    "id": "21365",
-    "brand": "Dorian Yates",
-    "brandSlug": "dorian-yates",
-    "name": "Game Changer Mass",
-    "pack": "3000 грама",
-    "price": "39.90",
-    "image": "21365.webp",
-    "url": ""
+    "id": "3432",
+    "brand": "Dymatize",
+    "name": "Super Mass Gainer with Creapure",
+    "pack": "2943 грама",
+    "price": "54.00",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/dymatize/dymatize-super-mass-gainer/13432",
+    "image": "dymatize_3432.webp",
+    "brandSlug": "dymatize"
+  },
+  {
+    "id": "309",
+    "brand": "Optimum Nutrition",
+    "name": "Serious Mass",
+    "pack": "5443 грама",
+    "price": "79.99",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/optimum-nutrition/optimum-nutrition-serious-mass/10309",
+    "image": "optimum-nutrition_309.webp",
+    "brandSlug": "optimum-nutrition"
   },
   {
     "id": "24749",
-    "brand": "Dorian Yates",
-    "brandSlug": "dorian-yates",
+    "brand": "Dorian Yates Nutrition",
     "name": "Metabolic Mass Gainer",
     "pack": "6000 грама",
-    "price": "79.90",
-    "image": "24749.webp",
-    "url": ""
+    "price": "73.35",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/dorian-yates-nutrition/metabolic-mass-gainer/34749",
+    "image": "dorian-yates-nutrition_24749.webp",
+    "brandSlug": "dorian-yates-nutrition"
   },
   {
-    "id": "28319",
-    "brand": "Kevin Levrone",
-    "brandSlug": "kevin-levrone",
-    "name": "Gold Lean Mass",
-    "pack": "6000 грама",
-    "price": "69.90",
-    "image": "28319.webp",
-    "url": ""
+    "id": "308",
+    "brand": "Optimum Nutrition",
+    "name": "Serious Mass",
+    "pack": "2721 грама",
+    "price": "45.99",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/optimum-nutrition/optimum-nutrition-serious-mass/10308",
+    "image": "optimum-nutrition_308.webp",
+    "brandSlug": "optimum-nutrition"
   },
   {
-    "id": "30204",
-    "brand": "GymBeam",
-    "brandSlug": "gymbeam",
-    "name": "FueGain",
+    "id": "2684",
+    "brand": "MUTANT",
+    "name": "Mutant Mass",
+    "pack": "6800 грама",
+    "price": "81.30",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/mutant/mutant-mutant-mass/12684",
+    "image": "mutant_2684.webp",
+    "brandSlug": "mutant"
+  },
+  {
+    "id": "12756",
+    "brand": "SWEDISH Supplements",
+    "name": "Massive Mass Gainer",
+    "pack": "3500 грама",
+    "price": "51.16",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/swedish-supplements/swedish-supplements-massive-mass-gainer/22756",
+    "image": "swedish-supplements_12756.webp",
+    "brandSlug": "swedish-supplements"
+  },
+  {
+    "id": "21365",
+    "brand": "Dorian Yates Nutrition",
+    "name": "Game Changer Mass",
     "pack": "3000 грама",
-    "price": "34.90",
-    "image": "30204.webp",
-    "url": ""
-  },
-  {
-    "id": "30848",
-    "brand": "Mutant",
-    "brandSlug": "mutant",
-    "name": "Mass Extreme 2500",
-    "pack": "2720 грама",
-    "price": "49.90",
-    "image": "30848.webp",
-    "url": ""
-  },
-  {
-    "id": "30849",
-    "brand": "Mutant",
-    "brandSlug": "mutant",
-    "name": "Mass Extreme 2500",
-    "pack": "5450 грама",
-    "price": "84.90",
-    "image": "30849.webp",
-    "url": ""
+    "price": "48.27",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/dorian-yates-nutrition/game-changer-mass/31365",
+    "image": "dorian-yates-nutrition_21365.webp",
+    "brandSlug": "dorian-yates-nutrition"
   },
   {
     "id": "31827",
     "brand": "Kevin Levrone",
-    "brandSlug": "kevin-levrone",
-    "name": "Gold Lean Mass",
+    "name": "Gold Line / Lean Mass",
     "pack": "3000 грама",
-    "price": "59.90",
-    "image": "31827.webp",
-    "url": ""
+    "price": "49.37",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/kevin-levrone/gold-line-lean-mass/41827",
+    "image": "kevin-levrone_31827.webp",
+    "brandSlug": "kevin-levrone"
   },
   {
-    "id": "33418",
-    "brand": "Hiro.Lab",
-    "brandSlug": "hiro-lab",
-    "name": "Mass Kong",
-    "pack": "3000 грама",
-    "price": "34.90",
-    "image": "33418.webp",
-    "url": ""
-  },
-  {
-    "id": "43522",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Anabolic Gainer",
-    "pack": "7000 грама",
-    "price": "54.90",
-    "image": "43522.webp",
-    "url": ""
+    "id": "28319",
+    "brand": "Kevin Levrone",
+    "name": "Gold Line / Lean Mass",
+    "pack": "6000 грама",
+    "price": "90.53",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/kevin-levrone/gold-line-lean-mass/38319",
+    "image": "kevin-levrone_28319.webp",
+    "brandSlug": "kevin-levrone"
   },
   {
     "id": "47004",
     "brand": "Ronnie Coleman",
-    "brandSlug": "ronnie-coleman",
-    "name": "King Mass XL",
+    "name": "King Mass XL | Super Anabolic Growth Formula",
+    "pack": "2750 грама",
+    "price": "52.90",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/ronnie-coleman-2/king-mass-xl-super-anabolic-growth-formula/57004",
+    "image": "ronnie-coleman_47004.webp",
+    "brandSlug": "ronnie-coleman"
+  },
+  {
+    "id": "30849",
+    "brand": "MUTANT",
+    "name": "Mutant Mass / XXXtreme 2500",
+    "pack": "5450 грама",
+    "price": "55.73",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/mutant/mutant-mass-xxxtreme-25002/40849",
+    "image": "mutant_30849.webp",
+    "brandSlug": "mutant"
+  },
+  {
+    "id": "12103",
+    "brand": "SWEDISH Supplements",
+    "name": "Massive Mass Gainer",
+    "pack": "7000 грама",
+    "price": "94.47",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/swedish-supplements/swedish-supplements-massive-mass-gainer/22103",
+    "image": "swedish-supplements_12103.webp",
+    "brandSlug": "swedish-supplements"
+  },
+  {
+    "id": "10978",
+    "brand": "MyProtein",
+    "name": "Impact Weight Gainer Blend",
+    "pack": "2500 грама",
+    "price": "37.42",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/myprotein/myprotein-impact-weight-gainer/20978",
+    "image": "myprotein_10978.webp",
+    "brandSlug": "myprotein"
+  },
+  {
+    "id": "30848",
+    "brand": "MUTANT",
+    "name": "Mutant Mass / XXXtreme 2500",
     "pack": "2720 грама",
-    "price": "49.90",
-    "image": "47004.webp",
-    "url": ""
+    "price": "34.33",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/mutant/mutant-mass-xxxtreme-25002/40848",
+    "image": "mutant_30848.webp",
+    "brandSlug": "mutant"
+  },
+  {
+    "id": "33418",
+    "brand": "Hero.Lab",
+    "name": "Mass KONG | Low-Sugar & Fat ~ High-Protein Gainer",
+    "pack": "3000 грама",
+    "price": "45.44",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/hero.lab/mass-kong-low-sugar-high-protein-gainer/43418",
+    "image": "hero-lab_33418.webp",
+    "brandSlug": "hero-lab"
+  },
+  {
+    "id": "43522",
+    "brand": "OstroVit",
+    "name": "Anabolic Gainer | Mass Gainer with Creatine & Taurine",
+    "pack": "7000 грама",
+    "price": "70.85",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/ostrovit/anabolic-gainer-mass-gainer-with-creatine-amp-taurine/53522",
+    "image": "ostrovit_43522.webp",
+    "brandSlug": "ostrovit"
   }
 ]

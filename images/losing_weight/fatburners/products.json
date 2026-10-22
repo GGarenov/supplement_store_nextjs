@@ -1,232 +1,202 @@
 [
   {
-    "id": "60",
-    "brand": "Universal Nutrition",
-    "brandSlug": "universal-nutrition",
-    "name": "Animal Cuts",
-    "pack": "42 пакета",
-    "price": "49.90",
-    "image": "60.webp",
-    "url": ""
-  },
-  {
-    "id": "1082",
-    "brand": "Nutrex",
-    "brandSlug": "nutrex",
-    "name": "Lipo-6 Black Ultra Concentrate",
-    "pack": "60 капсули",
-    "price": "27.90",
-    "image": "1082.webp",
-    "url": ""
-  },
-  {
-    "id": "1649",
-    "brand": "Pure Nutrition",
-    "brandSlug": "pure-nutrition",
-    "name": "Black Fire",
-    "pack": "120 таблетки",
-    "price": "17.90",
-    "image": "1649.webp",
-    "url": ""
-  },
-  {
-    "id": "3335",
-    "brand": "Stacker2",
-    "brandSlug": "stacker2",
-    "name": "Black Burn",
-    "pack": "120 капсули",
-    "price": "29.90",
-    "image": "3335.webp",
-    "url": ""
-  },
-  {
-    "id": "5106",
-    "brand": "Nutrex",
-    "brandSlug": "nutrex",
-    "name": "Lipo-6 Hers Ultra Concentrate",
-    "pack": "60 капсули",
-    "price": "27.90",
-    "image": "5106.webp",
-    "url": ""
-  },
-  {
-    "id": "8596",
-    "brand": "Pure Nutrition",
-    "brandSlug": "pure-nutrition",
-    "name": "Black Fire",
-    "pack": "60 капсули",
-    "price": "14.90",
-    "image": "8596.webp",
-    "url": ""
-  },
-  {
-    "id": "10260",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Diet Support",
-    "pack": "120 капсули",
-    "price": "21.90",
-    "image": "10260.webp",
-    "url": ""
-  },
-  {
-    "id": "14293",
-    "brand": "Swedish Supplements",
-    "brandSlug": "swedish-supplements",
-    "name": "Cutter Adipose Destroyer",
-    "pack": "120 капсули",
-    "price": "24.90",
-    "image": "14293.webp",
-    "url": ""
-  },
-  {
     "id": "21371",
-    "brand": "Dorian Yates",
-    "brandSlug": "dorian-yates",
-    "name": "Blackbombs Thermogenic Fat Burner",
-    "pack": "60 таблетки",
-    "price": "24.90",
-    "image": "21371.webp",
-    "url": ""
+    "brand": "Dorian Yates Nutrition",
+    "name": "BlackBombs / Thermogenic Fat Burner",
+    "pack": "60 Таблетки",
+    "price": "18.27",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/dorian-yates-nutrition/blackbombs/31371",
+    "image": "dorian-yates-nutrition_21371.webp",
+    "brandSlug": "dorian-yates-nutrition"
   },
   {
     "id": "24301",
-    "brand": "Swedish Supplements",
-    "brandSlug": "swedish-supplements",
-    "name": "Go Hard Advanced",
+    "brand": "SWEDISH Supplements",
+    "name": "GO HARD Advanced | Supreme Thermogenic Torch Matrix",
     "pack": "90 капсули",
-    "price": "29.90",
-    "image": "24301.webp",
-    "url": ""
+    "price": "20.97",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/swedish-supplements/go-hard-advanced/34301",
+    "image": "swedish-supplements_24301.webp",
+    "brandSlug": "swedish-supplements"
   },
   {
-    "id": "24322",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Fat Burner For Women",
-    "pack": "60 капсули",
-    "price": "11.90",
-    "image": "24322.webp",
-    "url": ""
-  },
-  {
-    "id": "24686",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Fat Burner Extreme",
-    "pack": "90 капсули",
-    "price": "14.90",
-    "image": "24686.webp",
-    "url": ""
-  },
-  {
-    "id": "24696",
-    "brand": "Dorian Yates",
-    "brandSlug": "dorian-yates",
-    "name": "Slender Cellulite & Fat Burner",
-    "pack": "450 грама",
-    "price": "34.90",
-    "image": "24696.webp",
-    "url": ""
-  },
-  {
-    "id": "27420",
-    "brand": "Free Life",
-    "brandSlug": "free-life",
-    "name": "Fat Burner 401 mg",
-    "pack": "60 капсули",
-    "price": "9.90",
-    "image": "27420.webp",
-    "url": ""
-  },
-  {
-    "id": "27745",
-    "brand": "Kevin Levrone",
-    "brandSlug": "kevin-levrone",
-    "name": "Anabolic Cuts",
-    "pack": "30 пакета",
-    "price": "39.90",
-    "image": "27745.webp",
-    "url": ""
-  },
-  {
-    "id": "27747",
-    "brand": "Kevin Levrone",
-    "brandSlug": "kevin-levrone",
-    "name": "Fat Killer Shot",
-    "pack": "120 мл",
-    "price": "2.90",
-    "image": "27747.webp",
-    "url": ""
-  },
-  {
-    "id": "30166",
-    "brand": "Lazar Angelov Nutrition",
-    "brandSlug": "lazar-angelov-nutrition",
-    "name": "Cell Burner Capsule",
-    "pack": "120 капсули",
-    "price": "24.90",
-    "image": "30166.webp",
-    "url": ""
-  },
-  {
-    "id": "34315",
-    "brand": "Hiro.Lab",
-    "brandSlug": "hiro-lab",
-    "name": "Clean Cut",
-    "pack": "120 капсули",
-    "price": "19.90",
-    "image": "34315.webp",
-    "url": ""
-  },
-  {
-    "id": "38067",
-    "brand": "WeightWorld",
-    "brandSlug": "weightworld",
-    "name": "Slimming Patch",
-    "pack": "60 пластира",
-    "price": "14.90",
-    "image": "38067.webp",
-    "url": ""
-  },
-  {
-    "id": "38240",
-    "brand": "Swedish Supplements",
-    "brandSlug": "swedish-supplements",
-    "name": "Hellfire",
-    "pack": "90 капсули",
-    "price": "22.90",
-    "image": "38240.webp",
-    "url": ""
-  },
-  {
-    "id": "40002",
-    "brand": "Unknown",
-    "brandSlug": "unknown",
-    "name": "Slim Body Fat Burner",
-    "pack": "60 капсули",
-    "price": "19.90",
-    "image": "40002.webp",
-    "url": ""
-  },
-  {
-    "id": "41397",
-    "brand": "More Power",
-    "brandSlug": "more-power",
-    "name": "Burn 1 Herbal Supplement",
-    "pack": "100 капсули",
-    "price": "14.90",
-    "image": "41397.webp",
-    "url": ""
+    "id": "60",
+    "brand": "Universal Animal",
+    "name": "Animal Cuts",
+    "pack": "42 Пакета",
+    "price": "50.99",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/universal-animal/animal-cuts/10060",
+    "image": "universal-animal_60.webp",
+    "brandSlug": "universal-animal"
   },
   {
     "id": "44781",
     "brand": "Kevin Levrone",
-    "brandSlug": "kevin-levrone",
-    "name": "Levro Legendary Lipo Burn",
-    "pack": "90 таблетки",
-    "price": "22.90",
-    "image": "44781.webp",
-    "url": ""
+    "name": "LevroLegendary Lipo Burn | 20 Active Ingredients Thermogenic Fat Burner",
+    "pack": "90 Таблетки",
+    "price": "28.10",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/kevin-levrone/levrolegendary-lipo-burn-20-active-ingredients-thermogenic-fat-burner/54781",
+    "image": "kevin-levrone_44781.webp",
+    "brandSlug": "kevin-levrone"
+  },
+  {
+    "id": "24696",
+    "brand": "Dorian Yates Nutrition",
+    "name": "Slender / Cellulite & Fat Burner / Ultimate Matrix",
+    "pack": "450 грама",
+    "price": "29.51",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/dorian-yates-nutrition/slender-cellulite-amp-fat-burner-ultimate-matrix/34696",
+    "image": "dorian-yates-nutrition_24696.webp",
+    "brandSlug": "dorian-yates-nutrition"
+  },
+  {
+    "id": "24686",
+    "brand": "OstroVit",
+    "name": "Fat Burner / Extreme",
+    "pack": "90 капсули",
+    "price": "23.49",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/ostrovit/fat-burner-extreme/34686",
+    "image": "ostrovit_24686.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "24322",
+    "brand": "OstroVit",
+    "name": "Fat Burner for Women",
+    "pack": "60 капсули",
+    "price": "19.91",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/ostrovit/fat-burner-for-women/34322",
+    "image": "ostrovit_24322.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "1082",
+    "brand": "Nutrex",
+    "name": "Lipo 6 Black / Ultra Concentrate",
+    "pack": "60 капсули",
+    "price": "29.25",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/nutrex/nutrex-lipo-6-black-ultra-concentrate/11082",
+    "image": "nutrex_1082.webp",
+    "brandSlug": "nutrex"
+  },
+  {
+    "id": "14293",
+    "brand": "SWEDISH Supplements",
+    "name": "THE CUTTER | Thermogenic Adipose Destroyer",
+    "pack": "120 капсули",
+    "price": "21.84",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/swedish-supplements/swedish-suplements-cutter-120c/24293",
+    "image": "swedish-supplements_14293.webp",
+    "brandSlug": "swedish-supplements"
+  },
+  {
+    "id": "11911",
+    "brand": "Cellucor",
+    "name": "C4 RIPPED",
+    "pack": "180 грама",
+    "price": "21.93",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/cellucor/cellucor-c4-ripped/21911",
+    "image": "cellucor_11911.webp",
+    "brandSlug": "cellucor"
+  },
+  {
+    "id": "27747",
+    "brand": "Kevin Levrone",
+    "name": "Fat Killer 2 in 1 Shot / Thermogenic Pre-Workout",
+    "pack": "120 мл",
+    "price": "1.66",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/kevin-levrone/fat-killer-2-in-1-shot-thermogenic-vaporizer/37747",
+    "image": "kevin-levrone_27747.webp",
+    "brandSlug": "kevin-levrone"
+  },
+  {
+    "id": "27745",
+    "brand": "Kevin Levrone",
+    "name": "Anabolic Cuts",
+    "pack": "30 Пакета",
+    "price": "51.93",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/kevin-levrone/anabolic-cuts/37745",
+    "image": "kevin-levrone_27745.webp",
+    "brandSlug": "kevin-levrone"
+  },
+  {
+    "id": "32052",
+    "brand": "Dorian Yates Nutrition",
+    "name": "BlackBombs Powder | Thermogenic Fat Burner",
+    "pack": "300 грама",
+    "price": "21.08",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/dorian-yates-nutrition/blackbombs-powder-thermogenic-fat-burner/42052",
+    "image": "dorian-yates-nutrition_32052.webp",
+    "brandSlug": "dorian-yates-nutrition"
+  },
+  {
+    "id": "30166",
+    "brand": "Lazar Angelov Nutrition",
+    "name": "LA Cell Burner | Thermogenic Fat Burner",
+    "pack": "120 капсули",
+    "price": "25.54",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/lazar-angelov-nutrition/la-cell-burner-thermogenic-fat-burner/40166",
+    "image": "lazar-angelov-nutrition_30166.webp",
+    "brandSlug": "lazar-angelov-nutrition"
+  },
+  {
+    "id": "8596",
+    "brand": "PURE Nutrition USA",
+    "name": "Black Fire",
+    "pack": "60 Таблетки",
+    "price": "23.01",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/pure-nutrition/pure-nutrition-black-fire/18596",
+    "image": "pure-nutrition-usa_8596.webp",
+    "brandSlug": "pure-nutrition-usa"
+  },
+  {
+    "id": "3335",
+    "brand": "Stacker",
+    "name": "BLACK BURN",
+    "pack": "120 капсули",
+    "price": "31.71",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/stacker/stacker2-black-burn-535mg-120caps/13335",
+    "image": "stacker_3335.webp",
+    "brandSlug": "stacker"
+  },
+  {
+    "id": "34315",
+    "brand": "Hero.Lab",
+    "name": "Clean Cut | Thermogenic Total Weight Control",
+    "pack": "120 капсули",
+    "price": "38.83",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/hero.lab/clean-cut/44315",
+    "image": "hero-lab_34315.webp",
+    "brandSlug": "hero-lab"
+  },
+  {
+    "id": "1649",
+    "brand": "PURE Nutrition USA",
+    "name": "Black Fire",
+    "pack": "120 Таблетки",
+    "price": "38.35",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/pure-nutrition/pure-nutrition-black-fire/11649",
+    "image": "pure-nutrition-usa_1649.webp",
+    "brandSlug": "pure-nutrition-usa"
+  },
+  {
+    "id": "38240",
+    "brand": "SWEDISH Supplements",
+    "name": "Hellfire | with Forskolin, Grains of Paradise & Green Tea",
+    "pack": "90 капсули",
+    "price": "27.59",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/swedish-supplements/hellfire-with-forskolin-grains-of-paradise-amp-green-tea/48240",
+    "image": "swedish-supplements_38240.webp",
+    "brandSlug": "swedish-supplements"
+  },
+  {
+    "id": "5106",
+    "brand": "Nutrex",
+    "name": "Lipo 6 Hers Black UC",
+    "pack": "60 капсули",
+    "price": "29.65",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/nutrex/nutrex-lipo-6-hers-black-ultra-concentrate/15106",
+    "image": "nutrex_5106.webp",
+    "brandSlug": "nutrex"
   }
 ]

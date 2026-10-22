@@ -1,212 +1,202 @@
 [
   {
-    "id": "94",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Vitamin D3 1000 IU",
-    "pack": "180 гел капсули",
-    "price": "9.90",
-    "image": "94.webp",
-    "url": ""
-  },
-  {
-    "id": "5189",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Chewable Vitamin D3 1000 IU",
-    "pack": "180 дъвчащи таблетки",
-    "price": "11.90",
-    "image": "5189.webp",
-    "url": ""
-  },
-  {
-    "id": "5220",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Liquid Vitamin D3",
-    "pack": "59 мл",
-    "price": "12.90",
-    "image": "5220.webp",
-    "url": ""
-  },
-  {
-    "id": "19818",
-    "brand": "Swanson",
-    "brandSlug": "swanson",
-    "name": "Vitamin D3 1000 IU",
-    "pack": "250 капсули",
-    "price": "9.90",
-    "image": "19818.webp",
-    "url": ""
-  },
-  {
-    "id": "19920",
-    "brand": "Natural Factors",
-    "brandSlug": "natural-factors",
-    "name": "Vitamin K&D 120 mcg & 1000 IU",
-    "pack": "60 гел капсули",
-    "price": "19.90",
-    "image": "19920.webp",
-    "url": ""
-  },
-  {
-    "id": "21473",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Vitamin D3 4000 + K2",
-    "pack": "100 таблетки",
-    "price": "6.90",
-    "image": "21473.webp",
-    "url": ""
-  },
-  {
     "id": "22218",
     "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Vitamin D3 & K2 1000 IU",
+    "name": "Vitamin D-3 1000 IU + K-2 45 mcg",
     "pack": "120 капсули",
-    "price": "11.90",
-    "image": "22218.webp",
-    "url": ""
+    "price": "13.81",
+    "url": "https://fitness1.bg/vitamini/now-foods/vitamin-d3-1000-k2/32218",
+    "image": "now-foods_22218.webp",
+    "brandSlug": "now-foods"
   },
   {
-    "id": "22378",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Vitamin D3 + K2",
-    "pack": "90 таблетки",
-    "price": "5.90",
-    "image": "22378.webp",
-    "url": ""
-  },
-  {
-    "id": "24164",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Liquid Vitamin D-3 Extra Strength",
-    "pack": "30 мл",
-    "price": "14.90",
-    "image": "24164.webp",
-    "url": ""
-  },
-  {
-    "id": "25490",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Vitamin D-3 1000 IU",
-    "pack": "360 гел капсули",
-    "price": "13.90",
-    "image": "25490.webp",
-    "url": ""
+    "id": "31595",
+    "brand": "Hero.Lab",
+    "name": "Vitamin D3 4000 + K2 MK7 100 mcg",
+    "pack": "160 Таблетки",
+    "price": "15.82",
+    "url": "https://fitness1.bg/vitamini/hero.lab/vitamin-d3-4000-k2-mk7-100-mcg/41595",
+    "image": "hero-lab_31595.webp",
+    "brandSlug": "hero-lab"
   },
   {
     "id": "27034",
     "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Vitamin D3 2000 IU + K2 MK-7 + C + Zn",
+    "name": "Vitamin D3 2000 + K2 MK-7 / + Vitamin C + Zinc",
     "pack": "60 капсули",
-    "price": "6.90",
-    "image": "27034.webp",
-    "url": ""
+    "price": "14.80",
+    "url": "https://fitness1.bg/vitamini/ostrovit/vitamin-d3-2000-k2-mk-7-vitamin-c-zinc/37034",
+    "image": "ostrovit_27034.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "21473",
+    "brand": "OstroVit",
+    "name": "Vitamin D3 4000 + K2 MK-7 100 mcg",
+    "pack": "100 Таблетки",
+    "price": "11.95",
+    "url": "https://fitness1.bg/vitamini/ostrovit/vitamin-d3-4000-k2/31473",
+    "image": "ostrovit_21473.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "25490",
+    "brand": "NOW Foods",
+    "name": "Vitamin D-3 1000 IU",
+    "pack": "360 Гел капсули",
+    "price": "15.34",
+    "url": "https://fitness1.bg/vitamini/now-foods/vitamin-d3/35490",
+    "image": "now-foods_25490.webp",
+    "brandSlug": "now-foods"
   },
   {
     "id": "29793",
     "brand": "Osavi",
-    "brandSlug": "osavi",
-    "name": "Vitamin D3 + K2 Oral Spray",
-    "pack": "12.5 мл",
-    "price": "14.90",
-    "image": "29793.webp",
-    "url": ""
-  },
-  {
-    "id": "31595",
-    "brand": "Hiro.Lab",
-    "brandSlug": "hiro-lab",
-    "name": "D3 + K2 MK7",
-    "pack": "160 таблетки",
-    "price": "14.90",
-    "image": "31595.webp",
-    "url": ""
-  },
-  {
-    "id": "31631",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Vitamin D3 4000 + K2",
-    "pack": "100 таблетки",
-    "price": "7.90",
-    "image": "31631.webp",
-    "url": ""
-  },
-  {
-    "id": "31990",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Ultra A & D-3",
-    "pack": "100 гел капсули",
-    "price": "9.90",
-    "image": "31990.webp",
-    "url": ""
-  },
-  {
-    "id": "32421",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Vitamin D 1000 IU",
-    "pack": "120 капсули",
-    "price": "11.90",
-    "image": "32421.webp",
-    "url": ""
-  },
-  {
-    "id": "34023",
-    "brand": "Natural Factors",
-    "brandSlug": "natural-factors",
-    "name": "Vitamin K + D",
-    "pack": "120 гел капсули",
-    "price": "19.90",
-    "image": "34023.webp",
-    "url": ""
-  },
-  {
-    "id": "35261",
-    "brand": "Trace Minerals",
-    "brandSlug": "trace-minerals",
-    "name": "Ionic D3 + K2",
-    "pack": "59 мл",
-    "price": "19.90",
-    "image": "35261.webp",
-    "url": ""
+    "name": "Vitamin D3 + K2 | Oral Spray",
+    "pack": "25 мл",
+    "price": "17.87",
+    "url": "https://fitness1.bg/vitamini/osavi/vitamin-d3-k2-oral-spray/39793",
+    "image": "osavi_29793.webp",
+    "brandSlug": "osavi"
   },
   {
     "id": "38597",
     "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Vitamin D3 1000 + K2",
-    "pack": "90 таблетки",
-    "price": "6.90",
-    "image": "38597.webp",
-    "url": ""
+    "name": "Vitamin D3 1000 IU + K2 50 mcg",
+    "pack": "90 Таблетки",
+    "price": "8.67",
+    "url": "https://fitness1.bg/vitamini/ostrovit/vitamin-d3-1000-iu-k2-50-mcg/48597",
+    "image": "ostrovit_38597.webp",
+    "brandSlug": "ostrovit"
   },
   {
-    "id": "43315",
-    "brand": "Zein Pharma",
-    "brandSlug": "zein-pharma",
-    "name": "Vitamin D3 + K2 Family Drops",
-    "pack": "20 мл",
-    "price": "14.90",
-    "image": "43315.webp",
-    "url": ""
+    "id": "35261",
+    "brand": "Trace Minerals",
+    "name": "Ionic D3 + K2 | Drops",
+    "pack": "59 мл",
+    "price": "34.76",
+    "url": "https://fitness1.bg/vitamini/trace-minerals/ionic-d3-k2-drops/45261",
+    "image": "trace-minerals_35261.webp",
+    "brandSlug": "trace-minerals"
+  },
+  {
+    "id": "22378",
+    "brand": "OstroVit",
+    "name": "Vitamin D3 2000 + K2 100 mcg",
+    "pack": "90 Таблетки",
+    "price": "9.95",
+    "url": "https://fitness1.bg/vitamini/ostrovit/vitamin-d3-2000-iu-vitamin-k2-100-mcg/32378",
+    "image": "ostrovit_22378.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "31631",
+    "brand": "OstroVit",
+    "name": "Vitamin D3 4000 IU + K2 100 mcg | Vege",
+    "pack": "100 Таблетки",
+    "price": "15.82",
+    "url": "https://fitness1.bg/vitamini/ostrovit/vitamin-d3-4000-iu-k2-100-mcg-vege/41631",
+    "image": "ostrovit_31631.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "94",
+    "brand": "NOW Foods",
+    "name": "Vitamin D-3 1000 IU",
+    "pack": "180 Гел капсули",
+    "price": "9.58",
+    "url": "https://fitness1.bg/vitamini/now-foods/vitamin-d3/10094",
+    "image": "now-foods_94.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "34023",
+    "brand": "Natural Factors",
+    "name": "Vitamin K 120 mcg & Vitamin D 1000 IU",
+    "pack": "120 Гел капсули",
+    "price": "22.68",
+    "url": "https://fitness1.bg/vitamini/natural-factors/natural-factors-vitamin-k-d/44023",
+    "image": "natural-factors_34023.webp",
+    "brandSlug": "natural-factors"
+  },
+  {
+    "id": "24164",
+    "brand": "NOW Foods",
+    "name": "Liquid Vitamin D-3 / Extra Strength / 1000 IU per drop",
+    "pack": "30 мл",
+    "price": "13.04",
+    "url": "https://fitness1.bg/vitamini/now-foods/liquid-vitamin-d-3-ultra-1000-iu-per-drop/34164",
+    "image": "now-foods_24164.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "19818",
+    "brand": "SWANSON",
+    "name": "High Potency Vitamin D3 1000 IU",
+    "pack": "250 капсули",
+    "price": "11.17",
+    "url": "https://fitness1.bg/vitamini/swanson/swanson-high-potency-vitamin-d3/29818",
+    "image": "swanson_19818.webp",
+    "brandSlug": "swanson"
   },
   {
     "id": "44891",
     "brand": "Aura Herbals",
-    "brandSlug": "aura-herbals",
-    "name": "Vitamin D3 + K2 Forte Drops",
+    "name": "Vitamin D3 4000 IU + K2 FORTE",
     "pack": "30 мл",
-    "price": "16.90",
-    "image": "44891.webp",
-    "url": ""
+    "price": "22.68",
+    "url": "https://fitness1.bg/vitamini/aura-herbals/vitamin-d3-4000-iu-k2-forte/54891",
+    "image": "aura-herbals_44891.webp",
+    "brandSlug": "aura-herbals"
+  },
+  {
+    "id": "31990",
+    "brand": "NOW Foods",
+    "name": "Ultra A & D-3 | Vitamin A 25.000 & Vitamin D 1000 IU",
+    "pack": "100 Гел капсули",
+    "price": "10.35",
+    "url": "https://fitness1.bg/vitamini/now-foods/ultra-a-amp-d-3-vitamin-a-25000-amp-vitamin-d-1000-iu/41990",
+    "image": "now-foods_31990.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "19920",
+    "brand": "Natural Factors",
+    "name": "Vitamin K 120 mcg & Vitamin D 1000 IU",
+    "pack": "60 Гел капсули",
+    "price": "14.32",
+    "url": "https://fitness1.bg/vitamini/natural-factors/natural-factors-vitamin-k-d/29920",
+    "image": "natural-factors_19920.webp",
+    "brandSlug": "natural-factors"
+  },
+  {
+    "id": "5220",
+    "brand": "NOW Foods",
+    "name": "Liquid Vitamin D-3 / 100 IU per drop",
+    "pack": "60 мл",
+    "price": "10.74",
+    "url": "https://fitness1.bg/vitamini/now-foods/nowfoods-liquid-vitamin-d/15220",
+    "image": "now-foods_5220.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "32421",
+    "brand": "NOW Foods",
+    "name": "Vitamin D 1000 IU | Vegetarian Dry",
+    "pack": "120 капсули",
+    "price": "11.12",
+    "url": "https://fitness1.bg/vitamini/now-foods/vitamin-d-1000-iu-vegetarian-dry/42421",
+    "image": "now-foods_32421.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "5189",
+    "brand": "NOW Foods",
+    "name": "Vitamin D-3 1000 IU | Chewable",
+    "pack": "180 Дъвчащи таблетки",
+    "price": "11.50",
+    "url": "https://fitness1.bg/vitamini/now-foods/now-foods-vit-d-1000-iu-180-softgels/15189",
+    "image": "now-foods_5189.webp",
+    "brandSlug": "now-foods"
   }
 ]

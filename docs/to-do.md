@@ -54,7 +54,7 @@ Use these defaults unless the project owner decides otherwise:
   - `"format": "prettier --write ."`
 - [x] Update `.gitignore`:
   - [x] remove `/docs`, so the plan and this to-do list are committed
-  - [x] ~~keep `/images` ignored~~ `/images` is now committed, so the seed works after a fresh clone (the original folder was lost once)
+  - [x] ~~keep `/images` ignored~~ `/images` is now committed, so the seed works after a fresh clone (a second computer once had no copy and the catalog had to be rebuilt; the original data was restored on 2026-10-22)
   - [x] decide whether to commit `public/products/` (recommended: **yes**, so a fresh clone works)
   - [x] make sure `.env*` is ignored, except `.env.example`
 

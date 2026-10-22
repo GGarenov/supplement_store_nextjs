@@ -2,191 +2,201 @@
   {
     "id": "82",
     "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Kid Vits Berry Blast",
-    "pack": "120 дъвчащи таблетки",
-    "price": "19.90",
-    "image": "82.webp",
-    "url": ""
-  },
-  {
-    "id": "1524",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Berry Dophilus Chewables",
-    "pack": "60 дъвчащи таблетки",
-    "price": "14.90",
-    "image": "1524.webp",
-    "url": ""
-  },
-  {
-    "id": "1577",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Kids DHA Fish Oil Chewables",
-    "pack": "60 гел капсули",
-    "price": "15.90",
-    "image": "1577.webp",
-    "url": ""
-  },
-  {
-    "id": "1628",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Kid Cal",
-    "pack": "100 дъвчащи таблетки",
-    "price": "13.90",
-    "image": "1628.webp",
-    "url": ""
-  },
-  {
-    "id": "22687",
-    "brand": "Garden of Life",
-    "brandSlug": "garden-of-life",
-    "name": "Mykind Organics Kids Multi Gummies",
-    "pack": "120 желирани бонбони",
-    "price": "27.90",
-    "image": "22687.webp",
-    "url": ""
-  },
-  {
-    "id": "27014",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Kids Berry Dophilus Chewables",
-    "pack": "120 дъвчащи таблетки",
-    "price": "19.90",
-    "image": "27014.webp",
-    "url": ""
-  },
-  {
-    "id": "33036",
-    "brand": "Garden of Life",
-    "brandSlug": "garden-of-life",
-    "name": "Vitamin Code Kids",
-    "pack": "60 дъвчащи таблетки",
-    "price": "24.90",
-    "image": "33036.webp",
-    "url": ""
-  },
-  {
-    "id": "33281",
-    "brand": "Osavi",
-    "brandSlug": "osavi",
-    "name": "Daily Omega Kids",
-    "pack": "150 мл",
-    "price": "17.90",
-    "image": "33281.webp",
-    "url": ""
-  },
-  {
-    "id": "33286",
-    "brand": "Osavi",
-    "brandSlug": "osavi",
-    "name": "Cod Liver Oil Kids",
-    "pack": "150 мл",
-    "price": "17.90",
-    "image": "33286.webp",
-    "url": ""
+    "name": "Kid Vits",
+    "pack": "120 Дъвчащи таблетки",
+    "price": "18.71",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/now-foods/kid-vits/10082",
+    "image": "now-foods_82.webp",
+    "brandSlug": "now-foods"
   },
   {
     "id": "34176",
     "brand": "Nordic Naturals",
-    "brandSlug": "nordic-naturals",
-    "name": "Baby's DHA",
+    "name": "Baby's DHA | 1050mg Omega-3 With Vitamin D",
     "pack": "60 мл",
-    "price": "24.90",
-    "image": "34176.webp",
-    "url": ""
-  },
-  {
-    "id": "34181",
-    "brand": "Nordic Naturals",
-    "brandSlug": "nordic-naturals",
-    "name": "Children's DHA Gummies",
-    "pack": "30 желирани бонбони",
-    "price": "17.90",
-    "image": "34181.webp",
-    "url": ""
-  },
-  {
-    "id": "34183",
-    "brand": "Nordic Naturals",
-    "brandSlug": "nordic-naturals",
-    "name": "Children's DHA Xtra",
-    "pack": "60 мл",
-    "price": "26.90",
-    "image": "34183.webp",
-    "url": ""
+    "price": "28.10",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/nordic-naturals/baby39s-dha-1050mg-omega-3-with-vitamin-d/44176",
+    "image": "nordic-naturals_34176.webp",
+    "brandSlug": "nordic-naturals"
   },
   {
     "id": "34187",
     "brand": "Nordic Naturals",
-    "brandSlug": "nordic-naturals",
-    "name": "Children's DHA Fish Oil",
+    "name": "Children's DHA 530 mg",
     "pack": "119 мл",
-    "price": "22.90",
-    "image": "34187.webp",
-    "url": ""
+    "price": "31.67",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/nordic-naturals/children39s-dha-530-mg/44187",
+    "image": "nordic-naturals_34187.webp",
+    "brandSlug": "nordic-naturals"
   },
   {
-    "id": "34188",
-    "brand": "Nordic Naturals",
-    "brandSlug": "nordic-naturals",
-    "name": "Children's DHA Fish Oil",
-    "pack": "237 мл",
-    "price": "36.90",
-    "image": "34188.webp",
-    "url": ""
+    "id": "27014",
+    "brand": "NOW Foods",
+    "name": "BerryDophilus",
+    "pack": "120 Дъвчащи таблетки",
+    "price": "23.01",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/now-foods/now-foods-berrydophilus-60-dyvchashti-drajeta/37014",
+    "image": "now-foods_27014.webp",
+    "brandSlug": "now-foods"
   },
   {
-    "id": "34279",
-    "brand": "Nordic Naturals",
-    "brandSlug": "nordic-naturals",
-    "name": "Ultimate Omega 2X Teen",
-    "pack": "60 гел капсули",
-    "price": "27.90",
-    "image": "34279.webp",
-    "url": ""
+    "id": "34872",
+    "brand": "Garden Of Life",
+    "name": "Dr. Formulated Probiotics Organic Kids+",
+    "pack": "30 Дъвчащи таблетки",
+    "price": "38.32",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/garden-of-life/dr-formulated-probiotics-organic-kids/44872",
+    "image": "garden-of-life_34872.webp",
+    "brandSlug": "garden-of-life"
+  },
+  {
+    "id": "1628",
+    "brand": "NOW Foods",
+    "name": "Kid Cal - Mag",
+    "pack": "100 Дъвчащи таблетки",
+    "price": "16.49",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/now-foods/now-foods-kid-cal/11628",
+    "image": "now-foods_1628.webp",
+    "brandSlug": "now-foods"
   },
   {
     "id": "34287",
     "brand": "Nordic Naturals",
-    "brandSlug": "nordic-naturals",
-    "name": "Ultimate Omega Jr.",
-    "pack": "90 гел капсули",
-    "price": "24.90",
-    "image": "34287.webp",
-    "url": ""
+    "name": "Ultimate Omega Junior 680 mg",
+    "pack": "90 Гел капсули",
+    "price": "50.59",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/nordic-naturals/ultimate-omega-junior-680-mg/44287",
+    "image": "nordic-naturals_34287.webp",
+    "brandSlug": "nordic-naturals"
   },
   {
-    "id": "34872",
-    "brand": "Garden of Life",
-    "brandSlug": "garden-of-life",
-    "name": "Dr. Formulated Probiotics Organic Kids+",
-    "pack": "30 дъвчащи таблетки",
-    "price": "21.90",
-    "image": "34872.webp",
-    "url": ""
+    "id": "34183",
+    "brand": "Nordic Naturals",
+    "name": "Children's DHA Xtra 880mg",
+    "pack": "60 мл",
+    "price": "51.10",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/nordic-naturals/children39s-dha-xtra-880mg/44183",
+    "image": "nordic-naturals_34183.webp",
+    "brandSlug": "nordic-naturals"
   },
   {
     "id": "40188",
-    "brand": "ChildLife",
-    "brandSlug": "childlife",
-    "name": "Pure DHA",
-    "pack": "90 гел капсули",
-    "price": "19.90",
-    "image": "40188.webp",
-    "url": ""
+    "brand": "ChildLife Essentials",
+    "name": "Pure DHA Chewable",
+    "pack": "90 Дъвчащи гел капсули",
+    "price": "15.31",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/childlife-essentials/pure-dha-chewable/50188",
+    "image": "childlife-essentials_40188.webp",
+    "brandSlug": "childlife-essentials"
+  },
+  {
+    "id": "34181",
+    "brand": "Nordic Naturals",
+    "name": "Children's DHA Gummies 600 mg",
+    "pack": "30 желирани бонбони",
+    "price": "39.34",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/nordic-naturals/children39s-dha-gummies-600mg/44181",
+    "image": "nordic-naturals_34181.webp",
+    "brandSlug": "nordic-naturals"
+  },
+  {
+    "id": "1577",
+    "brand": "NOW Foods",
+    "name": "DHA 100 mg Kid's Chewable",
+    "pack": "60 дъвчащи дражета",
+    "price": "17.26",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/now-foods/now-foods-dha-100mg-kids-chew/11577",
+    "image": "now-foods_1577.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "33281",
+    "brand": "Osavi",
+    "name": "Daily Omega Kids Liquid | Nаtural Lemon Flavored",
+    "pack": "250 мл",
+    "price": "22.98",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/osavi/daily-omega-kids-liquid-nаtural-lemon-flavored/43281",
+    "image": "osavi_33281.webp",
+    "brandSlug": "osavi"
+  },
+  {
+    "id": "33286",
+    "brand": "Osavi",
+    "name": "Norwegian Cod Liver Oil Kids | Lemon Flavored Liquid Omega",
+    "pack": "250 мл",
+    "price": "24.01",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/osavi/norwegian-cod-liver-oil-kids-lemon-flavored-liquid-omega/43286",
+    "image": "osavi_33286.webp",
+    "brandSlug": "osavi"
+  },
+  {
+    "id": "22687",
+    "brand": "Garden Of Life",
+    "name": "MyKind / Organic Kids Multi / Gummies",
+    "pack": "120 желирани бонбони",
+    "price": "54.17",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/garden-of-life/garden-of-life-mykind-organic-kids-multi-gummies/32687",
+    "image": "garden-of-life_22687.webp",
+    "brandSlug": "garden-of-life"
+  },
+  {
+    "id": "34188",
+    "brand": "Nordic Naturals",
+    "name": "Children's DHA 530 mg",
+    "pack": "237 мл",
+    "price": "48.55",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/nordic-naturals/children39s-dha-530-mg/44188",
+    "image": "nordic-naturals_34188.webp",
+    "brandSlug": "nordic-naturals"
   },
   {
     "id": "44960",
     "brand": "Cvetita Herbal",
-    "brandSlug": "cvetita-herbal",
-    "name": "Appetite Stop Apple Cider Vinegar For Kids",
-    "pack": "60 дъвчащи таблетки",
-    "price": "11.90",
-    "image": "44960.webp",
-    "url": ""
+    "name": "Appetite Stop for Kids | Apple Cider Vinegar 300 mg",
+    "pack": "60 Дъвчащи таблетки",
+    "price": "35.00",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/cvetita-herbal/appetite-stop-for-kids-apple-cider-vinegar-300-mg/54960",
+    "image": "cvetita-herbal_44960.webp",
+    "brandSlug": "cvetita-herbal"
+  },
+  {
+    "id": "33036",
+    "brand": "Garden Of Life",
+    "name": "Vitamin Code / KIDS",
+    "pack": "60 желирани бонбони",
+    "price": "44.97",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/garden-of-life/garden-of-life-vitamin-code-kids-30chew/43036",
+    "image": "garden-of-life_33036.webp",
+    "brandSlug": "garden-of-life"
+  },
+  {
+    "id": "1524",
+    "brand": "NOW Foods",
+    "name": "BerryDophilus",
+    "pack": "60 Дъвчащи таблетки",
+    "price": "13.81",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/now-foods/now-foods-berrydophilus-60-dyvchashti-drajeta/11524",
+    "image": "now-foods_1524.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "34279",
+    "brand": "Nordic Naturals",
+    "name": "Ultimate Omega 2X TEEN",
+    "pack": "60 Гел капсули",
+    "price": "58.77",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/nordic-naturals/ultimate-omega-2x-teen/44279",
+    "image": "nordic-naturals_34279.webp",
+    "brandSlug": "nordic-naturals"
+  },
+  {
+    "id": "43315",
+    "brand": "Zein Pharma",
+    "name": "Vitamin D3 + K2 Family Drops",
+    "pack": "20 мл",
+    "price": "14.44",
+    "url": "https://fitness1.bg/zdrave-za-cyaloto-semeystvo/zein-pharma/vitamin-d3-k2-family-drops/53315",
+    "image": "zein-pharma_43315.webp",
+    "brandSlug": "zein-pharma"
   }
 ]

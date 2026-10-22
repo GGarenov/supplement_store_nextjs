@@ -100,8 +100,8 @@ async function seedProducts(
 
   const ids: string[] = [];
   for (const p of products) {
-    // Fake values are generated on every run (to keep the faker sequence stable)
-    // but only written on create, so re-seeding doesn't reset stock or sales.
+    // Fake values are generated on every run (to keep the faker sequence stable).
+    // Stock and sales are only written on create, so re-seeding doesn't reset them.
     const stock =
       faker.number.float() < 0.05 ? 0 : faker.number.int({ min: 1, max: 150 });
     const soldCount = faker.number.int({ min: 0, max: 500 });
@@ -121,12 +121,12 @@ async function seedProducts(
       packLabel: p.pack.label,
       image: p.imagePath,
       featured: featured.has(p.sourceId),
-      categories: {
-        connect: p.categorySlugs.map((slug) => ({
-          id: categoryIds.get(slug)!,
-        })),
-      },
+      // Built from the name and brand, so it's refreshed together with them.
+      description,
     };
+    const categoryRefs = p.categorySlugs.map((slug) => ({
+      id: categoryIds.get(slug)!,
+    }));
 
     const row = await db.product.upsert({
       where: { sourceId: p.sourceId },
@@ -134,10 +134,12 @@ async function seedProducts(
         sourceId: p.sourceId,
         stock,
         soldCount,
-        description,
         ...catalogFields,
+        categories: { connect: categoryRefs },
       },
-      update: catalogFields,
+      // `set` replaces the product's categories with the ones in the source
+      // data, so moving a product to another folder doesn't leave it in both.
+      update: { ...catalogFields, categories: { set: categoryRefs } },
     });
     ids.push(row.id);
   }
@@ -347,6 +349,14 @@ async function main() {
     categoryIds,
   );
   console.log(`Products: ${productIds.length}`);
+
+  // Brands left over from earlier source data (e.g. renamed ones) have no
+  // products any more. Brands a promotion points to are kept.
+  const orphans = await db.brand.deleteMany({
+    where: { products: { none: {} }, promotions: { none: {} } },
+  });
+  if (orphans.count)
+    console.log(`Removed ${orphans.count} brands with no products`);
 
   const { admin, users } = await seedUsers();
   console.log(`Users: ${users.length + 1} (admin: ${admin.email})`);

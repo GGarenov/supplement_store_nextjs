@@ -1,52 +1,132 @@
 [
   {
-    "id": "27433",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "D-Ribose Powder",
-    "pack": "227 грама",
-    "price": "24.90",
-    "image": "27433.webp",
-    "url": ""
+    "id": "10243",
+    "brand": "PEAK",
+    "name": "Createston / Professional",
+    "pack": "3150 грама",
+    "price": "152.88",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/peak/peak-createston-professional-2015/20243",
+    "image": "peak_10243.webp",
+    "brandSlug": "peak"
   },
   {
-    "id": "30807",
-    "brand": "Applied Nutrition",
-    "brandSlug": "applied-nutrition",
-    "name": "Sex Bomb For Him",
-    "pack": "120 капсули",
-    "price": "24.90",
-    "image": "30807.webp",
-    "url": ""
+    "id": "10244",
+    "brand": "PEAK",
+    "name": "Createston / Professional",
+    "pack": "1575 грама",
+    "price": "86.41",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/peak/peak-createston-professional-2015/20244",
+    "image": "peak_10244.webp",
+    "brandSlug": "peak"
   },
   {
-    "id": "36566",
-    "brand": "HR Labs",
-    "brandSlug": "hr-labs",
-    "name": "Basic",
-    "pack": "510 грама",
-    "price": "29.90",
-    "image": "36566.webp",
-    "url": ""
+    "id": "24550",
+    "brand": "PEAK",
+    "name": "Createston / Zero",
+    "pack": "1560 грама",
+    "price": "91.52",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/peak/createston-zero/34550",
+    "image": "peak_24550.webp",
+    "brandSlug": "peak"
+  },
+  {
+    "id": "10245",
+    "brand": "PEAK",
+    "name": "Createston / Classic+",
+    "pack": "3090 грама",
+    "price": "117.09",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/peak/peak-createston-normal-2015/20245",
+    "image": "peak_10245.webp",
+    "brandSlug": "peak"
+  },
+  {
+    "id": "10246",
+    "brand": "PEAK",
+    "name": "Createston / Classic+",
+    "pack": "1648 грама",
+    "price": "65.96",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/peak/peak-createston-normal-2015/20246",
+    "image": "peak_10246.webp",
+    "brandSlug": "peak"
+  },
+  {
+    "id": "45020",
+    "brand": "AHerb",
+    "name": "ALL-IN Pro | Performance, Recovery & Energy",
+    "pack": "600 грама",
+    "price": "34.77",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/aherb/all-in-pro-performance-recovery-amp-energy/55020",
+    "image": "aherb_45020.webp",
+    "brandSlug": "aherb"
+  },
+  {
+    "id": "42249",
+    "brand": "PEAK",
+    "name": "Createston Vegan",
+    "pack": "1545 грама",
+    "price": "75.13",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/peak/createston-vegan/52249",
+    "image": "peak_42249.webp",
+    "brandSlug": "peak"
+  },
+  {
+    "id": "30204",
+    "brand": "GymBeam",
+    "name": "FueGain",
+    "pack": "2500 грама",
+    "price": "51.10",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/gymbeam/fuegain/40204",
+    "image": "gymbeam_30204.webp",
+    "brandSlug": "gymbeam"
+  },
+  {
+    "id": "4568",
+    "brand": "AMIX",
+    "name": "Anabolic Masster",
+    "pack": "2200 грама",
+    "price": "81.30",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/amix/amix-anabolic-masster/14568",
+    "image": "amix_4568.webp",
+    "brandSlug": "amix"
   },
   {
     "id": "45669",
     "brand": "Apex Formulas",
-    "brandSlug": "apex-formulas",
-    "name": "Morning Ritual",
-    "pack": "450 грама",
-    "price": "39.90",
-    "image": "45669.webp",
-    "url": ""
+    "name": "Morning Ritual | All-in-One Daily Formula",
+    "pack": "600 грама",
+    "price": "56.22",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/apex-formulas/morning-ritual-all-in-one-daily-formula/55669",
+    "image": "apex-formulas_45669.webp",
+    "brandSlug": "apex-formulas"
+  },
+  {
+    "id": "36566",
+    "brand": "HR Labs",
+    "name": "Basic | All Muscle Building Formula",
+    "pack": "510 грама",
+    "price": "56.22",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/hr-labs/basic-all-muscle-building-formula/46566",
+    "image": "hr-labs_36566.webp",
+    "brandSlug": "hr-labs"
   },
   {
     "id": "47190",
     "brand": "Apex Formulas",
-    "brandSlug": "apex-formulas",
-    "name": "Morning Ritual",
-    "pack": "450 грама",
-    "price": "39.90",
-    "image": "47190.webp",
-    "url": ""
+    "name": "Morning Ritual - New Formula",
+    "pack": "660 грама",
+    "price": "56.22",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/apex-formulas/morning-ritual-new-formula/57190",
+    "image": "apex-formulas_47190.webp",
+    "brandSlug": "apex-formulas"
+  },
+  {
+    "id": "4688",
+    "brand": "AMIX",
+    "name": "Anabolic Masster",
+    "pack": "50 грама",
+    "price": "2.56",
+    "url": "https://fitness1.bg/kachvane-na-teglo-i-vazstanovyavane/amix/amix-anabolic-masster/14688",
+    "image": "amix_4688.webp",
+    "brandSlug": "amix"
   }
 ]

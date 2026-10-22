@@ -1,202 +1,202 @@
 [
   {
-    "id": "7421",
-    "brand": "MyProtein",
-    "brandSlug": "myprotein",
-    "name": "Myvitamins Zinc",
-    "pack": "90 таблетки",
-    "price": "7.90",
-    "image": "7421.webp",
-    "url": ""
-  },
-  {
-    "id": "7817",
-    "brand": "Peak",
-    "brandSlug": "peak",
-    "name": "Zinc Chelate",
-    "pack": "180 таблетки",
-    "price": "14.90",
-    "image": "7817.webp",
-    "url": ""
-  },
-  {
-    "id": "11521",
-    "brand": "Jarrow Formulas",
-    "brandSlug": "jarrow-formulas",
-    "name": "Zinc Balance",
-    "pack": "100 капсули",
-    "price": "12.90",
-    "image": "11521.webp",
-    "url": ""
-  },
-  {
-    "id": "13330",
-    "brand": "Garden of Life",
-    "brandSlug": "garden-of-life",
-    "name": "Vitamin Code Raw Zinc",
-    "pack": "60 капсули",
-    "price": "22.90",
-    "image": "13330.webp",
-    "url": ""
-  },
-  {
-    "id": "21442",
-    "brand": "Swanson",
-    "brandSlug": "swanson",
-    "name": "Zinc Orotate",
-    "pack": "60 капсули",
-    "price": "6.90",
-    "image": "21442.webp",
-    "url": ""
-  },
-  {
-    "id": "24780",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Zinc Picolinate 15 mg",
-    "pack": "150 таблетки",
-    "price": "7.90",
-    "image": "24780.webp",
-    "url": ""
-  },
-  {
-    "id": "25681",
-    "brand": "Grassberg",
-    "brandSlug": "grassberg",
-    "name": "Zinc Picolinate 15 mg",
-    "pack": "60 капсули",
-    "price": "7.90",
-    "image": "25681.webp",
-    "url": ""
-  },
-  {
-    "id": "26806",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Zinc Picolinate Limited Edition",
-    "pack": "200 таблетки",
-    "price": "9.90",
-    "image": "26806.webp",
-    "url": ""
-  },
-  {
-    "id": "27389",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Triple Zinc",
-    "pack": "90 капсули",
-    "price": "6.90",
-    "image": "27389.webp",
-    "url": ""
-  },
-  {
-    "id": "29433",
-    "brand": "Applied Nutrition",
-    "brandSlug": "applied-nutrition",
-    "name": "Zinc Chelated Bisglycinate",
-    "pack": "90 капсули",
-    "price": "9.90",
-    "image": "29433.webp",
-    "url": ""
-  },
-  {
-    "id": "31800",
-    "brand": "Grassberg",
-    "brandSlug": "grassberg",
-    "name": "Zinc Picolinate",
-    "pack": "180 капсули",
-    "price": "14.90",
-    "image": "31800.webp",
-    "url": ""
-  },
-  {
     "id": "32164",
     "brand": "Osavi",
-    "brandSlug": "osavi",
-    "name": "Zinc + Copper",
+    "name": "Zinc + Copper | L-OptiZinc®",
     "pack": "120 капсули",
-    "price": "12.90",
-    "image": "32164.webp",
-    "url": ""
+    "price": "21.45",
+    "url": "https://fitness1.bg/minerali/osavi/zinc-copper-l-optizinc/42164",
+    "image": "osavi_32164.webp",
+    "brandSlug": "osavi"
   },
   {
     "id": "32345",
     "brand": "Doctor's Best",
-    "brandSlug": "doctors-best",
-    "name": "PepZin GI Zinc-L-Carnosine",
+    "name": "PepZinGI® | Zinc Carnosine Complex",
     "pack": "120 капсули",
-    "price": "24.90",
-    "image": "32345.webp",
-    "url": ""
-  },
-  {
-    "id": "33344",
-    "brand": "Pure Nutrition",
-    "brandSlug": "pure-nutrition",
-    "name": "Zinc Immune Support",
-    "pack": "100 капсули",
-    "price": "7.90",
-    "image": "33344.webp",
-    "url": ""
-  },
-  {
-    "id": "40356",
-    "brand": "Unknown",
-    "brandSlug": "unknown",
-    "name": "Zinc 15 mg",
-    "pack": "120 капсули",
-    "price": "8.90",
-    "image": "40356.webp",
-    "url": ""
-  },
-  {
-    "id": "43513",
-    "brand": "Zein Pharma",
-    "brandSlug": "zein-pharma",
-    "name": "Zinc Glycinate 15 Mg",
-    "pack": "120 капсули",
-    "price": "12.90",
-    "image": "43513.webp",
-    "url": ""
-  },
-  {
-    "id": "43516",
-    "brand": "Zein Pharma",
-    "brandSlug": "zein-pharma",
-    "name": "Zinc Drops 15 Mg",
-    "pack": "50 мл",
-    "price": "16.90",
-    "image": "43516.webp",
-    "url": ""
-  },
-  {
-    "id": "44172",
-    "brand": "Osavi",
-    "brandSlug": "osavi",
-    "name": "Zinc + Copper",
-    "pack": "60 капсули",
-    "price": "9.90",
-    "image": "44172.webp",
-    "url": ""
-  },
-  {
-    "id": "47398",
-    "brand": "Swedish Supplements",
-    "brandSlug": "swedish-supplements",
-    "name": "Zinc",
-    "pack": "60 капсули",
-    "price": "7.90",
-    "image": "47398.webp",
-    "url": ""
+    "price": "39.81",
+    "url": "https://fitness1.bg/minerali/doctors-best/zinc-l-carnosine-complex/42345",
+    "image": "doctors-best_32345.webp",
+    "brandSlug": "doctors-best"
   },
   {
     "id": "47513",
     "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Zinc Transporters",
-    "pack": "90 таблетки",
-    "price": "12.90",
-    "image": "47513.webp",
-    "url": ""
+    "name": "Zinc Transporters | Matrix with Zinc Gluconate, L-OptiZinc®, Picolinate, Bisglycinate Albion™",
+    "pack": "90 Таблетки",
+    "price": "11.12",
+    "url": "https://fitness1.bg/minerali/now-foods/zinc-transporters-matrix-with-zinc-gluconate-l-optizinc-picolinate-bisglycinate-albion/57513",
+    "image": "now-foods_47513.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "24780",
+    "brand": "OstroVit",
+    "name": "Zinc Picolinate 15 mg",
+    "pack": "150 Таблетки",
+    "price": "8.67",
+    "url": "https://fitness1.bg/minerali/ostrovit/zinc-picolinate-15-mg/34780",
+    "image": "ostrovit_24780.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "26806",
+    "brand": "OstroVit",
+    "name": "Zinc Picolinate 15 mg / Limited Edition",
+    "pack": "200 Таблетки",
+    "price": "10.71",
+    "url": "https://fitness1.bg/minerali/ostrovit/zinc-picolinate-15-mg-limited-edition/36806",
+    "image": "ostrovit_26806.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "11521",
+    "brand": "Jarrow Formulas",
+    "name": "Zinc Balance / L-Opti Zinc 15 mg",
+    "pack": "100 капсули",
+    "price": "20.96",
+    "url": "https://fitness1.bg/minerali/jarrow-formulas/jarrow-formulas-zinc-balance/21521",
+    "image": "jarrow-formulas_11521.webp",
+    "brandSlug": "jarrow-formulas"
+  },
+  {
+    "id": "43513",
+    "brand": "Zein Pharma",
+    "name": "Zinc Bisglycinate 15 mg",
+    "pack": "120 капсули",
+    "price": "10.69",
+    "url": "https://fitness1.bg/minerali/zein-pharma/zinc-bisglycinate-15-mg2/53513",
+    "image": "zein-pharma_43513.webp",
+    "brandSlug": "zein-pharma"
+  },
+  {
+    "id": "40356",
+    "brand": "MP Sport",
+    "name": "Zinc 15 mg | as Zinc Gluconate",
+    "pack": "120 капсули",
+    "price": "6.11",
+    "url": "https://fitness1.bg/minerali/mp-sport/zinc-15-mg-as-zinc-gluconate2/50356",
+    "image": "mp-sport_40356.webp",
+    "brandSlug": "mp-sport"
+  },
+  {
+    "id": "13330",
+    "brand": "Garden Of Life",
+    "name": "Vitamin Code / RAW Zinc",
+    "pack": "60 капсули",
+    "price": "25.54",
+    "url": "https://fitness1.bg/minerali/garden-of-life/garden-of-life-vitamin-code-raw-zinc-60veg/23330",
+    "image": "garden-of-life_13330.webp",
+    "brandSlug": "garden-of-life"
+  },
+  {
+    "id": "44172",
+    "brand": "Osavi",
+    "name": "Zinc + Copper | L-OptiZinc®",
+    "pack": "60 капсули",
+    "price": "11.22",
+    "url": "https://fitness1.bg/minerali/osavi/zinc-copper-l-optizinc/54172",
+    "image": "osavi_44172.webp",
+    "brandSlug": "osavi"
+  },
+  {
+    "id": "27389",
+    "brand": "OstroVit",
+    "name": "Triple Zinc / Gluconate + Picolinate + Citrate",
+    "pack": "90 капсули",
+    "price": "10.71",
+    "url": "https://fitness1.bg/minerali/ostrovit/triple-zinc-gluconate-picolinate-citrate/37389",
+    "image": "ostrovit_27389.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "33344",
+    "brand": "PURE Nutrition USA",
+    "name": "Zinc Picolinate 15 mg",
+    "pack": "100 капсули",
+    "price": "10.23",
+    "url": "https://fitness1.bg/minerali/pure-nutrition/zinc-picolinate-15-mg2/43344",
+    "image": "pure-nutrition-usa_33344.webp",
+    "brandSlug": "pure-nutrition-usa"
+  },
+  {
+    "id": "29433",
+    "brand": "Applied Nutrition",
+    "name": "Zinc Vitality | 15 mg Zinc Bisglycinate",
+    "pack": "90 капсули",
+    "price": "17.12",
+    "url": "https://fitness1.bg/minerali/applied-nutrition/zinc-vitality-15-mg-zinc-bisglycinate/39433",
+    "image": "applied-nutrition_29433.webp",
+    "brandSlug": "applied-nutrition"
+  },
+  {
+    "id": "31800",
+    "brand": "Grassberg",
+    "name": "Zinc Picolinate 15 mg - High Absorption",
+    "pack": "180 капсули",
+    "price": "18.15",
+    "url": "https://fitness1.bg/minerali/grassberg/zinc-picolinate-15-mg-high-absorption/41800",
+    "image": "grassberg_31800.webp",
+    "brandSlug": "grassberg"
+  },
+  {
+    "id": "47398",
+    "brand": "SWEDISH Supplements",
+    "name": "Zinc 25 mg | as Zinc Citrate",
+    "pack": "60 капсули",
+    "price": "6.12",
+    "url": "https://fitness1.bg/minerali/swedish-supplements/zinc-25-mg-as-zinc-citrate/57398",
+    "image": "swedish-supplements_47398.webp",
+    "brandSlug": "swedish-supplements"
+  },
+  {
+    "id": "21442",
+    "brand": "SWANSON",
+    "name": "Zinc Orotate 10 mg",
+    "pack": "60 капсули",
+    "price": "10.67",
+    "url": "https://fitness1.bg/minerali/swanson/zinc-orotate/31442",
+    "image": "swanson_21442.webp",
+    "brandSlug": "swanson"
+  },
+  {
+    "id": "7421",
+    "brand": "MyProtein",
+    "name": "Zinc",
+    "pack": "90 Таблетки",
+    "price": "7.75",
+    "url": "https://fitness1.bg/minerali/myprotein/myprotein-zinc-90-tabs/17421",
+    "image": "myprotein_7421.webp",
+    "brandSlug": "myprotein"
+  },
+  {
+    "id": "25681",
+    "brand": "Grassberg",
+    "name": "Zinc Picolinate 15 mg - High Absorption",
+    "pack": "60 капсули",
+    "price": "11.50",
+    "url": "https://fitness1.bg/minerali/grassberg/zinc-picolinate-15-mg-high-absorption/35681",
+    "image": "grassberg_25681.webp",
+    "brandSlug": "grassberg"
+  },
+  {
+    "id": "7817",
+    "brand": "PEAK",
+    "name": "Zinc Chelate",
+    "pack": "180 Таблетки",
+    "price": "15.34",
+    "url": "https://fitness1.bg/minerali/peak/peak-zink-chelat/17817",
+    "image": "peak_7817.webp",
+    "brandSlug": "peak"
+  },
+  {
+    "id": "43516",
+    "brand": "Zein Pharma",
+    "name": "Zinc Drops 15 mg",
+    "pack": "50 мл",
+    "price": "13.37",
+    "url": "https://fitness1.bg/minerali/zein-pharma/zinc-drops-15-mg2/53516",
+    "image": "zein-pharma_43516.webp",
+    "brandSlug": "zein-pharma"
   }
 ]

@@ -9,27 +9,33 @@ All times are UTC+03:00.
 
 ## Overview
 
-*Last updated: 2026-10-21 22:10*
+*Last updated: 2026-10-22 09:45*
 
 ### Status by phase
 
 | Phase | Status | Commit |
 |---|---|---|
 | 0. Project setup | ✅ Done; Supabase connected | `0357135` |
-| 1. Data model and seeding | ✅ Migrated and seeded (catalog rebuilt from the photos) | `0357135` + uncommitted migration |
+| 1. Data model and seeding | ✅ Migrated and seeded · ⚠ the database still holds the rebuilt catalog: **re-seed needed** | `0357135` + `f3a52ae` (migration) |
 | 2. Layout and design system | ✅ Done and checked in the browser | `da00e29` + `f5672f8` |
-| 3. Catalog | ✅ Checked in the browser with real data | `5358fc5` + uncommitted fixes |
-| 4. Authentication | ✅ Register, log in, log out and redirects checked · ⏳ admin login not tried | `c5d25d9` + uncommitted fix |
+| 3. Catalog | ✅ Checked in the browser with real data | `5358fc5` + `f3a52ae` (fixes) |
+| 4. Authentication | ✅ Register, log in, log out and redirects checked · ⏳ admin login not tried | `c5d25d9` + `f3a52ae` (fix) |
 | 5. Cart | ⬜ Next | |
 | 6–11 | ⬜ Not started | |
 
-**In short:** the store runs against the Supabase database, with real products and users. Phases 0–4 are checked in the browser. The work of the 21:00 entry is not committed yet.
+**In short:** the store runs against the Supabase database. Phases 0–4 are checked in the browser. The **original** catalog data (`images/`) is back in the repo and replaces the version rebuilt from the photos. The database gets it with the next `npm run db:seed`.
 
 ### Still open
 
-1. **Admin login:** log in as `admin@healthystreet.test` with the `SEED_ADMIN_PASSWORD` from `.env`, and check that `/admin` opens.
-2. **Optional: Google OAuth.** Set `AUTH_GOOGLE_ID` and `AUTH_GOOGLE_SECRET` (redirect URI `http://localhost:3000/api/auth/callback/google`); the Google button then appears.
-3. **Commit** the migration (`prisma/migrations/`) and the fixes.
+1. **Re-seed with the original catalog.** On the computer that has `.env`:
+   - `git pull`, then `npm run db:seed`
+   - Check:
+     - names and prices match the original data (e.g. "BCAA Instant Powder" by OstroVit, €26.05)
+     - `/brands` has 94 brands
+     - the 5 products listed in two folders show up in both categories
+   - The seed now replaces each product's categories and removes brands left without products (see the 2026-10-22 09:45 entry).
+2. **Admin login:** log in as `admin@healthystreet.test` with the `SEED_ADMIN_PASSWORD` from `.env`, and check that `/admin` opens.
+3. **Optional: Google OAuth.** Set `AUTH_GOOGLE_ID` and `AUTH_GOOGLE_SECRET` (redirect URI `http://localhost:3000/api/auth/callback/google`); the Google button then appears.
 
 ### Tech stack and versions
 
@@ -69,13 +75,13 @@ All times are UTC+03:00.
 | `src/proxy.ts` plus page-level guards | Next 16 renamed Middleware to Proxy; the proxy is only an early check | Phase 4 |
 | JWT sessions | Required by the Credentials provider | Phase 4 |
 | Google login only when configured | No broken button without credentials | Phase 4 |
-| `images/**/products.json` rebuilt from the product photos | The original source folder was lost; it was never in git | Supabase |
+| `images/` (the source catalog) is committed, and it's the **original** data | It used to be gitignored, so a second computer had no source data and had to rebuild it from the photos. The original was then found on the first computer and restored | Supabase, Images restored |
 | `await connection()` before every database or session read | Prisma and Auth.js call `Date.now()`/`crypto.getRandomValues()`, which Next 16 rejects while prerendering | Supabase |
 
 ### Known issues and limitations
 
-- **The catalog is a reconstruction.** Names, brands and pack sizes were read from the photos; prices are invented (realistic), and about 40 pack sizes were guessed because the label doesn't show them. Every product is in exactly one category (the original had 5 in two). Fix individual products later in the admin.
-- **`images/` is committed** (since 2026-10-21 22:20): the `products.json` files and their images, ≈ 9.4 MB. The photos are stored twice in the repo (here and in `public/products/`), which is accepted so a fresh clone can run `npm run db:seed`.
+- **Until the next seed, the database holds the rebuilt catalog** (names read from the photos, invented prices). The repo has the original again; see "Still open".
+- **`images/` is committed:** the original `products.json` files and their images (≈ 9.4 MB). The photos are stored twice in the repo (here and in `public/products/`), which is accepted so a fresh clone can run `npm run db:seed`.
 
 - **Price filter and sort use the regular price,** not the sale price, because sale prices are calculated in code.
 - **A role change applies after the user's next login,** because the role is copied into the JWT at sign-in.
@@ -95,6 +101,10 @@ All times are UTC+03:00.
 
 | Commit | Time | Message | Note |
 |---|---|---|---|
+| *(this entry)* | 10-22 | chore(images): restore the original catalog data | Replaces the rebuilt `images/`; seed fixes |
+| `1b3b9aa` | 10-21 22:18 | images | Second computer: commits the **rebuilt** `images/`, un-ignores it |
+| `f3a52ae` | 10-21 22:16 | Phase 4 and supabase integration completed. | Second computer: migration, `connection()` fixes, rating stars |
+| `f2f0467` | 10-21 17:48 | docs: add overview to the work log | |
 | `c5d25d9` | 10-21 17:04 | feat(auth): credentials and OAuth login with roles | Phase 4 · pushed |
 | `5358fc5` | 10-21 16:41 | feat(catalog): listings, filters, product page and search | Phase 3 · pushed |
 | `f5672f8` | 10-21 15:11 | feat(ui): theme, fonts and main layout | The rest of Phase 2 · pushed |
@@ -112,6 +122,7 @@ All times are UTC+03:00.
 3. [2026-10-21 16:38 · Phase 3 (catalog)](#2026-10-21-1638-utc0300-phase-3-catalog)
 4. [2026-10-21 17:02 · Phase 4 (authentication)](#2026-10-21-1702-utc0300-phase-4-authentication)
 5. [2026-10-21 21:00 · Supabase connected, catalog rebuilt, Phase 3–4 checks](#2026-10-21-2100-utc0300-supabase-connected-catalog-rebuilt-phase-34-checks)
+6. [2026-10-22 09:45 · Original images restored](#2026-10-22-0945-utc0300-original-images-restored)
 
 ---
 
@@ -547,7 +558,7 @@ What was verified, with the dev server running on a temporary `AUTH_SECRET` pass
 
 **Status:** The app runs against Supabase with real data. The Phase 0, 1, 3 and 4 checks pass in the browser, except the admin login (not tried) and Google OAuth (optional, not configured). Lint and typecheck pass.
 
-**Not committed yet:** `prisma/migrations/`, the fixes below, and these docs.
+**Commit:** `f3a52ae` "Phase 4 and supabase integration completed." (the migration, the fixes and these docs), then `1b3b9aa` "images" (the rebuilt `images/`). Both pushed from the second computer.
 
 ### Supabase
 - Free project in **eu-west-1**. `.env` was created from `.env.example`. `AUTH_SECRET` was generated with Node's `crypto.randomBytes(32)` (same result as `npx auth secret`).
@@ -608,5 +619,72 @@ What was verified, with the dev server running on a temporary `AUTH_SECRET` pass
 
 ### Next steps
 1. Log in as the admin and open `/admin`.
-2. Commit: the migration, the fixes and the docs.
+2. ~~Commit.~~ Done: `f3a52ae` + `1b3b9aa`.
+3. Phase 5: the cart.
+
+---
+
+## 2026-10-22 09:45 (UTC+03:00): Original images restored
+
+**Status:** The repo has the **original** catalog data again. The `images/` that the second computer rebuilt from the photos has been replaced. Lint, typecheck, the build and `npm run catalog:check` pass.
+
+**Not done here:** re-seeding the database. This computer has no `.env`. Run `npm run db:seed` on the computer that has it (see "Still open" in the Overview).
+
+### What happened
+- `images/` was gitignored, so it existed only on the first computer.
+- On the second computer it was missing, so the catalog was **rebuilt from the photos** (entry 21:00). That version was committed as `1b3b9aa` and seeded into Supabase.
+- The first computer still had the **original** folder. The owner asked to keep that one in GitHub and drop the rebuilt one.
+
+### Comparing the two versions
+| | Original (this computer) | Rebuilt (second computer) |
+|---|---|---|
+| Products | 428 (433 entries; 5 products in two folders) | 428, each in exactly one folder |
+| Product ids | the same 428 | the same 428 |
+| Photos | the same 428 files, byte for byte (SHA-1 checked) | the same, renamed to `<id>.webp` |
+| Image file names | `<brandSlug>_<id>.webp` | `<id>.webp` |
+| Names, brands, prices, packs | from the source shop | read from the labels; **prices invented** |
+| `url` | the source product page | empty |
+
+Every one of the 428 products had at least one different field, for example:
+- 714: "Modern BCAA Plus", USP Labs, €35.28 → "Modern BCAA+", USPlabs, €39.90
+- 2761: Scivation "Xtend BCAAs…" → brand "Xtend"
+- 29677: listed under EAA → under BCAA
+
+So "merging" meant: keep the second computer's **code** and take this computer's **data**. Nothing from the rebuilt data was worth keeping, because the photos are identical and the original metadata is the real one.
+
+### Steps
+1. Backed up the original `images/` to the session scratchpad (455 files).
+2. Moved it out of the repo, because `git pull` won't overwrite untracked files at the same paths (`products.json` exists in both).
+3. `git pull --ff-only`: fast-forwarded to `1b3b9aa`. This brought in the migration, the `connection()` fixes, the rating-star fix and the docs.
+4. `git rm -r images`, put the original folder back, then `git add images`.
+   - Git records the 428 photos as **renames** (same content, new name), so the history doesn't store them twice.
+   - The 22 `products.json` files are modified, and 5 image files were added (the products that are in two folders).
+5. `npm run catalog:check`: 433 entries → 428 products, 94 brands, 31 categories, 5 products in two categories, 0 warnings.
+   - `public/products/` is unchanged (the same 428 images), so the site's images are untouched.
+
+### Seed changes (`prisma/seed.ts`)
+The database was seeded with the rebuilt data. Re-seeding with the original data has to **replace** it, not mix the two:
+- **Categories:**
+  - On update, a product's categories are now **`set`** to the list from the source data.
+  - Before, `connect` only added links, so a product moved from EAA to BCAA would have stayed in both.
+  - On create it's still `connect`, because Prisma doesn't allow `set` in a create.
+- **Description:**
+  - It's now updated together with the name and brand it's built from.
+  - Before, it stayed on the rebuilt text, e.g. "Original BCAA by Xtend".
+  - Stock and sales are still written on create only.
+- **Leftover brands:**
+  - After the products, brands with no products and no promotions are deleted, e.g. "Xtend" and "USPlabs" from the rebuilt data.
+  - Brands a promotion points to are kept, because deleting a brand would also delete its promotions (cascade).
+- Product ids, users, reviews, banners and promotions aren't affected:
+  - products are upserted by `sourceId`, which is the same in both versions
+  - existing reviews stay on the same products
+  - slugs change to the original ones (e.g. `ostrovit-bcaa-instant-powder-20848`), so old product links from the rebuilt data return 404
+
+### Checks run
+- `npm run catalog:check` ✅ (0 warnings) · `npm run lint` ✅ · `npm run typecheck` ✅ · `npm run build` ✅
+- Prettier ✅ on `prisma/seed.ts`, using `--end-of-line auto` because the working tree uses CRLF.
+
+### Next steps
+1. On the computer with `.env`: `git pull`, `npm run db:seed`, then the checks in "Still open".
+2. Log in as the admin and open `/admin`.
 3. Phase 5: the cart.

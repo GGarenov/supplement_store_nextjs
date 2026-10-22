@@ -1,202 +1,202 @@
 [
   {
-    "id": "341",
-    "brand": "Universal Nutrition",
-    "brandSlug": "universal-nutrition",
-    "name": "Animal Nitro EAA",
-    "pack": "44 пакета",
-    "price": "44.90",
-    "image": "341.webp",
-    "url": ""
-  },
-  {
-    "id": "769",
-    "brand": "Optimum Nutrition",
-    "brandSlug": "optimum-nutrition",
-    "name": "Essential Amino Energy",
-    "pack": "270 грама",
-    "price": "22.90",
-    "image": "769.webp",
-    "url": ""
-  },
-  {
-    "id": "870",
-    "brand": "NOW Foods",
-    "brandSlug": "now-foods",
-    "name": "Amino-9 Essentials Powder",
-    "pack": "330 грама",
-    "price": "29.90",
-    "image": "870.webp",
-    "url": ""
-  },
-  {
-    "id": "9092",
-    "brand": "Universal Nutrition",
-    "brandSlug": "universal-nutrition",
-    "name": "Animal Juiced Aminos",
-    "pack": "375 грама",
-    "price": "32.90",
-    "image": "9092.webp",
-    "url": ""
+    "id": "25648",
+    "brand": "Kevin Levrone",
+    "name": "Gold EAAmino | Essential Amino Acids + Electrolytes",
+    "pack": "390 грама",
+    "price": "34.74",
+    "url": "https://fitness1.bg/aminokiselini/kevin-levrone/gold-line-gold-eaamino/35648",
+    "image": "kevin-levrone_25648.webp",
+    "brandSlug": "kevin-levrone"
   },
   {
     "id": "24302",
-    "brand": "Swedish Supplements",
-    "brandSlug": "swedish-supplements",
-    "name": "EAA Engine",
+    "brand": "SWEDISH Supplements",
+    "name": "EAA Engine / Essential Aminoacid Complex",
     "pack": "450 грама",
-    "price": "34.90",
-    "image": "24302.webp",
-    "url": ""
+    "price": "27.21",
+    "url": "https://fitness1.bg/aminokiselini/swedish-supplements/еаа-engine-essential-aminoacid-complex/34302",
+    "image": "swedish-supplements_24302.webp",
+    "brandSlug": "swedish-supplements"
+  },
+  {
+    "id": "33131",
+    "brand": "Rule1",
+    "name": "Essential Amino 9 | EAA with Electrolytes",
+    "pack": "345 грама",
+    "price": "29.84",
+    "url": "https://fitness1.bg/aminokiselini/rule1/essential-amino-9-eaa-with-electrolytes/43131",
+    "image": "rule1_33131.webp",
+    "brandSlug": "rule1"
   },
   {
     "id": "24525",
     "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "EAA",
+    "name": "EAA / Essential Amino Acids",
     "pack": "400 грама",
-    "price": "17.90",
-    "image": "24525.webp",
-    "url": ""
+    "price": "21.45",
+    "url": "https://fitness1.bg/aminokiselini/ostrovit/supreme-pure-eaa/34525",
+    "image": "ostrovit_24525.webp",
+    "brandSlug": "ostrovit"
   },
   {
-    "id": "25648",
-    "brand": "Kevin Levrone",
-    "brandSlug": "kevin-levrone",
-    "name": "Gold EAAmino",
-    "pack": "390 грама",
-    "price": "27.90",
-    "image": "25648.webp",
-    "url": ""
-  },
-  {
-    "id": "26235",
-    "brand": "Mutant",
-    "brandSlug": "mutant",
-    "name": "GEAAR",
-    "pack": "400 грама",
-    "price": "29.90",
-    "image": "26235.webp",
-    "url": ""
-  },
-  {
-    "id": "26872",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "EAA 5750",
-    "pack": "300 капсули",
-    "price": "19.90",
-    "image": "26872.webp",
-    "url": ""
-  },
-  {
-    "id": "29915",
-    "brand": "Weider",
-    "brandSlug": "weider",
-    "name": "Premium EAA Zero",
-    "pack": "325 грама",
-    "price": "24.90",
-    "image": "29915.webp",
-    "url": ""
-  },
-  {
-    "id": "29953",
-    "brand": "Dorian Yates",
-    "brandSlug": "dorian-yates",
-    "name": "Hit EAA",
-    "pack": "360 грама",
-    "price": "24.90",
-    "image": "29953.webp",
-    "url": ""
-  },
-  {
-    "id": "30173",
-    "brand": "Lazar Angelov Nutrition",
-    "brandSlug": "lazar-angelov-nutrition",
-    "name": "Essential Amino Powder",
-    "pack": "390 грама",
-    "price": "27.90",
-    "image": "30173.webp",
-    "url": ""
-  },
-  {
-    "id": "31103",
-    "brand": "Hiro.Lab",
-    "brandSlug": "hiro-lab",
-    "name": "EAA Powder",
-    "pack": "400 грама",
-    "price": "24.90",
-    "image": "31103.webp",
-    "url": ""
-  },
-  {
-    "id": "33131",
-    "brand": "Rule One",
-    "brandSlug": "rule-one",
-    "name": "Essential Amino 9",
-    "pack": "345 грама",
-    "price": "29.90",
-    "image": "33131.webp",
-    "url": ""
-  },
-  {
-    "id": "36369",
-    "brand": "Applied Nutrition",
-    "brandSlug": "applied-nutrition",
-    "name": "Amino Fuel EAA",
-    "pack": "390 грама",
-    "price": "24.90",
-    "image": "36369.webp",
-    "url": ""
-  },
-  {
-    "id": "37089",
-    "brand": "Ronnie Coleman",
-    "brandSlug": "ronnie-coleman",
-    "name": "Amino Tone + EAA",
-    "pack": "540 грама",
-    "price": "29.90",
-    "image": "37089.webp",
-    "url": ""
-  },
-  {
-    "id": "41049",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "EAAdvanced",
-    "pack": "700 грама",
-    "price": "22.90",
-    "image": "41049.webp",
-    "url": ""
-  },
-  {
-    "id": "42655",
-    "brand": "Muscletech",
-    "brandSlug": "muscletech",
-    "name": "Platinum 100% EAA+",
-    "pack": "390 грама",
-    "price": "32.90",
-    "image": "42655.webp",
-    "url": ""
+    "id": "769",
+    "brand": "Optimum Nutrition",
+    "name": "AmiNO Energy | EAA & Glutamine with Energy & Focus Blend",
+    "pack": "270 грама",
+    "price": "21.98",
+    "url": "https://fitness1.bg/aminokiselini/optimum-nutrition/optimum-nutrition-amino-energy/10769",
+    "image": "optimum-nutrition_769.webp",
+    "brandSlug": "optimum-nutrition"
   },
   {
     "id": "43529",
-    "brand": "Xtend",
-    "brandSlug": "xtend",
-    "name": "EAA",
-    "pack": "480 грама",
-    "price": "34.90",
-    "image": "43529.webp",
-    "url": ""
+    "brand": "Scivation",
+    "name": "Xtend EAA | Essential Amino Acids + Electrolytes",
+    "pack": "296~316 грама",
+    "price": "21.47",
+    "url": "https://fitness1.bg/aminokiselini/scivation/xtend-eaa-essential-amino-acids-electrolytes/53529",
+    "image": "scivation_43529.webp",
+    "brandSlug": "scivation"
   },
   {
     "id": "47587",
     "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "EAA",
+    "name": "EAA / Essential Amino Acids",
+    "pack": "600 грама",
+    "price": "25.54",
+    "url": "https://fitness1.bg/aminokiselini/ostrovit/supreme-pure-eaa/57587",
+    "image": "ostrovit_47587.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "31103",
+    "brand": "Hero.Lab",
+    "name": "EAA Powder | with Electrolytes & AstraGin®",
     "pack": "400 грама",
-    "price": "22.90",
-    "image": "47587.webp",
-    "url": ""
+    "price": "34.74",
+    "url": "https://fitness1.bg/aminokiselini/hero.lab/eaa-powder-with-electrolytes-amp-astragin/41103",
+    "image": "hero-lab_31103.webp",
+    "brandSlug": "hero-lab"
+  },
+  {
+    "id": "29953",
+    "brand": "Dorian Yates Nutrition",
+    "name": "HIT EAA | High-Intensity Training Essential Amino Acid Complex",
+    "pack": "360 грама",
+    "price": "21.08",
+    "url": "https://fitness1.bg/aminokiselini/dorian-yates-nutrition/hit-eaa-high-intensity-training-essential-amino-acids/39953",
+    "image": "dorian-yates-nutrition_29953.webp",
+    "brandSlug": "dorian-yates-nutrition"
+  },
+  {
+    "id": "42655",
+    "brand": "MuscleTech",
+    "name": "Platinum 100% EAA+",
+    "pack": "393  грама",
+    "price": "30.66",
+    "url": "https://fitness1.bg/aminokiselini/muscle-tech/platinum-100-eaa/52655",
+    "image": "muscletech_42655.webp",
+    "brandSlug": "muscletech"
+  },
+  {
+    "id": "30173",
+    "brand": "Lazar Angelov Nutrition",
+    "name": "LA Essential Amino Powder | EAA",
+    "pack": "390 грама",
+    "price": "29.63",
+    "url": "https://fitness1.bg/aminokiselini/lazar-angelov-nutrition/la-essential-amino-powder-eaa/40173",
+    "image": "lazar-angelov-nutrition_30173.webp",
+    "brandSlug": "lazar-angelov-nutrition"
+  },
+  {
+    "id": "26872",
+    "brand": "OstroVit",
+    "name": "EAA 5750 / Essential Amino Acids",
+    "pack": "300 капсули",
+    "price": "30.65",
+    "url": "https://fitness1.bg/aminokiselini/ostrovit/eaa-5750-essential-amino-acids/36872",
+    "image": "ostrovit_26872.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "26235",
+    "brand": "MUTANT",
+    "name": "GeaaR / Complete Essential Amino Acids",
+    "pack": "378 грама",
+    "price": "30.42",
+    "url": "https://fitness1.bg/aminokiselini/mutant/geaar-complete-essential-amino-acids/36235",
+    "image": "mutant_26235.webp",
+    "brandSlug": "mutant"
+  },
+  {
+    "id": "341",
+    "brand": "Universal Animal",
+    "name": "Animal Nitro EAA",
+    "pack": "44 Пакета",
+    "price": "58.99",
+    "url": "https://fitness1.bg/aminokiselini/universal-animal/universal-animal-animal-nitro/10341",
+    "image": "universal-animal_341.webp",
+    "brandSlug": "universal-animal"
+  },
+  {
+    "id": "36369",
+    "brand": "Applied Nutrition",
+    "name": "Amino Fuel EAA | Essential Amino Acids",
+    "pack": "390 грама",
+    "price": "35.27",
+    "url": "https://fitness1.bg/aminokiselini/applied-nutrition/amino-fuel-essential-amino-acids/46369",
+    "image": "applied-nutrition_36369.webp",
+    "brandSlug": "applied-nutrition"
+  },
+  {
+    "id": "29677",
+    "brand": "SWEDISH Supplements",
+    "name": "Amino Reload | BCEAA Recover Matrix",
+    "pack": "1000 грама",
+    "price": "31.42",
+    "url": "https://fitness1.bg/aminokiselini/swedish-supplements/amino-reload-bceaa-recover-matrix/39677",
+    "image": "swedish-supplements_29677.webp",
+    "brandSlug": "swedish-supplements"
+  },
+  {
+    "id": "41049",
+    "brand": "OstroVit",
+    "name": "EAAdvanced | With Glutamine And Electrolytes",
+    "pack": "700 грама",
+    "price": "39.34",
+    "url": "https://fitness1.bg/aminokiselini/ostrovit/eaadvanced-with-glutamine-and-electrolytes/51049",
+    "image": "ostrovit_41049.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "870",
+    "brand": "NOW Foods",
+    "name": "Amino-9 Essentials",
+    "pack": "330 грама",
+    "price": "38.21",
+    "url": "https://fitness1.bg/aminokiselini/now-foods/now-foods-amino-9-essentials/10870",
+    "image": "now-foods_870.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "29915",
+    "brand": "Weider",
+    "name": "Premium EAA",
+    "pack": "325 грама",
+    "price": "24.54",
+    "url": "https://fitness1.bg/aminokiselini/weider/premium-eaa/39915",
+    "image": "weider_29915.webp",
+    "brandSlug": "weider"
+  },
+  {
+    "id": "9092",
+    "brand": "Universal Animal",
+    "name": "ANIMAL Juiced AMINOS",
+    "pack": "348~405 грама",
+    "price": "32.21",
+    "url": "https://fitness1.bg/aminokiselini/universal-animal/universal-juiced-aminos/19092",
+    "image": "universal-animal_9092.webp",
+    "brandSlug": "universal-animal"
   }
 ]

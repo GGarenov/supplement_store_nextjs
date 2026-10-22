@@ -1,142 +1,202 @@
 [
   {
-    "id": "4463",
-    "brand": "Pure Nutrition",
-    "brandSlug": "pure-nutrition",
-    "name": "Herbal Burn",
-    "pack": "120 капсули",
-    "price": "19.90",
-    "image": "4463.webp",
-    "url": ""
-  },
-  {
-    "id": "6616",
-    "brand": "Trec Nutrition",
-    "brandSlug": "trec-nutrition",
-    "name": "Fat Transporter",
-    "pack": "90 капсули",
-    "price": "14.90",
-    "image": "6616.webp",
-    "url": ""
-  },
-  {
-    "id": "6617",
-    "brand": "Trec Nutrition",
-    "brandSlug": "trec-nutrition",
-    "name": "Fat Transporter",
-    "pack": "90 капсули",
-    "price": "14.90",
-    "image": "6617.webp",
-    "url": ""
-  },
-  {
-    "id": "8599",
-    "brand": "Pure Nutrition",
-    "brandSlug": "pure-nutrition",
-    "name": "Herbal Burn",
-    "pack": "60 капсули",
-    "price": "11.90",
-    "image": "8599.webp",
-    "url": ""
-  },
-  {
     "id": "21771",
     "brand": "OstroVit",
-    "brandSlug": "ostrovit",
     "name": "CLA + Green Tea + L-Carnitine",
-    "pack": "90 капсули",
-    "price": "11.90",
-    "image": "21771.webp",
-    "url": ""
+    "pack": "90 Гел капсули",
+    "price": "15.82",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/ostrovit/clagreen-tea-l-carnitine/31771",
+    "image": "ostrovit_21771.webp",
+    "brandSlug": "ostrovit"
   },
   {
-    "id": "22785",
-    "brand": "HSLabs",
-    "brandSlug": "hslabs",
-    "name": "CLA Green Tea L-Carnitine",
-    "pack": "90 капсули",
-    "price": "14.90",
-    "image": "22785.webp",
-    "url": ""
-  },
-  {
-    "id": "26506",
+    "id": "26525",
     "brand": "Applied Nutrition",
-    "brandSlug": "applied-nutrition",
-    "name": "CLA L-Carnitine & Green Tea",
-    "pack": "100 гел капсули",
-    "price": "22.90",
-    "image": "26506.webp",
-    "url": ""
-  },
-  {
-    "id": "28713",
-    "brand": "Allnutrition",
-    "brandSlug": "allnutrition",
-    "name": "Cuts4All",
-    "pack": "120 таблетки",
-    "price": "9.90",
-    "image": "28713.webp",
-    "url": ""
-  },
-  {
-    "id": "34036",
-    "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "3C CLA Carnitine Chromium",
-    "pack": "150 грама",
-    "price": "10.90",
-    "image": "34036.webp",
-    "url": ""
-  },
-  {
-    "id": "35620",
-    "brand": "Life Extension",
-    "brandSlug": "life-extension",
-    "name": "AMPK Metabolic Formula",
-    "pack": "30 таблетки",
-    "price": "29.90",
-    "image": "35620.webp",
-    "url": ""
-  },
-  {
-    "id": "41451",
-    "brand": "Nutrex",
-    "brandSlug": "nutrex",
-    "name": "Lipo 6 Stim-Free",
-    "pack": "60 капсули",
-    "price": "24.90",
-    "image": "41451.webp",
-    "url": ""
+    "name": "L-Carnitine Liquid 3000 With Green Tea",
+    "pack": "480 мл",
+    "price": "30.16",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/applied-nutrition/l-carnitine-liquid-3000-with-green-tea/36525",
+    "image": "applied-nutrition_26525.webp",
+    "brandSlug": "applied-nutrition"
   },
   {
     "id": "44976",
-    "brand": "Rule One",
-    "brandSlug": "rule-one",
+    "brand": "Rule1",
     "name": "R1 Lean Powder",
     "pack": "180 грама",
-    "price": "32.90",
-    "image": "44976.webp",
-    "url": ""
+    "price": "38.32",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/rule1/r1-lean-powder/54976",
+    "image": "rule1_44976.webp",
+    "brandSlug": "rule1"
+  },
+  {
+    "id": "4463",
+    "brand": "PURE Nutrition USA",
+    "name": "Herbal Burn",
+    "pack": "120 капсули",
+    "price": "29.14",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/pure-nutrition/pure-nutrition-herbal-burn/14463",
+    "image": "pure-nutrition-usa_4463.webp",
+    "brandSlug": "pure-nutrition-usa"
   },
   {
     "id": "45150",
     "brand": "OstroVit",
-    "brandSlug": "ostrovit",
-    "name": "Glucomannan Plus",
+    "name": "Glucomannan Plus | with L-Carnitine, Green Tea & Green Coffee",
     "pack": "180 капсули",
-    "price": "14.90",
-    "image": "45150.webp",
-    "url": ""
+    "price": "24.01",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/ostrovit/slim-care-glucomannan-amp-l-carnitine-amp-green-tea-extract/55150",
+    "image": "ostrovit_45150.webp",
+    "brandSlug": "ostrovit"
   },
   {
     "id": "45723",
-    "brand": "Rule One",
-    "brandSlug": "rule-one",
-    "name": "R1 Lean",
+    "brand": "Rule1",
+    "name": "Lean | Lipotropic Fat Burner",
     "pack": "60 капсули",
-    "price": "29.90",
-    "image": "45723.webp",
-    "url": ""
+    "price": "38.32",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/rule1/lean-lipotropic-fat-burner/55723",
+    "image": "rule1_45723.webp",
+    "brandSlug": "rule1"
+  },
+  {
+    "id": "34036",
+    "brand": "OstroVit",
+    "name": "3C | CLA + Carnitine + Chromium",
+    "pack": "150 грама",
+    "price": "25.03",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/ostrovit/3c-cla-carnitine-chromium/44036",
+    "image": "ostrovit_34036.webp",
+    "brandSlug": "ostrovit"
+  },
+  {
+    "id": "41397",
+    "brand": "MHN | More Healthy Nutrition",
+    "name": "MORE Fat Burn 1 Starter",
+    "pack": "100 капсули",
+    "price": "44.90",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/mhn--more-healthy-nutrition/more-fat-burn-1-starter/51397",
+    "image": "mhn-more-healthy-nutrition_41397.webp",
+    "brandSlug": "mhn-more-healthy-nutrition"
+  },
+  {
+    "id": "28713",
+    "brand": "AllNutrition",
+    "name": "Cuts4All | Lipotropic Fat Burner",
+    "pack": "120 Таблетки",
+    "price": "16.87",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/allnutrition/cuts4all-lipotropic-fat-burner/38713",
+    "image": "allnutrition_28713.webp",
+    "brandSlug": "allnutrition"
+  },
+  {
+    "id": "10260",
+    "brand": "NOW Foods",
+    "name": "Diet Support",
+    "pack": "120 капсули",
+    "price": "29.53",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/now-foods/nowdietsupport/20260",
+    "image": "now-foods_10260.webp",
+    "brandSlug": "now-foods"
+  },
+  {
+    "id": "26506",
+    "brand": "Applied Nutrition",
+    "name": "CLA, L-Carnitine and Green Tea",
+    "pack": "100 Гел капсули",
+    "price": "39.11",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/applied-nutrition/cla-l-carnitine-and-green-tea/36506",
+    "image": "applied-nutrition_26506.webp",
+    "brandSlug": "applied-nutrition"
+  },
+  {
+    "id": "6616",
+    "brand": "Trec Nutrition",
+    "name": "Fat Transporter | Lipotropic Fat Burner",
+    "pack": "90 капсули",
+    "price": "25.03",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/trec-nutrition/trec-nutrition-fat-transporter/16616",
+    "image": "trec-nutrition_6616.webp",
+    "brandSlug": "trec-nutrition"
+  },
+  {
+    "id": "8599",
+    "brand": "PURE Nutrition USA",
+    "name": "Herbal Burn",
+    "pack": "60 капсули",
+    "price": "16.87",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/pure-nutrition/pure-nutrition-herbal-burn/18599",
+    "image": "pure-nutrition-usa_8599.webp",
+    "brandSlug": "pure-nutrition-usa"
+  },
+  {
+    "id": "35620",
+    "brand": "Life Extension",
+    "name": "AMPK Metabolic Formula",
+    "pack": "30 Таблетки",
+    "price": "51.07",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/life-extension/ampk-metabolic-formula/45620",
+    "image": "life-extension_35620.webp",
+    "brandSlug": "life-extension"
+  },
+  {
+    "id": "27420",
+    "brand": "FreeLife",
+    "name": "Fat Burner",
+    "pack": "60 капсули",
+    "price": "19.94",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/free-life/fat-burner2/37420",
+    "image": "freelife_27420.webp",
+    "brandSlug": "freelife"
+  },
+  {
+    "id": "41451",
+    "brand": "Nutrex",
+    "name": "Lipo 6 Stim-Free | Stimulant Free Fat Loss & Appetite Control",
+    "pack": "60 капсули",
+    "price": "29.45",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/nutrex/lipo-6-stim-free-stimulant-free-fat-loss-amp-appetite-control/51451",
+    "image": "nutrex_41451.webp",
+    "brandSlug": "nutrex"
+  },
+  {
+    "id": "38067",
+    "brand": "Weight World",
+    "name": "Guarana Slimming Patches",
+    "pack": "60 Пластира",
+    "price": "24.04",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/weight-world/guarana-slimming-patches/48067",
+    "image": "weight-world_38067.webp",
+    "brandSlug": "weight-world"
+  },
+  {
+    "id": "40002",
+    "brand": "The Green Bear",
+    "name": "Slim Body",
+    "pack": "60 капсули",
+    "price": "30.63",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/the-green-bear/slim-body/50002",
+    "image": "the-green-bear_40002.webp",
+    "brandSlug": "the-green-bear"
+  },
+  {
+    "id": "22785",
+    "brand": "HS Labs",
+    "name": "CLA, Green Tea, L-Carnitine",
+    "pack": "90 капсули",
+    "price": "18.41",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/hs-labs/cla-green-tea-l-carnitine-/32785",
+    "image": "hs-labs_22785.webp",
+    "brandSlug": "hs-labs"
+  },
+  {
+    "id": "6617",
+    "brand": "Trec Nutrition",
+    "name": "Fat Transporter | Lipotropic Fat Burner",
+    "pack": "180 капсули",
+    "price": "42.92",
+    "url": "https://fitness1.bg/otslabvane-i-kontrol-na-tegloto/trec-nutrition/trec-nutrition-fat-transporter/16617",
+    "image": "trec-nutrition_6617.webp",
+    "brandSlug": "trec-nutrition"
   }
 ]
